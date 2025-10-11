@@ -1,4 +1,4 @@
-import CheckoutButton from "@/components/CheckoutButton";
+import CheckoutButton from "../components/CheckoutButton";
 
 export default function Page() {
   return (
