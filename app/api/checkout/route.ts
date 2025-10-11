@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
 import Stripe from "stripe";
+import { z } from "zod";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2024-06-20",
 });
 
-const BodySchema = z.object({ quantity: z.number().int().positive().default(1) });
+const BodySchema = z.object({
+  quantity: z.number().int().positive().default(1),
+});
 
 export async function POST(req: NextRequest) {
   try {
@@ -29,8 +31,9 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ url: session.url });
   } catch (err: any) {
-    return new NextResponse(JSON.stringify({ error: err?.message ?? "Checkout error" }), {
-      status: 400,
-    });
+    return new NextResponse(
+      JSON.stringify({ error: err?.message ?? "Checkout error" }),
+      { status: 400 }
+    );
   }
 }
