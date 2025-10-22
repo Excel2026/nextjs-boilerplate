@@ -1,56 +1,42 @@
+"use client";
+
 import fs from "node:fs/promises";
 import path from "node:path";
 
-// Ensure the page is always rendered fresh on Vercel after each deploy
-export const revalidate = 0;           // no cache
+export const revalidate = 0;
 export const dynamic = "force-dynamic";
 
 type Row = {
-  Date: string;        // "MM/DD/YYYY"
-  DrawType: string;    // "Mid" | "Eve" (or similar)
+  Date: string;
   P1: string;
   P2: string;
   P3: string;
-  Prediction: string;
-  Result: string;
+  Combined: string;
 };
 
-function parseUSDate(mmddyyyy: string): number {
-  // mm/dd/yyyy -> epoch ms for descending sort
-  const [m, d, y] = mmddyyyy.split("/").map((v) => parseInt(v, 10));
-  // guard against bad data
-  if (!m || !d || !y) return 0;
-  return new Date(y, m - 1, d).getTime();
-}
-
-function sortRows(rows: Row[]): Row[] {
-  // Newest date first; within same date: Eve above Mid
-  const drawOrder = (s: string) => (s?.toLowerCase().startsWith("eve") ? 0 : 1);
-  return [...rows].sort((a, b) => {
-    const da = parseUSDate(a.Date);
-    const db = parseUSDate(b.Date);
-    if (db !== da) return db - da;                 // date desc
-    return drawOrder(a.DrawType) - drawOrder(b.DrawType); // Eve first
-  });
-}
-
 async function getData(): Promise<Row[]> {
-  const file = path.join(process.cwd(), "public", "predictions.json");
+  const f = path.join(process.cwd(), "public", "predictions.json");
   try {
-    const raw = await fs.readFile(file, "utf8");
-    const json = JSON.parse(raw) as Row[];
-    return sortRows(json);
+    const txt = await fs.readFile(f, "utf8");
+    const parsed = JSON.parse(txt);
+    const rows: any[] = Array.isArray(parsed) ? parsed : parsed?.rows ?? [];
+    return rows.map((r) => ({
+      Date: String(r.Date ?? ""),
+      P1: String(r.P1 ?? ""),
+      P2: String(r.P2 ?? ""),
+      P3: String(r.P3 ?? ""),
+      Combined: String(r.Combined ?? r.Prediction ?? ""),
+    }));
   } catch {
-    // If the file isn't present yet, just show an empty table without any spinner.
     return [];
   }
 }
 
-export default async function Pick3Page() {
+export default async function Page() {
   const data = await getData();
 
   return (
-    <main className="min-h-screen bg-gray-50 p-8 font-sans">
+    <main className="min-h-screen bg-gray-50 p-8">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">
         Pick 3 Predictions – North Carolina
       </h1>
@@ -64,41 +50,31 @@ export default async function Pick3Page() {
           <thead className="bg-gray-100">
             <tr>
               <th className="border p-2 text-left">Date</th>
-              <th className="border p-2 text-left">Draw</th>
               <th className="border p-2 text-left">P1</th>
               <th className="border p-2 text-left">P2</th>
               <th className="border p-2 text-left">P3</th>
-              <th className="border p-2 text-left">Prediction</th>
-              <th className="border p-2 text-left">Result</th>
+              <th className="border p-2 text-left">Combined</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((r, i) => (
-              <tr key={`${r.Date}-${r.DrawType}-${i}`} className="hover:bg-gray-50">
-                <td className="border p-2">{r.Date}</td>
-                <td className="border p-2">{r.DrawType}</td>
-                <td className="border p-2">{r.P1}</td>
-                <td className="border p-2">{r.P2}</td>
-                <td className="border p-2">{r.P3}</td>
-                <td className="border p-2 text-blue-600 font-semibold">{r.Prediction}</td>
-                <td
-                  className={`border p-2 ${
-                    r.Result?.toLowerCase().includes("hit")
-                      ? "text-green-600 font-semibold"
-                      : "text-gray-700"
-                  }`}
-                >
-                  {r.Result}
-                </td>
-              </tr>
-            ))}
             {data.length === 0 && (
               <tr>
-                <td className="border p-4 text-gray-500 italic" colSpan={7}>
+                <td className="border p-4 italic text-gray-500" colSpan={5}>
                   No data available yet.
                 </td>
               </tr>
             )}
+            {data.map((r, i) => (
+              <tr key={`${r.Date}-${i}`} className="hover:bg-gray-50">
+                <td className="border p-2">{r.Date}</td>
+                <td className="border p-2">{r.P1}</td>
+                <td className="border p-2">{r.P2}</td>
+                <td className="border p-2">{r.P3}</td>
+                <td className="border p-2 text-blue-600 font-semibold">
+                  {r.Combined}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
