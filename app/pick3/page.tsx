@@ -2,5 +2,5 @@
 import { redirect } from "next/navigation";
 
 export default function Page() {
-  redirect("/"); // send all /pick3 traffic to the root dashboard
+  redirect("/"); // redirect all /pick3 traffic to root
 }
