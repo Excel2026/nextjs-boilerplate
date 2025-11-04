@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+﻿// app/layout.tsx
+import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/header";
 
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-black text-white antialiased">
-        <header />
+        <Header />
         {children}
       </body>
     </html>
