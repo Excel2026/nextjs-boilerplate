@@ -1,3 +1,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ================================
+   GLOBAL THEME & BASE RESET
+   ================================ */
+@layer base {
+  html,
+  body {
+    @apply h-full bg-black text-white antialiased;
+  }
+
+  :root {
+    --bg: #0b0b0f;
+    --panel: #0f1220;
+    --panel-glass: rgba(12, 16, 28, 0.66);
+    --text: #e9ecf1;
+    --muted: #aab3c5;
+    --brand: #ffc83d;
+    --brand-2: #3578ff;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+/* ================================
+   COMPONENTS (REUSABLE PIECES)
+   ================================ */
+@layer components {
+  .card-pad {
+    @apply p-4 sm:p-5 md:p-6 rounded-xl border border-white/10 bg-[var(--panel-glass)] shadow-lg backdrop-blur;
+  }
+
+  .header-glass {
+    @apply bg-black/80 backdrop-blur border-b border-white/10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center h-11 px-4 font-bold rounded-lg border border-transparent transition-all;
+  }
+  .btn-primary {
+    background-color: var(--brand);
+    color: black;
+  }
+  .btn-primary:hover { filter: brightness(1.1); }
+  .btn-secondary {
+    background-color: var(--brand-2);
+    color: white;
+  }
+  .btn-secondary:hover { filter: brightness(1.1); }
+
+  .page-title {
+    @apply text-2xl md:text-3xl font-extrabold;
+    color: var(--brand);
+  }
+
+  .ball {
+    @apply flex items-center justify-center rounded-full bg-white text-black font-extrabold text-lg shadow-[0_6px_22px_rgba(0,0,0,0.6)];
+  }
+  .ball.sm { @apply h-8 w-8 text-sm font-bold; }
+
+  /* Base badge */
+  .badge {
+    @apply inline-block rounded-full px-2 py-0.5 text-xs font-semibold text-white uppercase;
+  }
+  /* NEW: colors for Mid/Eve */
+  .badge-blue   { @apply bg-blue-600; }   /* MID  */
+  .badge-orange { @apply bg-orange-500; } /* EVE  */
+
+  .pill {
+    @apply px-3 py-1 rounded-full bg-white/10 text-white text-sm font-semibold hover:bg-white/20;
+  }
+  .pill.active { background-color: var(--brand); color: black; }
+
+  .input {
+    @apply border border-yellow-400 rounded-md px-3 py-1 text-sm text-white bg-transparent outline-none focus:ring-0;
+  }
+}
+
+/* ================================
+   UTILITIES (TINY HELPERS)
+   ================================ */
+@layer utilities {
+  .pg-bg { @apply absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat; }
+
+  .landing-bg {
+    background-image: url("/Landing page background v1.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) saturate(110%) brightness(70%);
+  }
+
+  .predictions-bg {
+    background-image: url("/Prediction Page Background v1.png");
+    background-size: cover;
+    background-position: center;
+    transform: scaleX(-1);
+    filter: blur(2px) saturate(110%) brightness(70%);
+  }
+
+  .history-bg {
+    background-image: url("/Prediction Page Background v1.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) saturate(100%) brightness(60%);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in { animation: fadeIn 1.2s ease-out both; }
+}
