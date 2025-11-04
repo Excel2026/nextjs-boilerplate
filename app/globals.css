@@ -1,116 +1,255 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ---------- Base / Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
 
-/* ================================
-   GLOBAL THEME & BASE RESET
-   ================================ */
-@layer base {
-  html,
-  body {
-    @apply h-full bg-black text-white antialiased;
+/* ---------- App Shell ---------- */
+:root{
+  --bb-max: 1200px;
+  --bb-pad: 1rem;
+  --bb-card: rgba(15,15,20,.75);
+  --bb-card-border: rgba(255,255,255,.06);
+  --bb-frost: rgba(30,30,40,.6);
+  --bb-shadow: 0 6px 30px rgba(0,0,0,.35);
+  --bb-radius: 18px;
+}
+
+.container,
+.page-wrap,
+.main-wrap{
+  width: 100%;
+  max-width: var(--bb-max);
+  margin: 0 auto;
+  padding: 0 var(--bb-pad);
+}
+
+/* Frosted cards (your dark glass panels) */
+.frosted,
+.frosted-panel,
+.card,
+.draw-card,
+.prediction-card{
+  background: var(--bb-card);
+  backdrop-filter: saturate(140%) blur(10px);
+  border: 1px solid var(--bb-card-border);
+  border-radius: var(--bb-radius);
+  box-shadow: var(--bb-shadow);
+}
+
+/* Hero image wrapper (home logo/background area) */
+.hero,
+.hero-wrap{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--bb-radius);
+}
+.hero img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* History table – make it robust */
+.draw-history-table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;           /* critical for mobile fit */
+}
+.draw-history-table th,
+.draw-history-table td{
+  padding: .9rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  vertical-align: middle;
+  white-space: nowrap;           /* prevent date wrapping into 3 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* The white circular digit pills */
+.ball,
+.pill,
+.number-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Any list of pills/numbers should wrap nicely */
+.pills,
+.numbers,
+.numbers-wrap,
+[class*="numbers"],
+[class*="pills"]{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .65rem;
+}
+
+/* Generic two-pane rows (Servicing | Hit Tracker, Game 1 | Custom Pick, etc.) */
+.row,
+.split,
+.flex-row,
+.panes{
+  display: flex;
+  gap: 1rem;
+}
+.col,
+.pane{
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ---------- Desktop first tweaks ---------- */
+header nav a{
+  padding: .5rem .8rem;
+  border-radius: 10px;
+}
+
+/* Make background images cover properly when used via CSS */
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------- MOBILE: ≤ 1024px ---------- */
+@media (max-width: 1024px){
+  .row,
+  .split,
+  .flex-row,
+  .panes{
+    gap: .85rem;
   }
-
-  :root {
-    --bg: #0b0b0f;
-    --panel: #0f1220;
-    --panel-glass: rgba(12, 16, 28, 0.66);
-    --text: #e9ecf1;
-    --muted: #aab3c5;
-    --brand: #ffc83d;
-    --brand-2: #3578ff;
-  }
-
-  a {
-    @apply text-inherit no-underline;
+  .ball,
+  .pill,
+  .number-pill{
+    width: 52px; height: 52px; font-size: 1.15rem;
   }
 }
 
-/* ================================
-   COMPONENTS (REUSABLE PIECES)
-   ================================ */
-@layer components {
-  .card-pad {
-    @apply p-4 sm:p-5 md:p-6 rounded-xl border border-white/10 bg-[var(--panel-glass)] shadow-lg backdrop-blur;
+/* ---------- MOBILE: ≤ 768px (tablets + phones) ---------- */
+@media (max-width: 768px){
+  /* Stack any two/three-column sections vertically */
+  .row,
+  .split,
+  .flex-row,
+  .panes{
+    flex-direction: column;
+  }
+  .col,
+  .pane,
+  .frosted,
+  .card,
+  .draw-card,
+  .prediction-card{
+    width: 100%;
   }
 
-  .header-glass {
-    @apply bg-black/80 backdrop-blur border-b border-white/10;
+  /* Tighter header */
+  header, nav{
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+  }
+  header nav a{
+    padding: .4rem .6rem;
   }
 
-  .btn {
-    @apply inline-flex items-center justify-center h-11 px-4 font-bold rounded-lg border border-transparent transition-all;
-  }
-  .btn-primary {
-    background-color: var(--brand);
-    color: black;
-  }
-  .btn-primary:hover { filter: brightness(1.1); }
-  .btn-secondary {
-    background-color: var(--brand-2);
-    color: white;
-  }
-  .btn-secondary:hover { filter: brightness(1.1); }
+  /* Hero */
+  .hero { border-radius: 14px; }
+  .hero img{ border-radius: 14px; }
 
-  .page-title {
-    @apply text-2xl md:text-3xl font-extrabold;
-    color: var(--brand);
+  /* History table fits: smaller text and pills */
+  .draw-history-table th,
+  .draw-history-table td{
+    padding: .65rem .55rem;
+    font-size: .95rem;
+  }
+  .ball,
+  .pill,
+  .number-pill{
+    width: 46px; height: 46px; font-size: 1rem;
   }
 
-  .ball {
-    @apply flex items-center justify-center rounded-full bg-white text-black font-extrabold text-lg shadow-[0_6px_22px_rgba(0,0,0,0.6)];
+  /* Ensure ALL three balls fit (P1,P2,P3) on small width */
+  .draw-history-table td:nth-last-child(-n+3){
+    width: 1%;
   }
-  .ball.sm { @apply h-8 w-8 text-sm font-bold; }
 
-  /* Base badge */
-  .badge {
-    @apply inline-block rounded-full px-2 py-0.5 text-xs font-semibold text-white uppercase;
+  /* Predictions – keep lists readable */
+  .numbers,
+  .pills,
+  .numbers-wrap,
+  [class*="numbers"],
+  [class*="pills"]{
+    gap: .4rem .45rem;
   }
-  /* NEW: colors for Mid/Eve */
-  .badge-blue   { @apply bg-blue-600; }   /* MID  */
-  .badge-orange { @apply bg-orange-500; } /* EVE  */
 
-  .pill {
-    @apply px-3 py-1 rounded-full bg-white/10 text-white text-sm font-semibold hover:bg-white/20;
+  /* Frosted cards use full width */
+  .frosted,
+  .frosted-panel{
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
-  .pill.active { background-color: var(--brand); color: black; }
 
-  .input {
-    @apply border border-yellow-400 rounded-md px-3 py-1 text-sm text-white bg-transparent outline-none focus:ring-0;
+  /* Servicing & Hit Tracker not side-by-side on phones */
+  .servicing,
+  .hit-tracker{
+    width: 100% !important;
   }
 }
 
-/* ================================
-   UTILITIES (TINY HELPERS)
-   ================================ */
-@layer utilities {
-  .pg-bg { @apply absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat; }
-
-  .landing-bg {
-    background-image: url("/Landing page background v1.png");
-    background-size: cover;
-    background-position: center;
-    filter: blur(2px) saturate(110%) brightness(70%);
+/* ---------- SMALL PHONES: ≤ 520px ---------- */
+@media (max-width: 520px){
+  .draw-history-table th,
+  .draw-history-table td{
+    padding: .55rem .45rem;
+    font-size: .9rem;
+  }
+  .ball,
+  .pill,
+  .number-pill{
+    width: 40px; height: 40px; font-size: .95rem;
   }
 
-  .predictions-bg {
-    background-image: url("/Prediction Page Background v1.png");
-    background-size: cover;
-    background-position: center;
-    transform: scaleX(-1);
-    filter: blur(2px) saturate(110%) brightness(70%);
-  }
+  /* Keep headings compact */
+  h1{ font-size: 1.75rem; line-height: 1.15; }
+  h2{ font-size: 1.35rem; }
+  h3{ font-size: 1.1rem; }
 
-  .history-bg {
-    background-image: url("/Prediction Page Background v1.png");
-    background-size: cover;
-    background-position: center;
-    filter: blur(2px) saturate(100%) brightness(60%);
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .fade-in { animation: fadeIn 1.2s ease-out both; }
+  /* Nav line-height and spacing */
+  header nav a{ padding: .35rem .5rem; }
 }
+
+/* ---------- Utility (safe) ---------- */
+.hide-overflow{ overflow: hidden; }
+.nowrap{ white-space: nowrap; }
+.center{ text-align: center; }
+.mt-1{ margin-top: .25rem; } .mt-2{ margin-top: .5rem; } .mt-3{ margin-top: 1rem; }
+.mb-1{ margin-bottom: .25rem; } .mb-2{ margin-bottom: .5rem; } .mb-3{ margin-bottom: 1rem; }
