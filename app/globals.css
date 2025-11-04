@@ -2,327 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === GLOBAL THEME === */
-:root {
-  color-scheme: dark;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: black;
-  color: white;
-  overflow-x: hidden;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-header {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header a {
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  transition: background-color 0.2s ease;
-}
-
-header a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* === FROSTED GLASS === */
-.frosted,
-.frosted-panel {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 1.5rem;
-  margin: 1rem auto;
-  width: 80%;
-  max-width: 900px;
-}
-
-/* === HERO IMAGE === */
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto;
-  max-width: 1000px;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  display: block;
-}
-
-/* === STATE LIST + HIT TRACKER === */
-.state-hit-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: start;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 2rem auto;
-}
-
-.state-panel,
-.hit-tracker {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 1rem;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.25rem;
-  width: 45%;
-  min-width: 320px;
-  color: white;
-}
-
-.state-panel h2,
-.hit-tracker h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  text-align: center;
-}
-
-/* === PREDICTION NUMBERS === */
-.prediction-card {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 1rem;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 0.5rem;
-  width: 80%;
-  max-width: 900px;
-  margin: 1.5rem auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.number-pill {
-  background: white;
-  color: black;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 1.25rem;
-  margin: 0.35rem;
-  padding: 0.6rem 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* === DRAW HISTORY === */
-.draw-history-table {
-  width: 80%;
-  max-width: 900px;
-  margin: 1.5rem auto;
-  border-collapse: collapse;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.draw-history-table th,
-.draw-history-table td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  white-space: nowrap;
-  font-size: 1rem;
-}
-
-.draw-history-table th {
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* === SUBSCRIPTION === */
-.subscription-card {
-  width: 80%;
-  max-width: 800px;
-  margin: 1.5rem auto;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  backdrop-filter: blur(12px);
-  text-align: center;
-}
-
-/* === BUTTONS === */
-button,
-.btn {
-  background: linear-gradient(90deg, #ffd34d, #ad7aff);
-  color: black;
-  font-weight: 700;
-  border: none;
-  border-radius: 9999px;
-  padding: 0.6rem 1.4rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-button:hover,
-.btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* === RESPONSIVE MOBILE LAYOUT FIX (11/4/2025) === */
-
-/* Tablets & phones */
-@media (max-width: 1024px) {
+/* ================================
+   GLOBAL THEME & BASE RESET
+   ================================ */
+@layer base {
+  html,
   body {
-    overflow-x: hidden !important;
+    @apply h-full bg-black text-white antialiased;
   }
 
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 0.75rem 0.5rem;
+  :root {
+    --bg: #0b0b0f;
+    --panel: #0f1220;
+    --panel-glass: rgba(12, 16, 28, 0.66);
+    --text: #e9ecf1;
+    --muted: #aab3c5;
+    --brand: #ffc83d;
+    --brand-2: #3578ff;
   }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .hero {
-    width: 95%;
-    margin: 1rem auto;
-  }
-
-  .hero img {
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-  }
-
-  .state-hit-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .state-panel,
-  .hit-tracker {
-    width: 95% !important;
-    max-width: 420px;
-    margin: 0 auto !important;
-    text-align: center;
-  }
-
-  .prediction-card {
-    width: 95% !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1rem;
-  }
-
-  .number-pill {
-    min-width: 2.75rem;
-    font-size: 1.2rem;
-    margin: 0.3rem;
-    padding: 0.5rem 0.9rem;
-  }
-
-  .draw-history-table {
-    width: 95% !important;
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-
-  .draw-history-table td {
-    padding: 0.3rem 0.5rem;
-  }
-
-  .frosted,
-  .frosted-panel {
-    width: 95% !important;
-    margin: 1rem auto;
-    padding: 1rem;
+  a {
+    @apply text-inherit no-underline;
   }
 }
 
-/* Small phones */
-@media (max-width: 600px) {
-  h1,
-  h2,
-  h3 {
-    font-size: 1.1rem !important;
+/* ================================
+   COMPONENTS (REUSABLE PIECES)
+   ================================ */
+@layer components {
+  .card-pad {
+    @apply p-4 sm:p-5 md:p-6 rounded-xl border border-white/10 bg-[var(--panel-glass)] shadow-lg backdrop-blur;
   }
 
-  .number-pill {
-    font-size: 1rem;
-    padding: 0.4rem 0.7rem;
-    margin: 0.25rem;
+  .header-glass {
+    @apply bg-black/80 backdrop-blur border-b border-white/10;
   }
 
-  .draw-history-table td {
-    font-size: 0.9rem;
-    padding: 0.25rem 0.3rem;
+  .btn {
+    @apply inline-flex items-center justify-center h-11 px-4 font-bold rounded-lg border border-transparent transition-all;
+  }
+  .btn-primary {
+    background-color: var(--brand);
+    color: black;
+  }
+  .btn-primary:hover { filter: brightness(1.1); }
+  .btn-secondary {
+    background-color: var(--brand-2);
+    color: white;
+  }
+  .btn-secondary:hover { filter: brightness(1.1); }
+
+  .page-title {
+    @apply text-2xl md:text-3xl font-extrabold;
+    color: var(--brand);
   }
 
-  .state-panel,
-  .hit-tracker {
-    font-size: 0.95rem;
+  .ball {
+    @apply flex items-center justify-center rounded-full bg-white text-black font-extrabold text-lg shadow-[0_6px_22px_rgba(0,0,0,0.6)];
+  }
+  .ball.sm { @apply h-8 w-8 text-sm font-bold; }
+
+  /* Base badge */
+  .badge {
+    @apply inline-block rounded-full px-2 py-0.5 text-xs font-semibold text-white uppercase;
+  }
+  /* NEW: colors for Mid/Eve */
+  .badge-blue   { @apply bg-blue-600; }   /* MID  */
+  .badge-orange { @apply bg-orange-500; } /* EVE  */
+
+  .pill {
+    @apply px-3 py-1 rounded-full bg-white/10 text-white text-sm font-semibold hover:bg-white/20;
+  }
+  .pill.active { background-color: var(--brand); color: black; }
+
+  .input {
+    @apply border border-yellow-400 rounded-md px-3 py-1 text-sm text-white bg-transparent outline-none focus:ring-0;
   }
 }
 
-/* Ultra-small devices */
-@media (max-width: 400px) {
-  .prediction-card {
-    padding: 0.75rem;
+/* ================================
+   UTILITIES (TINY HELPERS)
+   ================================ */
+@layer utilities {
+  .pg-bg { @apply absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat; }
+
+  .landing-bg {
+    background-image: url("/Landing page background v1.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) saturate(110%) brightness(70%);
   }
 
-  .number-pill {
-    min-width: 2.4rem;
-    font-size: 0.95rem;
+  .predictions-bg {
+    background-image: url("/Prediction Page Background v1.png");
+    background-size: cover;
+    background-position: center;
+    transform: scaleX(-1);
+    filter: blur(2px) saturate(110%) brightness(70%);
   }
+
+  .history-bg {
+    background-image: url("/Prediction Page Background v1.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) saturate(100%) brightness(60%);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in { animation: fadeIn 1.2s ease-out both; }
 }
