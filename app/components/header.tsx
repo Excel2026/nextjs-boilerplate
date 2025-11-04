@@ -1,10 +1,10 @@
-// app/components/Header.tsx
+// app/components/header.tsx
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Header() {
+export default function header() {
   const pathname = usePathname();
 
   // Define the base nav list
