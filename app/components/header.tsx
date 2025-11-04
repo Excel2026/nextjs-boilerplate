@@ -4,10 +4,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function header() {
+export default function Header() {
   const pathname = usePathname();
 
-  // Define the base nav list
   const nav = [
     { href: "/", label: "Home" },
     { href: "/pick3", label: "Predictions" },
@@ -15,7 +14,6 @@ export default function header() {
     { href: "/plans", label: "Subscription Plans" },
   ];
 
-  // If we are *on* the Draw History page, hide that specific nav link
   const filteredNav =
     pathname === "/draw-history"
       ? nav.filter((n) => n.href !== "/draw-history")
@@ -36,23 +34,18 @@ export default function header() {
         </div>
 
         {/* Right: nav */}
-        <nav className="flex items-center gap-6 text-sm">
-          {filteredNav.map(({ href, label }) => {
-            const active =
-              pathname === href ||
-              (href !== "/" && pathname?.startsWith(href));
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={`transition hover:text-white ${
-                  active ? "text-white" : "text-gray-300"
-                }`}
-              >
-                {label}
-              </Link>
-            );
-          })}
+        <nav className="flex gap-6 text-sm text-gray-300">
+          {filteredNav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`hover:text-white ${
+                pathname === item.href ? "text-white font-medium" : ""
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
