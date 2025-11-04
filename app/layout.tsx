@@ -1,7 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/Header";
+import header from "./components/header";
 
 export const metadata: Metadata = {
   title: "Best Bet — NC Pick 3",
