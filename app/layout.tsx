@@ -1,7 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import header from "./components/header";
+import Header from "./components/header";
 
 export const metadata: Metadata = {
   title: "Best Bet — NC Pick 3",
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-black text-white antialiased">
-        <header />
+        <Header />
         {children}
       </body>
     </html>
