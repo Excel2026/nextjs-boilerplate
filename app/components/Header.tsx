@@ -1,4 +1,4 @@
-// app/components/header.tsx
+// app/components/Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -22,7 +22,6 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-        {/* Left: brand */}
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-300">Run by</span>
           <Link
@@ -33,7 +32,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Right: nav */}
         <nav className="flex gap-6 text-sm text-gray-300">
           {filteredNav.map((item) => (
             <Link
