@@ -15,10 +15,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* Ensure correct scaling on iOS/Android */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body className="min-h-screen bg-black text-white antialiased">
         <Header />
         {children}
