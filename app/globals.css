@@ -181,3 +181,53 @@ body {
     padding: 0.25rem 0.4rem !important;
   }
 }
+/* --- MOBILE LAYOUT PATCH: Keep panes & cards readable --- */
+@media (max-width: 768px) {
+  /* Home: keep hero visible above side panes */
+  .hero {
+    order: -1;
+    margin: 0.5rem auto !important;
+    width: 95% !important;
+  }
+  .hero img {
+    max-height: 50vh;
+    object-fit: contain;
+  }
+
+  /* Side panes become collapsible blocks instead of full width */
+  .states-pane, .hit-tracker {
+    width: 100% !important;
+    display: block !important;
+    margin: 0.25rem auto !important;
+  }
+
+  /* Predictions grid: stack neatly */
+  .prediction-grid, .game2-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.25rem !important;
+    text-align: center !important;
+  }
+
+  /* Prediction pills */
+  .number-pill {
+    display: inline-block;
+    margin: 0.15rem;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  /* Draw history numbers */
+  .draw-history-table td {
+    font-size: 0.9rem !important;
+    padding: 0.25rem !important;
+    white-space: nowrap;
+  }
+
+  /* Frosted panels shrink */
+  .frosted, .frosted-panel {
+    width: 95% !important;
+    margin: 0.5rem auto !important;
+    padding: 1rem !important;
+  }
+}
