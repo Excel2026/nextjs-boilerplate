@@ -114,3 +114,70 @@
   }
   .fade-in { animation: fadeIn 1.2s ease-out both; }
 }
+/* --- Mobile responsiveness sweep (safe add-on) --- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Helpful utility in case any legacy container overflows */
+.responsive-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* --- Mobile Responsive Enhancements (Nov 2025) --- */
+
+/* General scaling */
+body {
+  overflow-x: hidden;
+}
+
+/* Hero image responsiveness */
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+/* Frosted panels adjust padding and font size on small screens */
+@media (max-width: 768px) {
+  .frosted, .frosted-panel {
+    margin: 0.5rem !important;
+    padding: 0.75rem !important;
+    font-size: 0.9rem !important;
+  }
+  .hero {
+    margin: 0.5rem;
+  }
+  .hero img {
+    border-radius: 0.75rem;
+  }
+  header, nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  header a, nav a {
+    padding: 0.5rem 0.75rem !important;
+  }
+}
+
+/* Ultra-small phones */
+@media (max-width: 480px) {
+  h1, h2, h3 {
+    font-size: 1.1rem !important;
+  }
+  .prediction-card, .draw-card {
+    padding: 0.5rem !important;
+  }
+  .number-pill {
+    margin: 0.1rem !important;
+    padding: 0.25rem 0.4rem !important;
+  }
+}
