@@ -12,7 +12,7 @@ type PredictionsJSON = {
 function sort3Digits(list: string[]): string[] {
   return [...list]
     .filter(Boolean)
-    .map((x) => x.padStart(3, "0"))
+    .map((x) => x.toString().trim().padStart(3, "0"))
     .sort((a, b) => Number(a) - Number(b));
 }
 
@@ -32,10 +32,13 @@ function formatLastUpdated(input?: string): string {
 
 export default function Pick3Page() {
   const [data, setData] = useState<PredictionsJSON | null>(null);
+
+  // instructions modal
   const [showInstructions, setShowInstructions] = useState(false);
-  const [showFilterResults, setShowFilterResults] = useState(false);
+
+  // filter state
   const [filterValue, setFilterValue] = useState("");
-  const [filteredNumbers, setFilteredNumbers] = useState<string[]>([]);
+  const [filteredNumbers, setFilteredNumbers] = useState<string[] | null>(null); // null = no filter
 
   useEffect(() => {
     (async () => {
@@ -45,7 +48,14 @@ export default function Pick3Page() {
     })();
   }, []);
 
-  const game1 = useMemo(() => sort3Digits(data?.["Game 1"]?.flat?.() ?? []), [data]);
+  // base list (sorted)
+  const game1 = useMemo(
+    () => sort3Digits(data?.["Game 1"]?.flat?.() ?? []),
+    [data]
+  );
+
+  // what we actually render (filtered or full)
+  const displayList = filteredNumbers ?? game1;
 
   const tabular: React.CSSProperties = {
     fontVariantNumeric: "tabular-nums",
@@ -57,22 +67,37 @@ export default function Pick3Page() {
 
   const lastUpdated = formatLastUpdated(data?.last_updated);
 
+  // ---- FILTER LOGIC (1 digit or a 2-digit pair) ----
   const handleFilter = () => {
-    const val = filterValue.trim();
-    if (!val || !/^\d{1,2}$/.test(val)) {
-      setFilteredNumbers([]);
-      setShowFilterResults(true);
+    const raw = filterValue.trim();
+    if (!raw) {
+      setFilteredNumbers(null);
       return;
     }
 
-    const results = game1.filter((num) =>
-      val.length === 1
-        ? num.includes(val)
-        : num.includes(val[0]) && num.includes(val[1])
-    );
+    // accept input like "3", "12", "1 2", "1,2"
+    const cleaned = raw.replace(/[^\d]/g, "");
+    if (!/^\d{1,2}$/.test(cleaned)) {
+      // invalid entry – show nothing but keep panel
+      setFilteredNumbers([]);
+      return;
+    }
 
-    setFilteredNumbers(results);
-    setShowFilterResults(true);
+    if (cleaned.length === 1) {
+      const d = cleaned;
+      setFilteredNumbers(game1.filter((n) => n.includes(d)));
+      return;
+    }
+
+    // pair, order-agnostic
+    const a = cleaned[0];
+    const b = cleaned[1];
+    setFilteredNumbers(game1.filter((n) => n.includes(a) && n.includes(b)));
+  };
+
+  const clearFilter = () => {
+    setFilterValue("");
+    setFilteredNumbers(null);
   };
 
   return (
@@ -112,6 +137,8 @@ export default function Pick3Page() {
               <button
                 onClick={() => setShowInstructions(true)}
                 className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-400 text-black font-bold shadow-md hover:bg-yellow-300 transition"
+                aria-label="Instructions"
+                title="Instructions"
               >
                 ?
               </button>
@@ -136,11 +163,17 @@ export default function Pick3Page() {
             <section className="w-1/2 max-w-[560px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg">
               <h2 className="mb-3">
                 <span className="text-lg font-semibold text-white">
-                  {game1.length} Numbers
+                  {displayList.length} Numbers
                 </span>
+                {filteredNumbers && (
+                  <span className="ml-2 text-xs text-yellow-300">
+                    (filtered)
+                  </span>
+                )}
               </h2>
+
               <div className="grid grid-cols-6 gap-4 justify-items-center">
-                {game1.map((n, i) => (
+                {displayList.map((n, i) => (
                   <div
                     key={`g1-${i}`}
                     className="bg-white text-black rounded-full w-12 h-12 flex items-center justify-center shadow-md"
@@ -158,15 +191,18 @@ export default function Pick3Page() {
                 Custom Pick
               </h2>
               <p className="text-sm mb-2">
-                {/* <<< Only line changed per your request >>> */}
                 Filter Main List for specific digits or pairs
               </p>
-              <div className="flex gap-2 mb-4">
+
+              <div className="flex gap-2 mb-3">
                 <input
                   type="text"
-                  placeholder="e.g., 1 or 23"
+                  placeholder="e.g., 3 or 23"
                   value={filterValue}
                   onChange={(e) => setFilterValue(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handleFilter();
+                  }}
                   className="flex-1 rounded px-2 py-1 text-black text-sm focus:outline-none"
                 />
                 <button
@@ -175,9 +211,46 @@ export default function Pick3Page() {
                 >
                   Filter
                 </button>
+                <button
+                  onClick={clearFilter}
+                  className="bg-gray-700 text-white text-sm font-semibold px-3 py-1 rounded hover:bg-gray-600"
+                  title="Clear"
+                >
+                  Reset
+                </button>
               </div>
-              <div className="min-h-[120px] bg-black/40 rounded p-3 text-gray-300 text-sm italic">
-                Type a digit or pair above, then click Filter.
+
+              <div className="min-h-[120px] bg-black/40 rounded p-3 text-gray-300 text-sm">
+                {!filteredNumbers && (
+                  <p className="italic">
+                    Type a digit (0–9) or pair (e.g., 23), then click{" "}
+                    <b>Filter</b>.
+                  </p>
+                )}
+                {filteredNumbers && filteredNumbers.length === 0 && (
+                  <p className="text-red-200">
+                    No matches. Try a single digit (e.g., 7) or a pair (e.g.,
+                    17). Input can be “1 7” or “1,7” too.
+                  </p>
+                )}
+                {filteredNumbers && filteredNumbers.length > 0 && (
+                  <div className="text-gray-100">
+                    <div className="mb-2 text-xs opacity-80">
+                      Showing {filteredNumbers.length} result
+                      {filteredNumbers.length === 1 ? "" : "s"}:
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {filteredNumbers.map((n, i) => (
+                        <span
+                          key={`f-${i}`}
+                          className="bg-white text-black rounded-full px-2 py-[2px] text-xs font-bold"
+                        >
+                          {n}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </section>
           </div>
@@ -200,27 +273,14 @@ export default function Pick3Page() {
               How to play Game 1
             </h2>
             <p className="text-base leading-relaxed text-gray-200 whitespace-pre-line">
-              Review the 3-digit predictions shown on the main panel (left). You can either simply
-              play all the numbers in the list or custom pick from the list by using the "Custom
-              Filter" tool.
-              {"\n\n"}In the Custom Filter tool, type in just (1) number you want to target and it
-              will pull up every 3-digit number that has your selected number in it (in any
-              position). Or type in pairs and it will pull up only the 3-digit numbers that contain
-              your 2-digit pairs (in any order).
-              {"\n\n"}Simply take a screenshot or photo with your phone and take it to your local
-              store to fill out your play slips.
-              {"\n\n"}*Note: As with all predictions, (these included), we are obviously targeting
-              exact hits and you will get exact hits just by playing the prediction numbers as they
-              are displayed but there absolutely will also be hits that are in "any" / "box" order
-              from the prediction list so you have to decide on your own how you are going to play
-              these numbers.
-              {"\n\n"}As you know, Pick 3 and all lottery ball games are punishing, brutal and
-              require a lot of patience and discipline. Play consistently yet responsibly. If you
-              don't see it jumping out in your face, might be better to not play some draws if the
-              numbers just don't feel right.
+              Review the 3-digit predictions shown on the main panel (left).
+              You can either simply play all the numbers in the list or custom
+              pick from the list by using the "Custom Filter" tool.
+              {"\n\n"}Type one digit to show every prediction that contains it
+              (in any position). Or type a 2-digit pair to show only the
+              predictions that contain both digits (any order).
             </p>
 
-            {/* Modal footer with Close button */}
             <div className="mt-6 flex justify-center">
               <button
                 onClick={() => setShowInstructions(false)}
@@ -240,13 +300,13 @@ export default function Pick3Page() {
             background-color: #ffffff;
           }
           25% {
-            background-color: #38bdf8; /* blue */
+            background-color: #38bdf8;
           }
           50% {
-            background-color: #9333ea; /* purple */
+            background-color: #9333ea;
           }
           75% {
-            background-color: #10b981; /* green */
+            background-color: #10b981;
           }
           100% {
             background-color: #ffffff;
