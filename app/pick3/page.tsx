@@ -62,6 +62,11 @@ export default function Pick3Page() {
     setFilteredNumbers(result);
   };
 
+  const handleReset = () => {
+    setFilterValue("");
+    setFilteredNumbers(null);
+  };
+
   const shownList = filteredNumbers ?? game1;
 
   return (
@@ -135,8 +140,10 @@ export default function Pick3Page() {
               <h2 className="text-lg font-semibold text-yellow-400 mb-3">
                 Custom Pick
               </h2>
-              <p className="text-sm mb-2">Filter Main List for specific digits or pairs</p>
-              <div className="flex gap-2 mb-4">
+              <p className="text-sm mb-2">
+                Filter Main List for specific digits or pairs
+              </p>
+              <div className="flex gap-2 mb-3">
                 <input
                   type="text"
                   placeholder="e.g. 3 or 14"
@@ -151,16 +158,22 @@ export default function Pick3Page() {
                   Filter
                 </button>
               </div>
+              <button
+                onClick={handleReset}
+                className="w-full bg-gray-600 text-white text-sm font-semibold px-3 py-1 rounded hover:bg-gray-500 transition"
+              >
+                Reset
+              </button>
 
               {filteredNumbers ? (
-                <div className="min-h-[120px] bg-black/40 rounded p-3 text-gray-200 text-sm">
+                <div className="min-h-[120px] bg-black/40 rounded p-3 text-gray-200 text-sm mt-3">
                   {filteredNumbers.length === 0
                     ? "No numbers found."
                     : filteredNumbers.join(", ")}
                 </div>
               ) : (
-                <div className="min-h-[120px] bg-black/40 rounded p-3 text-gray-300 text-sm italic">
-                  Type a digit or pair above, then click Filter.
+                <div className="min-h-[120px] bg-black/40 rounded p-3 text-gray-300 text-sm italic mt-3">
+                  Type a digit or pair above, then click Filter. Click Reset to show all again.
                 </div>
               )}
             </section>
