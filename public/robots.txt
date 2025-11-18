@@ -1,0 +1,5 @@
+# robots.txt for Best Bet — NC Pick 3
+User-agent: *
+Allow: /
+
+Sitemap: https://bestbet.vercel.app/sitemap.xml

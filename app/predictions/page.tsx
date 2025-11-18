@@ -1,366 +1,287 @@
 "use client";
+
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
-type Row = string[]; // [Date,P1,P2,P3,Draw,3-Digit,#]
+/** ▸▸ Game 1 Help Text ◂◂ */
+const HELP_HTML = `
+<h2 class="text-xl font-semibold text-yellow-400 text-center mb-4">How to play Game 1</h2>
+<p class="text-sm text-gray-200 leading-relaxed text-center">
+Review the 3-digit predictions shown on the main panel. You can either simply play all the numbers in the list or custom pick from the list by using the “Custom Filter” tool.
+</p>
+<p class="text-sm text-gray-200 leading-relaxed text-center mt-4">
+In the Custom Filter tool, type in just (1) number you want to target and it will pull up every 3-digit number that has your selected number in it (in any position).<br/>
+Or type in pairs and it will pull up only the 3-digit numbers that contain your 2-digit pairs (in any order).
+</p>
+<p class="text-sm text-gray-200 leading-relaxed text-center mt-4">
+Simply take a screenshot or photo with your phone and take it to your local store to fill out your play slips.
+</p>
+<p class="text-sm text-gray-200 leading-relaxed text-center mt-4">
+<b>*Note:</b> As with all predictions, (these included), we are obviously targeting exact hits and you will get exact hits just by playing the prediction numbers as they are displayed but there absolutely will also be hits that are in “any” / “box” order from the prediction list so you have to decide on your own how you are going to play these numbers.
+</p>
+<p class="text-sm text-gray-200 leading-relaxed text-center mt-4">
+As you know, Pick 3 and all lottery ball games are punishing, brutal and require a lot of patience and discipline. Play consistently yet responsibly. If you don’t see it jumping out in your face, might be better to not play some draws if the numbers just don’t feel right.
+</p>
+<div class="flex justify-center mt-6">
+  <button
+    id="closeHelp"
+    class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-300 transition"
+  >
+    Close
+  </button>
+</div>
+`;
 
-export default function Page() {
-  const [history, setHistory] = useState<Row[] | null>(null);
-  const [results, setResults] = useState<string[][] | null>(null);
-  const [pairs, setPairs] = useState<string[][] | null>(null);
-  const [updated, setUpdated] = useState("");
-  const [nowNy, setNowNy] = useState("");
+type PredictionsJSON = {
+  ["Game 1"]?: string[][];
+  last_updated?: string;
+};
 
-  // ---------- robust date helpers ----------
-  const parseDateMs = (v: unknown): number => {
-    if (v == null) return 0;
-    if (typeof v === "string") {
-      const s = v.trim();
-      let m =
-        s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/) ||
-        s.match(/^(\d{1,2})\/(\d{1,2})\s+(\d{2,4})$/) ||
-        s.match(/^(\d{1,2})\/(\d{1,2})(\d{2,4})$/);
-      if (m) {
-        const mm = +m[1], dd = +m[2]; let yy = +m[3];
-        if (yy < 100) yy += 2000;
-        const t = new Date(yy, mm - 1, dd).getTime();
-        return Number.isNaN(t) ? 0 : t;
-      }
-      m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
-      if (m) {
-        const t = new Date(+m[1], +m[2] - 1, +m[3]).getTime();
-        return Number.isNaN(t) ? 0 : t;
-      }
-      const t = new Date(s).getTime();
-      return Number.isNaN(t) ? 0 : t;
-    }
-    if (v instanceof Date) return v.getTime();
-    const t = new Date(String(v)).getTime();
-    return Number.isNaN(t) ? 0 : t;
-  };
+function sort3Digits(list: string[]): string[] {
+  return [...list]
+    .filter(Boolean)
+    .map((x) => x.padStart(3, "0"))
+    .sort((a, b) => Number(a) - Number(b));
+}
 
-  const niceDate = (v: unknown) => {
-    const ms = parseDateMs(v);
-    if (!ms) return String(v ?? "");
-    const d = new Date(ms);
-    return `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()}`;
-  };
+function formatLastUpdated(input?: string): string {
+  const d = input ? new Date(input.replace(" ", "T")) : new Date();
+  const datePart = d.toLocaleDateString("en-US", {
+    month: "2-digit",
+    day: "2-digit",
+    year: "numeric",
+  });
+  const hrs = d.getHours();
+  const mins = d.getMinutes().toString().padStart(2, "0");
+  const h12 = hrs % 12 || 12;
+  const ampm = hrs < 12 ? "a.m" : "p.m";
+  return `${datePart} ${h12}:${mins} ${ampm} (EST)`;
+}
 
-  const fmtNy = (d: Date | string) => {
-    const dt = d instanceof Date ? d : new Date(d);
-    try {
-      return dt.toLocaleString("en-US", { timeZone: "America/New_York" });
-    } catch {
-      return String(d);
-    }
-  };
+export default function Pick3Page() {
+  const [data, setData] = useState<PredictionsJSON | null>(null);
+  const [filterValue, setFilterValue] = useState("");
+  const [filteredNumbers, setFilteredNumbers] = useState<string[] | null>(null);
+  const [hydrated, setHydrated] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
 
-  const badge = (draw: string) => {
-    const isMid = String(draw).toLowerCase().startsWith("mid");
-    const bg = isMid ? "#F6EFD0" : "#DDEBFF";
-    const bd = isMid ? "#E3D3A3" : "#BBD5FF";
-    const fg = isMid ? "#6B4E00" : "#0B3A7A";
-    return (
-      <span
-        style={{
-          fontSize: 11,
-          padding: "2px 6px",
-          borderRadius: 999,
-          background: bg,
-          color: fg,
-          border: `1px solid ${bd}`,
-          fontWeight: 600,
-          display: "inline-block",
-          minWidth: 30,
-          textAlign: "center",
-          lineHeight: 1.35,
-        }}
-      >
-        {draw || ""}
-      </span>
-    );
-  };
-
-  // ---------- data load ----------
-  const load = () =>
-    fetch("/predictions.json?t=" + Date.now(), { cache: "no-store" })
-      .then((r) => r.json())
-      .then((j) => {
-        const hist = (j?.History ?? []) as Row[];
-        const withTs = hist.map((row) => ({ row, ts: parseDateMs(row?.[0]) }));
-        const parsed = withTs
-          .filter((x) => x.ts > 0)
-          .sort((a, b) => b.ts - a.ts)
-          .map((x) => x.row);
-        const unparsed = withTs.filter((x) => x.ts === 0).map((x) => x.row);
-        setHistory([...parsed, ...unparsed]);
-        setResults((j?.Results ?? []) as string[][]);
-        setPairs((j?.Pairs ?? []) as string[][]);
-        setUpdated(j?.updated ?? "");
-      })
-      .catch(console.error);
-
+  // Load predictions.json
   useEffect(() => {
-    load();
+    (async () => {
+      const res = await fetch("/predictions.json", { cache: "no-store" });
+      const j = (await res.json()) as PredictionsJSON;
+      setData(j);
+      setHydrated(true);
+    })();
   }, []);
 
+  // Wire up Close button in help modal
   useEffect(() => {
-    const tick = () => setNowNy(fmtNy(new Date()));
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
+    if (!showHelp) return;
+    const btn = document.getElementById("closeHelp");
+    const handler = () => setShowHelp(false);
+    btn?.addEventListener("click", handler);
+    return () => btn?.removeEventListener("click", handler);
+  }, [showHelp]);
 
-  const latestDraw = history?.[0]?.[4] || "";
-  const predictionsTitle = useMemo(() => {
-    const v = String(latestDraw).toLowerCase();
-    if (v.startsWith("mid")) return "Midday Predictions";
-    if (v.startsWith("eve")) return "Evening Predictions";
-    return "Today’s Predictions";
-  }, [latestDraw]);
+  const game1 = useMemo(
+    () => sort3Digits(data?.["Game 1"]?.flat?.() ?? []),
+    [data]
+  );
+  const shownList = filteredNumbers ?? game1;
 
-  const num = (s: string) => {
-    const n = parseInt(String(s).replace(/[^\d]/g, ""), 10);
-    return Number.isNaN(n) ? Number.POSITIVE_INFINITY : n;
+  const handleFilter = () => {
+    const val = filterValue.trim();
+    if (!val) {
+      setFilteredNumbers(null);
+      return;
+    }
+    const digits = val.split("").filter((d) => /\d/.test(d));
+    const result = game1.filter((num) => digits.every((d) => num.includes(d)));
+    setFilteredNumbers(result);
   };
-  const asc = (a: string, b: string) => num(a) - num(b);
 
-  const game1FlatSorted = useMemo(
-    () => (results ? results.flat() : []).slice().sort(asc),
-    [results]
-  );
-  const game2FlatSorted = useMemo(
-    () => (pairs ? pairs.flat() : []).slice().sort(asc),
-    [pairs]
-  );
+  const handleReset = () => {
+    setFilterValue("");
+    setFilteredNumbers(null);
+  };
 
-  const countChip = (n: number) => (
-    <span
-      style={{
-        marginLeft: 8,
-        fontSize: 11,
-        fontWeight: 700,
-        padding: "2px 6px",
-        borderRadius: 999,
-        background: "#111",
-        color: "#fff",
-        lineHeight: 1,
-      }}
-    >
-      {n}
-    </span>
-  );
+  const lastUpdated =
+    hydrated && data?.last_updated ? formatLastUpdated(data.last_updated) : "";
 
-  // ---------- Render guards ----------
-  if (!history || !results || !pairs)
-    return (
-      <div style={{ padding: 20, textAlign: "center", color: "#666" }}>
-        <h2>Loading predictions…</h2>
-      </div>
-    );
-
-  // ---------- UI ----------
   return (
-    <div style={{ padding: 10, fontFamily: "ui-sans-serif,system-ui" }}>
+    <main className="relative min-h-screen text-black overflow-x-hidden overflow-y-auto pb-32">
+      {/* Background */}
+      <div className="absolute inset-0 z-0 bg-[#0b0b0b]" />
       <div
+        aria-hidden
+        className="absolute inset-0 z-10 bg-cover bg-center bg-no-repeat"
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: 6,
+          backgroundImage: 'url("/Prediction%20Page%20Background%20v2.png")',
+          opacity: 1,
         }}
-      >
-        <h1 style={{ fontSize: 24, margin: 0, fontWeight: 800 }}>
-          North Carolina — Pick 3 Dashboard
-        </h1>
-        <button
-          onClick={load}
-          style={{
-            padding: "6px 10px",
-            borderRadius: 10,
-            border: "1px solid #d0d0d0",
-          }}
-        >
-          Refresh
-        </button>
-      </div>
-      <div style={{ marginBottom: 8, color: "#666" }}>
-        <b>Last updated:</b> {updated ? fmtNy(updated) : "—"} &nbsp;•&nbsp;{" "}
-        <b>Now (EST):</b> {nowNy || "—"}
-      </div>
+      />
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(470px, 1fr) 760px 1fr",
-          alignItems: "start",
-          gap: 10,
-        }}
-      >
-        {/* History */}
-        <div
-          style={{
-            border: "1px solid #e5e5e5",
-            borderRadius: 12,
-            padding: 6,
-            maxWidth: 680,
-          }}
-        >
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              tableLayout: "fixed",
-            }}
-          >
-            <thead>
-              <tr style={{ background: "#0f0f0f", color: "#fff" }}>
-                {["DATE", "P1", "P2", "P3", "DRAW", "3-DIGIT", "#"].map((h) => (
-                  <th
-                    key={h}
-                    style={{ padding: "6px 6px", fontSize: 12, textAlign: "center" }}
-                  >
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {history.map((r, i) => (
-                <tr key={i}>
-                  <td style={{ padding: "6px 4px" }}>{niceDate(r?.[0])}</td>
-                  <td style={{ textAlign: "center" }}>{r?.[1] ?? ""}</td>
-                  <td style={{ textAlign: "center" }}>{r?.[2] ?? ""}</td>
-                  <td style={{ textAlign: "center" }}>{r?.[3] ?? ""}</td>
-                  <td style={{ textAlign: "center" }}>{badge(String(r?.[4] ?? ""))}</td>
-                  <td style={{ textAlign: "center", fontWeight: 700 }}>
-                    {r?.[5] ?? ""}
-                  </td>
-                  <td style={{ textAlign: "center" }}>{r?.[6] ?? ""}</td>
-                </tr>
+      <div className="relative z-20">
+        <div className="mx-auto max-w-7xl px-4 py-10 flex flex-col items-center">
+          {/* Header */}
+          <div className="flex items-start justify-between w-full max-w-4xl gap-4">
+            <div>
+              <h1 className="text-3xl font-extrabold text-white drop-shadow">
+                NC Pick 3 Predictions
+              </h1>
+              {/* Game 1 + Help icon inline */}
+              <div className="flex items-center mt-1">
+                <span className="text-3xl font-extrabold text-white drop-shadow">
+                  Game 1
+                </span>
+                <button
+                  onClick={() => setShowHelp(true)}
+                  className="ml-3 inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-400 text-black font-bold shadow-md hover:bg-yellow-300 transition"
+                  aria-label="How to play Game 1"
+                >
+                  ?
+                </button>
+              </div>
+            </div>
+
+            <div className="flex gap-2 items-center">
+              <Link
+                href="/game2"
+                className="
+                  animated-color-pill
+                  inline-flex items-center justify-center text-center leading-none
+                  h-10 min-w-[115px] px-3
+                  text-black font-semibold shadow-md
+                "
+              >
+                Go to Game 2
+              </Link>
+            </div>
+          </div>
+
+          {/* Last updated + count (same row) */}
+          {hydrated && (
+            <div className="mt-2 mb-6 self-start flex items-baseline gap-3">
+              <p className="text-sm text-gray-200">
+                Last updated: {lastUpdated}
+              </p>
+              <span className="text-lg font-semibold text-white">
+                {shownList.length} Numbers
+              </span>
+            </div>
+          )}
+
+          {/* Main numbers panel */}
+          <section className="w-full max-w-[560px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg">
+            <h2 className="mb-3 text-lg font-semibold text-white text-center">
+              {shownList.length} Numbers
+            </h2>
+            <div className="grid grid-cols-4 gap-4 justify-items-center">
+              {shownList.map((n, i) => (
+                <div
+                  key={i}
+                  className="bg-white text-black rounded-full w-11 h-11 flex items-center justify-center shadow-md font-bold text-[17px]"
+                >
+                  {n}
+                </div>
               ))}
-            </tbody>
-          </table>
+            </div>
+          </section>
+
+          {/* Custom Pick Section */}
+          <section className="mt-12 w-[340px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-6 shadow-lg text-white text-center">
+            <h2 className="text-lg font-semibold text-yellow-400 mb-3">
+              Custom Pick
+            </h2>
+            <p className="text-sm mb-2">
+              Filter Main List for specific digits or pairs
+            </p>
+            <div className="flex gap-2 mb-3 justify-center">
+              <input
+                type="text"
+                placeholder="e.g. 3 or 14"
+                value={filterValue}
+                onChange={(e) => setFilterValue(e.target.value)}
+                className="flex-1 rounded px-2 py-1 text-black text-sm focus:outline-none"
+              />
+              <button
+                onClick={handleFilter}
+                className="bg-yellow-400 text-black text-sm font-semibold px-3 py-1 rounded hover:bg-yellow-300"
+              >
+                Filter
+              </button>
+            </div>
+            <button
+              onClick={handleReset}
+              className="w-full bg-gray-600 text-white text-sm font-semibold px-3 py-1 rounded hover:bg-gray-500 transition"
+            >
+              Reset
+            </button>
+            <p className="text-xs text-gray-300 mt-3">
+              Type a digit or pair above, then click Filter. Click Reset to
+              show all again.
+            </p>
+          </section>
         </div>
-
-        {/* Predictions */}
-        <aside
-          style={{
-            gridColumn: 2,
-            justifySelf: "center",
-            width: "100%",
-            maxWidth: 760,
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 16,
-          }}
-        >
-          <h3
-            style={{
-              gridColumn: "1 / -1",
-              margin: "2px 0 6px",
-              fontWeight: 800,
-              fontSize: 18,
-              textAlign: "center",
-            }}
-          >
-            {predictionsTitle}
-          </h3>
-
-          {/* Game 1 */}
-          <section
-            style={{
-              border: "2px solid #000",
-              borderRadius: 12,
-              padding: 10,
-              background: "#fff",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 14,
-                color: "#C32020",
-                fontWeight: 700,
-                marginBottom: 8,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <span>Game 1</span>
-              {countChip(game1FlatSorted.length)}
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(6, 1fr)",
-                gap: 8,
-              }}
-            >
-              {game1FlatSorted.map((v, i) => (
-                <div
-                  key={i}
-                  style={{
-                    border: "1px solid #e5e5e5",
-                    borderRadius: 10,
-                    padding: "6px 8px",
-                    fontWeight: 700,
-                    textAlign: "center",
-                    background: "#fff",
-                  }}
-                >
-                  {v}
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Game 2 */}
-          <section
-            style={{
-              border: "2px solid #000",
-              borderRadius: 12,
-              padding: 10,
-              background: "#fff",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 14,
-                color: "#C32020",
-                fontWeight: 700,
-                marginBottom: 8,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <span>Game 2</span>
-              {countChip(game2FlatSorted.length)}
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(5, 1fr)",
-                gap: 8,
-              }}
-            >
-              {game2FlatSorted.map((v, i) => (
-                <div
-                  key={i}
-                  style={{
-                    border: "1px solid #e5e5e5",
-                    borderRadius: 10,
-                    padding: "6px 8px",
-                    fontWeight: 700,
-                    textAlign: "center",
-                    background: "#fff",
-                  }}
-                >
-                  {v}
-                </div>
-              ))}
-            </div>
-          </section>
-        </aside>
       </div>
-    </div>
+
+      {/* Help Modal */}
+      {showHelp && (
+        <div
+          onClick={() => setShowHelp(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative mx-auto bg-gray-900/90 text-white rounded-2xl p-6 w-full max-w-md shadow-xl border border-yellow-400/40"
+          >
+            <div
+              className="[&_h1]:text-yellow-400 [&_*]:select-text"
+              dangerouslySetInnerHTML={{ __html: HELP_HTML }}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Styles */}
+      <style jsx global>{`
+        @keyframes colorMorph {
+          0% {
+            background-color: #ffffff;
+          }
+          25% {
+            background-color: #38bdf8;
+          }
+          50% {
+            background-color: #9333ea;
+          }
+          75% {
+            background-color: #10b981;
+          }
+          100% {
+            background-color: #ffffff;
+          }
+        }
+        .animated-color-pill {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.25rem 0.75rem;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: #000;
+          animation: colorMorph 6s ease-in-out infinite;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          line-height: 1;
+        }
+        .animated-color-pill:hover {
+          transform: scale(1.08);
+          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+      `}</style>
+    </main>
   );
 }

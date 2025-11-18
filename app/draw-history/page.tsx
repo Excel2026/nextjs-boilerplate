@@ -59,24 +59,25 @@ export default function DrawHistoryPage() {
   return (
     <main className="min-h-screen">
       <div className="mx-auto max-w-4xl px-6 py-10">
-        <h1 className="page-title mb-4">Draw History</h1>
+        {/* Title – bumped up ~2 sizes */}
+        <h1 className="page-title mb-4 text-4xl sm:text-5xl">Draw History</h1>
 
         {/* Filters */}
         <div className="mb-4 flex items-center gap-3">
           <button
-            className={`pill ${scope === "All" ? "active" : ""}`}
+            className={`pill ${scope === "All" ? "active" : ""} rounded-full text-base px-4`}
             onClick={() => setScope("All")}
           >
             All
           </button>
           <button
-            className={`pill ${scope === "Mid" ? "active" : ""}`}
+            className={`pill ${scope === "Mid" ? "active" : ""} rounded-full text-base px-4`}
             onClick={() => setScope("Mid")}
           >
             Mid
           </button>
           <button
-            className={`pill ${scope === "Eve" ? "active" : ""}`}
+            className={`pill ${scope === "Eve" ? "active" : ""} rounded-full text-base px-4`}
             onClick={() => setScope("Eve")}
           >
             Eve
@@ -104,18 +105,18 @@ export default function DrawHistoryPage() {
           </div>
         </div>
 
-        {/* Table */}
-        <div className="overflow-hidden rounded-xl border border-white/10 bg-[var(--panel)]">
+        {/* Table – black frosted pane backer */}
+        <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/60 backdrop-blur-md shadow-2xl">
           <table className="w-full text-sm">
             <thead className="bg-white/5 text-gray-200">
               <tr>
-                <th className="px-3 py-3 text-left">#</th>
-                <th className="px-3 py-3 text-left">Date</th>
-                <th className="px-3 py-3 text-left">Draw</th>
-                <th className="px-3 py-3 text-left">P1</th>
-                <th className="px-3 py-3 text-left">P2</th>
-                <th className="px-3 py-3 text-left">P3</th>
-                <th className="px-3 py-3 text-left">3-Digit</th>
+                <th className="px-3 py-3 text-center text-base">#</th>
+                <th className="px-3 py-3 text-center text-base">Date</th>
+                <th className="px-3 py-3 text-center text-base">Draw</th>
+                <th className="px-3 py-3 text-center text-base">P1</th>
+                <th className="px-3 py-3 text-center text-base">P2</th>
+                <th className="px-3 py-3 text-center text-base">P3</th>
+                <th className="px-3 py-3 text-center text-base">3-Digit</th>
               </tr>
             </thead>
             <tbody>
@@ -148,21 +149,21 @@ export default function DrawHistoryPage() {
                       <td className="px-3 py-3">{badge}</td>
 
                       <td className="px-3 py-3">
-                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-black font-mono text-lg font-semibold">
+                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-black text-lg font-semibold">
                           {r.P1}
                         </span>
                       </td>
                       <td className="px-3 py-3">
-                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-black font-mono text-lg font-semibold">
+                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-black text-lg font-semibold">
                           {r.P2}
                         </span>
                       </td>
                       <td className="px-3 py-3">
-                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-black font-mono text-lg font-semibold">
+                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-black text-lg font-semibold">
                           {r.P3}
                         </span>
                       </td>
-                      <td className="px-3 py-3 font-mono font-semibold text-lg">
+                      <td className="px-3 py-3 font-semibold text-lg">
                         {three}
                       </td>
                     </tr>
