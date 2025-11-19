@@ -1,7 +1,8 @@
-﻿// app/layout.tsx
+﻿// app/layout.tsx 
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Best Bet — NC Pick 3",
@@ -18,6 +19,9 @@ export default function RootLayout({
       <body className="min-h-screen bg-black text-white antialiased">
         <Header />
         {children}
+
+        {/* Vercel Analytics */}
+        <Analytics />
       </body>
     </html>
   );
