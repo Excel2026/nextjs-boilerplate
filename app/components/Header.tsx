@@ -1,15 +1,11 @@
-// app/components/Header.tsx
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
 
-  // MAIN NAV (NO Game 2 here)
   const nav = [
     { href: "/", label: "Home" },
     { href: "/pick3", label: "Predictions" },
@@ -18,13 +14,12 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur">
-      {/* TOP ROW */}
-      <div className="flex w-full items-center justify-between px-3 py-3 sm:px-4 lg:px-6">
-        
-        {/* LEFT — “Run by Best Bet” */}
-        <div className="flex items-baseline gap-1">
-          <span className="text-xs text-gray-400">Run by</span>
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur">
+      <div className="mx-auto flex max-w-5xl flex-col items-center px-4 py-3 md:flex-row md:justify-between">
+
+        {/* Brand */}
+        <div className="hidden md:flex items-center gap-2">
+          <span className="text-sm text-gray-300">Run by</span>
           <Link
             href="/"
             className="bg-clip-text text-lg font-semibold text-transparent [background-image:linear-gradient(90deg,#ffd34d,#ad7aff)]"
@@ -33,47 +28,9 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          {nav.map((n) => {
-            // HIDE the link for the current route
-            if (pathname === n.href) return null;
-
-            // Special case: hide Home link on Home
-            if (pathname === "/" && n.href === "/") return null;
-
-            const active =
-              pathname === n.href ||
-              (n.href !== "/" && pathname.startsWith(n.href));
-
-            return (
-              <Link
-                key={n.href}
-                href={n.href}
-                className={`transition-colors hover:text-white ${
-                  active ? "text-white" : "text-gray-300"
-                }`}
-              >
-                {n.label}
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* MOBILE MENU BUTTON */}
-        <button
-          className="md:hidden inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm text-gray-200 ring-1 ring-white/15 hover:bg-white/5"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle navigation"
-        >
-          {open ? "Close" : "Menu"}
-        </button>
-      </div>
-
-      {/* MOBILE DRAWER */}
-      {open && (
-        <div className="md:hidden border-t border-white/10 bg-black/90 backdrop-blur animate-fadeDown">
-          <nav className="mx-auto flex w-full flex-col gap-3 px-4 py-4">
+        {/* NAV */}
+        <nav className="w-full md:w-auto mt-4 md:mt-0">
+          <div className="w-full text-center space-y-6 md:space-y-0 md:flex md:items-center md:justify-center md:gap-6">
             {nav.map((n) => {
               if (pathname === n.href) return null;
               if (pathname === "/" && n.href === "/") return null;
@@ -82,39 +39,16 @@ export default function Header() {
                 <Link
                   key={n.href}
                   href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="
-                    w-full text-center rounded-full
-                    bg-white/10 text-white
-                    py-3 text-lg font-semibold
-                    hover:bg-white/20
-                    transition-all duration-200
-                  "
+                  className="block text-lg font-semibold text-white hover:text-yellow-300 transition-colors md:text-sm"
                 >
                   {n.label}
                 </Link>
               );
             })}
-          </nav>
-        </div>
-      )}
+          </div>
+        </nav>
 
-      {/* FADE-DOWN ANIMATION */}
-      <style jsx global>{`
-        @keyframes fadeDown {
-          0% {
-            opacity: 0;
-            transform: translateY(-6px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeDown {
-          animation: fadeDown 0.25s ease-out;
-        }
-      `}</style>
+      </div>
     </header>
   );
 }
