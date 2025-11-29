@@ -9,6 +9,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  // MAIN NAV (NO Game 2 here)
   const nav = [
     { href: "/", label: "Home" },
     { href: "/pick3", label: "Predictions" },
@@ -35,8 +36,10 @@ export default function Header() {
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
           {nav.map((n) => {
-            // hide current page
+            // HIDE the link for the current route
             if (pathname === n.href) return null;
+
+            // Special case: hide Home link on Home
             if (pathname === "/" && n.href === "/") return null;
 
             const active =
@@ -67,7 +70,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* MOBILE DRAWER — BIG CENTERED PILLS + FADE DOWN */}
+      {/* MOBILE DRAWER */}
       {open && (
         <div className="md:hidden border-t border-white/10 bg-black/90 backdrop-blur animate-fadeDown">
           <nav className="mx-auto flex w-full flex-col gap-3 px-4 py-4">
