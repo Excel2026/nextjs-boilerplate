@@ -1,0 +1,1275 @@
+[11/24/2025 06:27:07 PM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/24/2025 06:27:07 PM] FATAL ERROR: FileNotFoundError(2, 'No such file or directory')
+[11/24/2025 06:27:07 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 348, in main
+    endpoint = load_endpoint()
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 83, in load_endpoint
+    with open(SECRETS_FILE, "r", encoding="utf-8") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Sites\\site-repo\\secrets\\downtack_config.json'
+
+[11/24/2025 06:29:01 PM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/24/2025 06:29:01 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/24/2025 06:29:02 PM] Normalized 2 Downtack rows (plays/draws format).
+[11/24/2025 06:29:02 PM] Performing STRONG Excel cleanup before COM open...
+[11/24/2025 06:29:02 PM] Excel COM open attempt 1/2...
+[11/24/2025 06:29:21 PM] Loaded 740 existing rows from Excel.
+[11/24/2025 06:29:21 PM] Merged history has 741 total rows.
+[11/24/2025 06:29:21 PM] Writing 741 rows to Excel range A5:E745 in one call...
+[11/24/2025 06:29:21 PM] Saving + closing workbook...
+[11/24/2025 06:29:22 PM] Excel COM cleaned up successfully.
+[11/24/2025 06:29:24 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[11/24/2025 06:29:26 PM] Extractor exit code: 0
+[11/24/2025 06:29:26 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[11/24/2025 06:29:27 PM] Extractor exit code: 0
+[11/24/2025 06:29:27 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[11/24/2025 06:29:29 PM] Extractor exit code: 0
+[11/24/2025 06:29:29 PM] === NC Pick 3 update finished ===
+[11/24/2025 11:15:02 PM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/24/2025 11:15:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/24/2025 11:15:03 PM] Normalized 2 Downtack rows (plays/draws format).
+[11/24/2025 11:15:03 PM] Performing STRONG Excel cleanup before COM open...
+[11/24/2025 11:15:03 PM] Excel COM open attempt 1/2...
+[11/24/2025 11:15:04 PM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:15:07 PM] Excel COM open attempt 2/2...
+[11/24/2025 11:15:12 PM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:15:15 PM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/24/2025 11:15:15 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/24/2025 11:25:02 PM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/24/2025 11:25:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/24/2025 11:25:02 PM] Normalized 2 Downtack rows (plays/draws format).
+[11/24/2025 11:25:02 PM] Performing STRONG Excel cleanup before COM open...
+[11/24/2025 11:25:03 PM] Excel COM open attempt 1/2...
+[11/24/2025 11:25:03 PM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:25:06 PM] Excel COM open attempt 2/2...
+[11/24/2025 11:25:11 PM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:25:14 PM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/24/2025 11:25:14 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/24/2025 11:35:02 PM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/24/2025 11:35:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/24/2025 11:35:03 PM] Normalized 2 Downtack rows (plays/draws format).
+[11/24/2025 11:35:03 PM] Performing STRONG Excel cleanup before COM open...
+[11/24/2025 11:35:03 PM] Excel COM open attempt 1/2...
+[11/24/2025 11:35:04 PM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:35:07 PM] Excel COM open attempt 2/2...
+[11/24/2025 11:35:11 PM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:35:14 PM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/24/2025 11:35:14 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/24/2025 11:45:02 PM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/24/2025 11:45:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/24/2025 11:45:03 PM] Normalized 2 Downtack rows (plays/draws format).
+[11/24/2025 11:45:03 PM] Performing STRONG Excel cleanup before COM open...
+[11/24/2025 11:45:03 PM] Excel COM open attempt 1/2...
+[11/24/2025 11:45:04 PM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:45:07 PM] Excel COM open attempt 2/2...
+[11/24/2025 11:45:12 PM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:45:15 PM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/24/2025 11:45:15 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/24/2025 11:55:02 PM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/24/2025 11:55:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/24/2025 11:55:03 PM] Normalized 2 Downtack rows (plays/draws format).
+[11/24/2025 11:55:03 PM] Performing STRONG Excel cleanup before COM open...
+[11/24/2025 11:55:03 PM] Excel COM open attempt 1/2...
+[11/24/2025 11:55:04 PM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:55:07 PM] Excel COM open attempt 2/2...
+[11/24/2025 11:55:12 PM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/24/2025 11:55:15 PM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/24/2025 11:55:15 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 12:05:02 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 12:05:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 12:05:03 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 12:05:03 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 12:05:03 AM] Excel COM open attempt 1/2...
+[11/25/2025 12:05:04 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:05:07 AM] Excel COM open attempt 2/2...
+[11/25/2025 12:05:11 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:05:14 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 12:05:14 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 12:15:02 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 12:15:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 12:15:03 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 12:15:03 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 12:15:03 AM] Excel COM open attempt 1/2...
+[11/25/2025 12:15:04 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:15:07 AM] Excel COM open attempt 2/2...
+[11/25/2025 12:15:11 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:15:14 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 12:15:14 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 12:25:02 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 12:25:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 12:25:03 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 12:25:03 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 12:25:03 AM] Excel COM open attempt 1/2...
+[11/25/2025 12:25:04 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:25:07 AM] Excel COM open attempt 2/2...
+[11/25/2025 12:25:11 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:25:14 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 12:25:14 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 12:35:02 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 12:35:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 12:35:03 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 12:35:03 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 12:35:03 AM] Excel COM open attempt 1/2...
+[11/25/2025 12:35:03 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:35:06 AM] Excel COM open attempt 2/2...
+[11/25/2025 12:35:11 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:35:14 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 12:35:14 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 12:45:02 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 12:45:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 12:45:03 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 12:45:03 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 12:45:03 AM] Excel COM open attempt 1/2...
+[11/25/2025 12:45:04 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:45:07 AM] Excel COM open attempt 2/2...
+[11/25/2025 12:45:11 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:45:14 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 12:45:14 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 12:55:02 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 12:55:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 12:55:02 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 12:55:02 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 12:55:03 AM] Excel COM open attempt 1/2...
+[11/25/2025 12:55:03 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:55:06 AM] Excel COM open attempt 2/2...
+[11/25/2025 12:55:11 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 12:55:14 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 12:55:14 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 01:05:02 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 01:05:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 01:05:02 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 01:05:02 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 01:05:03 AM] Excel COM open attempt 1/2...
+[11/25/2025 01:05:03 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 01:05:06 AM] Excel COM open attempt 2/2...
+[11/25/2025 01:05:11 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 01:05:14 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 01:05:14 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 01:15:02 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 01:15:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 01:15:03 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 01:15:03 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 01:15:03 AM] Excel COM open attempt 1/2...
+[11/25/2025 01:15:04 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 01:15:07 AM] Excel COM open attempt 2/2...
+[11/25/2025 01:15:12 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 01:15:15 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 01:15:15 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/25/2025 07:22:10 AM] === NC Pick 3 Downtack (Excel fallback) update started ===
+[11/25/2025 07:22:11 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/25/2025 07:22:11 AM] Normalized 2 Downtack rows (plays/draws format).
+[11/25/2025 07:22:11 AM] Performing STRONG Excel cleanup before COM open...
+[11/25/2025 07:22:11 AM] Excel COM open attempt 1/2...
+[11/25/2025 07:22:13 AM] Excel COM error attempt 1: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 07:22:16 AM] Excel COM open attempt 2/2...
+[11/25/2025 07:22:21 AM] Excel COM error attempt 2: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/25/2025 07:22:24 AM] FATAL ERROR: RuntimeError('Excel COM failed after retries: com_error(-2147352567, \'Exception occurred.\', (0, \'Microsoft Excel\', "Microsoft Excel cannot access the file \'C:\\\\Sites\\\\pick3-site\\\\Pick 3 Website Info - 10-10-2025\\\\Raw Scrape - 10-26-2025\\\\NC-No Program - 10-1-2025.xlsm\'. There are several possible reasons:\\n\\n• The file name or path does not exist.\\n• The file is being used by another program.\\n• The workbook you are trying to save has the same name as a currently open workbook.", \'xlmain11.chm\', 0, -2146827284), None)')
+[11/25/2025 07:22:24 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 356, in main
+    update_excel_from_rows(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 327, in update_excel_from_rows
+    raise RuntimeError(f"Excel COM failed after retries: {last_err!r}")
+RuntimeError: Excel COM failed after retries: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/26/2025 11:35:01 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 11:35:01 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 11:35:01 AM] Downtack returned 2 rows, using 2 newest.
+[11/26/2025 11:35:01 AM] Opening workbook: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\NC-No Program - 10-1-2025.xlsm
+[11/26/2025 11:35:07 AM] Shifting existing rows down by 2 (last data row = 748)
+[11/26/2025 11:35:12 AM] ERROR during Excel update: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[11/26/2025 11:35:12 AM] FATAL ERROR: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[11/26/2025 11:35:12 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 326, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 314, in main
+    update_excel_shiftonly(new_rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 266, in update_excel_shiftonly
+    shift_existing_rows_down(ws, len(new_rows))
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 219, in shift_existing_rows_down
+    ws.Cells(r + num_new, c).Value = ws.Cells(r, c).Value
+                                     ^^^^^^^^
+  File "C:\Program Files\Python314\Lib\site-packages\win32com\client\dynamic.py", line 620, in __getattr__
+    ret = self._oleobj_.Invoke(retEntry.dispid, 0, invoke_type, 1)
+pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
+
+[11/26/2025 11:45:44 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 11:45:44 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 11:45:45 AM] Downtack returned 2 rows, using 2 for top insert.
+[11/26/2025 11:45:51 AM] FATAL ERROR in Excel update: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[11/26/2025 03:30:01 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 03:30:01 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 03:30:02 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 03:30:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 03:40:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 03:40:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 03:40:02 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 03:40:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 03:50:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 03:50:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 03:50:02 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 03:50:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 04:00:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 04:00:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 04:00:03 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 04:00:04 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 04:10:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 04:10:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 04:10:03 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 04:10:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 04:20:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 04:20:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 04:20:02 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 04:20:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 04:30:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 04:30:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 04:30:03 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 04:30:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 04:40:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 04:40:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 04:40:02 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 04:40:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 04:50:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 04:50:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 04:50:02 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 04:50:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 05:00:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 05:00:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 05:00:03 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 05:00:04 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 05:10:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 05:10:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 05:10:02 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 05:10:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 05:20:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 05:20:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 05:20:02 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 05:20:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 05:30:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 05:30:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 05:30:03 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 05:30:03 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 06:41:58 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 06:41:58 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 06:41:59 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 06:42:03 PM] FATAL ERROR in Excel update: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[11/26/2025 06:52:10 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 06:52:10 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 06:52:10 PM] Downtack returned 2 rows, using 1 for top insert.
+[11/26/2025 06:52:22 PM] FATAL ERROR in Excel update: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[11/26/2025 07:05:43 PM] Killed background EXCEL.EXE instances.
+[11/26/2025 07:05:43 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 07:05:43 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 07:05:43 PM] Downtack returned 2 rows.
+[11/26/2025 07:05:43 PM] Killed background EXCEL.EXE instances.
+[11/26/2025 07:06:02 PM] Loaded 744 existing rows.
+[11/26/2025 07:06:02 PM] Shifting existing rows down by 2.
+[11/26/2025 07:06:05 PM] ERROR during Excel update: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[11/26/2025 07:06:05 PM] FATAL ERROR: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[11/26/2025 07:06:05 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 300, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 291, in main
+    update_excel_shiftonly(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 239, in update_excel_shiftonly
+    shift_existing_rows_down(ws, count_new)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 205, in shift_existing_rows_down
+    ws.Cells(r + count, c).Value = ws.Cells(r, c).Value
+                                   ^^^^^^^^
+  File "C:\Program Files\Python314\Lib\site-packages\win32com\client\dynamic.py", line 620, in __getattr__
+    ret = self._oleobj_.Invoke(retEntry.dispid, 0, invoke_type, 1)
+pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
+
+[11/26/2025 07:43:41 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 07:43:41 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 07:43:41 PM] Normalized 2 Downtack rows (plays/draws format).
+[11/26/2025 07:43:41 PM] Killed background EXCEL.EXE instances.
+[11/26/2025 07:43:43 PM] Opening workbook: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\NC-No Program - 10-1-2025.xlsm
+[11/26/2025 07:43:44 PM] Workbook + 'Data' sheet opened successfully.
+[11/26/2025 07:43:44 PM] Top sheet keys: {('11/23/2025', 'Mid'), ('11/22/2025', 'Eve'), ('11/21/2025', 'Eve'), ('11/24/2025', 'Eve'), ('11/25/2025', 'Eve'), ('11/23/2025', 'Eve'), ('11/22/2025', 'Mid'), ('11/21/2025', 'Mid'), ('11/24/2025', 'Mid'), ('11/25/2025', 'Mid')}
+[11/26/2025 07:43:44 PM] Skipping already-present draw ('11/25/2025', 'Eve')
+[11/26/2025 07:43:44 PM] Preparing to insert 1 new row(s) at top: [{'date': '11/26/2025', 'p1': '9', 'p2': '8', 'p3': '7', 'me': 'Mid'}]
+[11/26/2025 07:43:47 PM] Loaded 744 existing rows from Excel.
+[11/26/2025 07:43:47 PM] FATAL ERROR in Excel update: com_error(-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2146827284), None)
+[11/26/2025 07:43:47 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2146827284), None)
+[11/26/2025 07:43:47 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 397, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 383, in main
+    update_excel_shiftonly(rows)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 333, in update_excel_shiftonly
+    shift_block_down(ws, existing_count, num_new)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 255, in shift_block_down
+    dest_range = src_range.Offset(num_new, 0)
+  File "C:\Program Files\Python314\Lib\site-packages\win32com\client\dynamic.py", line 214, in __call__
+    self._oleobj_.Invoke(*allArgs), self._olerepr_.defaultDispatchName, None
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2146827284), None)
+
+[11/26/2025 08:18:00 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 08:18:00 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 08:18:01 PM] Normalized 2 Downtack rows.
+[11/26/2025 08:18:03 PM] Workbook + Data sheet opened successfully.
+[11/26/2025 08:18:20 PM] Loaded 744 existing rows.
+[11/26/2025 08:18:20 PM] Shifting 744 rows down by 1 safely...
+[11/26/2025 08:21:55 PM] Shift complete.
+[11/26/2025 08:21:55 PM] Inserting 1 new row(s) at top...
+[11/26/2025 08:21:56 PM] Saving workbook...
+[11/26/2025 08:21:56 PM] Excel COM cleaned up.
+[11/26/2025 08:21:59 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[11/26/2025 08:22:02 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[11/26/2025 08:22:04 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[11/26/2025 08:22:05 PM] === NC Pick 3 update finished ===
+[11/26/2025 11:15:01 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 11:15:01 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 11:15:02 PM] Normalized 2 Downtack rows.
+[11/26/2025 11:15:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:15:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:15:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/26/2025 11:25:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 11:25:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 11:25:02 PM] Normalized 2 Downtack rows.
+[11/26/2025 11:25:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:25:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:25:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/26/2025 11:35:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 11:35:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 11:35:02 PM] Normalized 2 Downtack rows.
+[11/26/2025 11:35:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:35:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:35:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/26/2025 11:45:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 11:45:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 11:45:03 PM] Normalized 2 Downtack rows.
+[11/26/2025 11:45:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:45:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:45:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/26/2025 11:55:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/26/2025 11:55:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/26/2025 11:55:02 PM] Normalized 2 Downtack rows.
+[11/26/2025 11:55:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:55:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/26/2025 11:55:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 12:05:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 12:05:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 12:05:02 AM] Normalized 2 Downtack rows.
+[11/27/2025 12:05:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:05:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:05:03 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 12:15:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 12:15:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 12:15:03 AM] Normalized 2 Downtack rows.
+[11/27/2025 12:15:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:15:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:15:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 12:25:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 12:25:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 12:25:03 AM] Normalized 2 Downtack rows.
+[11/27/2025 12:25:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:25:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:25:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 12:35:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 12:35:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 12:35:02 AM] Normalized 2 Downtack rows.
+[11/27/2025 12:35:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:35:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:35:03 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 12:45:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 12:45:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 12:45:02 AM] Normalized 2 Downtack rows.
+[11/27/2025 12:45:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:45:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:45:03 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 12:55:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 12:55:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 12:55:02 AM] Normalized 2 Downtack rows.
+[11/27/2025 12:55:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:55:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 12:55:03 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 01:05:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 01:05:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 01:05:02 AM] Normalized 2 Downtack rows.
+[11/27/2025 01:05:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 01:05:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 01:05:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 01:15:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 01:15:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 01:15:03 AM] Normalized 2 Downtack rows.
+[11/27/2025 01:15:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 01:15:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 01:15:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 09:06:23 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 09:06:23 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 09:06:24 AM] Normalized 2 Downtack rows.
+[11/27/2025 09:06:26 AM] Workbook + Data sheet opened successfully.
+[11/27/2025 09:06:43 AM] Loaded 745 existing rows.
+[11/27/2025 09:06:43 AM] Shifting 745 rows down by 1 safely...
+[11/27/2025 09:10:16 AM] Shift complete.
+[11/27/2025 09:10:16 AM] Inserting 1 new row(s) at top...
+[11/27/2025 09:10:17 AM] Saving workbook...
+[11/27/2025 09:10:17 AM] Excel COM cleaned up.
+[11/27/2025 09:10:20 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[11/27/2025 09:10:23 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[11/27/2025 09:10:24 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[11/27/2025 09:10:26 AM] === NC Pick 3 update finished ===
+[11/27/2025 03:30:03 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 03:30:03 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 03:30:04 PM] Normalized 2 Downtack rows.
+[11/27/2025 03:30:06 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 03:30:06 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 03:30:06 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 03:40:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 03:40:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 03:40:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 03:40:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 03:40:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 03:40:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 03:50:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 03:50:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 03:50:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 03:50:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 03:50:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 03:50:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 04:00:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 04:00:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 04:00:03 PM] Normalized 2 Downtack rows.
+[11/27/2025 04:00:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:00:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:00:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 04:10:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 04:10:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 04:10:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 04:10:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:10:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:10:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 04:20:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 04:20:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 04:20:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 04:20:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:20:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:20:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 04:30:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 04:30:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 04:30:03 PM] Normalized 2 Downtack rows.
+[11/27/2025 04:30:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:30:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:30:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 04:40:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 04:40:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 04:40:03 PM] Normalized 2 Downtack rows.
+[11/27/2025 04:40:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:40:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:40:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 04:50:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 04:50:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 04:50:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 04:50:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:50:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 04:50:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 05:00:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 05:00:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 05:00:03 PM] Normalized 2 Downtack rows.
+[11/27/2025 05:00:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 05:00:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 05:00:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 05:10:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 05:10:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 05:10:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 05:10:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 05:10:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 05:10:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 05:20:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 05:20:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 05:20:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 05:20:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 05:20:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 05:20:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 05:30:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 05:30:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 05:30:03 PM] Normalized 2 Downtack rows.
+[11/27/2025 05:30:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 05:30:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 05:30:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 10:17:12 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 10:17:12 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 10:17:13 PM] Normalized 2 Downtack rows.
+[11/27/2025 10:17:16 PM] Workbook + Data sheet opened successfully.
+[11/27/2025 10:17:36 PM] Loaded 746 existing rows.
+[11/27/2025 10:17:36 PM] Shifting 746 rows down by 1 safely...
+[11/27/2025 10:21:09 PM] Shift complete.
+[11/27/2025 10:21:09 PM] Inserting 1 new row(s) at top...
+[11/27/2025 10:21:10 PM] Saving workbook...
+[11/27/2025 10:21:11 PM] Excel COM cleaned up.
+[11/27/2025 10:21:13 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[11/27/2025 10:21:17 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[11/27/2025 10:21:18 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[11/27/2025 10:21:20 PM] === NC Pick 3 update finished ===
+[11/27/2025 11:15:01 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 11:15:01 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 11:15:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 11:15:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:15:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:15:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 11:25:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 11:25:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 11:25:03 PM] Normalized 2 Downtack rows.
+[11/27/2025 11:25:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:25:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:25:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 11:35:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 11:35:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 11:35:03 PM] Normalized 2 Downtack rows.
+[11/27/2025 11:35:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:35:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:35:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 11:45:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 11:45:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 11:45:02 PM] Normalized 2 Downtack rows.
+[11/27/2025 11:45:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:45:03 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:45:03 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/27/2025 11:55:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/27/2025 11:55:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/27/2025 11:55:03 PM] Normalized 2 Downtack rows.
+[11/27/2025 11:55:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:55:04 PM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/27/2025 11:55:04 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/28/2025 12:05:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/28/2025 12:05:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/28/2025 12:05:03 AM] Normalized 2 Downtack rows.
+[11/28/2025 12:05:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:05:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:05:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/28/2025 12:15:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/28/2025 12:15:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/28/2025 12:15:02 AM] Normalized 2 Downtack rows.
+[11/28/2025 12:15:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:15:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:15:03 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/28/2025 12:25:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/28/2025 12:25:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/28/2025 12:25:03 AM] Normalized 2 Downtack rows.
+[11/28/2025 12:25:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:25:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:25:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/28/2025 12:35:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/28/2025 12:35:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/28/2025 12:35:02 AM] Normalized 2 Downtack rows.
+[11/28/2025 12:35:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:35:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:35:03 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/28/2025 12:45:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/28/2025 12:45:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/28/2025 12:45:02 AM] Normalized 2 Downtack rows.
+[11/28/2025 12:45:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:45:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:45:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/28/2025 12:55:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/28/2025 12:55:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/28/2025 12:55:03 AM] Normalized 2 Downtack rows.
+[11/28/2025 12:55:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:55:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 12:55:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/28/2025 01:05:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/28/2025 01:05:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/28/2025 01:05:02 AM] Normalized 2 Downtack rows.
+[11/28/2025 01:05:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 01:05:03 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 01:05:03 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+
+[11/28/2025 01:15:02 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[11/28/2025 01:15:02 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[11/28/2025 01:15:03 AM] Normalized 2 Downtack rows.
+[11/28/2025 01:15:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 01:15:04 AM] FATAL ERROR: com_error(-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+[11/28/2025 01:15:04 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 206, in update_excel
+    excel, wb, ws = open_wb()
+                    ~~~~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 124, in open_wb
+    wb = excel.Workbooks.Open(str(WORKBOOK))
+  File "<COMObject <unknown>>", line 5, in Open
+pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel cannot access the file 'C:\\Sites\\pick3-site\\Pick 3 Website Info - 10-10-2025\\Raw Scrape - 10-26-2025\\NC-No Program - 10-1-2025.xlsm'. There are several possible reasons:\n\n• The file name or path does not exist.\n• The file is being used by another program.\n• The workbook you are trying to save has the same name as a currently open workbook.", 'xlmain11.chm', 0, -2146827284), None)
+

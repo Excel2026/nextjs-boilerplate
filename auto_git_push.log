@@ -1,0 +1,2202 @@
+[2025-11-21 12:07:52.448061] === Auto Git Push Started ===
+[2025-11-21 12:07:52.450493] RUN: git add -A
+[2025-11-21 12:07:52.657763] STDOUT:
+
+[2025-11-21 12:07:52.658260] STDERR:
+
+[2025-11-21 12:07:52.658751] RUN: git commit -m "Auto: data update"
+[2025-11-21 12:07:52.786299] STDOUT:
+
+[2025-11-21 12:07:52.786788] STDERR:
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'SYSTEM@pick3-worker-05.(none)')
+
+[2025-11-21 12:07:52.788912] RUN: git push
+[2025-11-21 12:18:22.915077] === Auto Git Push Started ===
+[2025-11-21 12:18:22.917910] RUN: git add -A
+[2025-11-21 12:18:23.011432] STDOUT:
+
+[2025-11-21 12:18:23.012313] STDERR:
+
+[2025-11-21 12:18:23.012917] RUN: git commit -m "Auto: data update"
+[2025-11-21 12:18:23.165725] STDOUT:
+[main f2bcdc0] Auto: data update
+ 4 files changed, 147 insertions(+), 135 deletions(-)
+ create mode 100644 auto_git_push.log
+
+[2025-11-21 12:18:23.166345] STDERR:
+
+[2025-11-21 12:18:23.167339] RUN: git push
+[2025-11-21 12:18:24.794624] STDOUT:
+
+[2025-11-21 12:18:24.795278] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   6f1a9b9..f2bcdc0  main -> main
+
+[2025-11-21 12:18:24.795939] === Auto Git Push Completed ===
+[2025-11-21 12:22:35.217997] === Auto Git Push Started ===
+[2025-11-21 12:22:35.219582] RUN: git add -A
+[2025-11-21 12:22:35.311011] STDOUT:
+
+[2025-11-21 12:22:35.311954] STDERR:
+
+[2025-11-21 12:22:35.312583] RUN: git commit -m "Auto: data update"
+[2025-11-21 12:22:35.447950] STDOUT:
+[main 00182b7] Auto: data update
+ 1 file changed, 22 insertions(+)
+
+[2025-11-21 12:22:35.448553] STDERR:
+
+[2025-11-21 12:22:35.449154] RUN: git push
+[2025-11-21 12:22:36.894995] STDOUT:
+
+[2025-11-21 12:22:36.895646] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   f2bcdc0..00182b7  main -> main
+
+[2025-11-21 12:22:36.896446] === Auto Git Push Completed ===
+[2025-11-21 12:22:42.418624] === Auto Git Push Started ===
+[2025-11-21 12:22:42.420139] RUN: git add -A
+[2025-11-21 12:22:42.528651] STDOUT:
+
+[2025-11-21 12:22:42.529377] STDERR:
+
+[2025-11-21 12:22:42.530108] RUN: git commit -m "Auto: data update"
+[2025-11-21 12:22:42.672535] STDOUT:
+[main f3274ca] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-21 12:22:42.673114] STDERR:
+
+[2025-11-21 12:22:42.673856] RUN: git push
+[2025-11-21 12:22:44.150951] STDOUT:
+
+[2025-11-21 12:22:44.151629] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   00182b7..f3274ca  main -> main
+
+[2025-11-21 12:22:44.152835] === Auto Git Push Completed ===
+[2025-11-21 12:27:03.804491] === Auto Git Push Started ===
+[2025-11-21 12:27:03.806105] RUN: git add -A
+[2025-11-21 12:27:03.900296] STDOUT:
+
+[2025-11-21 12:27:03.900899] STDERR:
+
+[2025-11-21 12:27:03.901503] RUN: git commit -m "Auto: data update"
+[2025-11-21 12:27:04.038913] STDOUT:
+[main a5ffec9] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-21 12:27:04.039596] STDERR:
+
+[2025-11-21 12:27:04.040298] RUN: git push
+[2025-11-21 12:27:05.522845] STDOUT:
+
+[2025-11-21 12:27:05.523667] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   f3274ca..a5ffec9  main -> main
+
+[2025-11-21 12:27:05.524373] === Auto Git Push Completed ===
+[2025-11-21 12:34:01.737312] === Auto Git Push Started ===
+[2025-11-21 12:34:01.740955] RUN: git add -A
+[2025-11-21 12:34:01.845626] STDOUT:
+
+[2025-11-21 12:34:01.846293] STDERR:
+
+[2025-11-21 12:34:01.846950] RUN: git commit -m "Auto: data update"
+[2025-11-21 12:34:01.990959] STDOUT:
+[main 3185376] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-21 12:34:01.991692] STDERR:
+
+[2025-11-21 12:34:01.992450] RUN: git push
+[2025-11-21 12:34:03.497307] STDOUT:
+
+[2025-11-21 12:34:03.498229] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   a5ffec9..3185376  main -> main
+
+[2025-11-21 12:34:03.500682] === Auto Git Push Completed ===
+[2025-11-22 07:16:56.561423] === Auto Git Push Started ===
+[2025-11-22 07:16:56.562933] RUN: git add -A
+[2025-11-22 07:16:56.679134] STDOUT:
+
+[2025-11-22 07:16:56.679504] STDERR:
+
+[2025-11-22 07:16:56.679769] RUN: git commit -m "Auto: data update"
+[2025-11-22 07:16:56.813300] STDOUT:
+[main d44ebb9] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 07:16:56.813744] STDERR:
+
+[2025-11-22 07:16:56.814010] RUN: git push
+[2025-11-22 07:16:59.176893] STDOUT:
+
+[2025-11-22 07:16:59.177282] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   3185376..d44ebb9  main -> main
+
+[2025-11-22 07:16:59.177616] === Auto Git Push Completed ===
+[2025-11-22 07:28:31.480963] === Auto Git Push Started ===
+[2025-11-22 07:28:31.481467] RUN: git add -A
+[2025-11-22 07:28:31.570801] STDOUT:
+
+[2025-11-22 07:28:31.571180] STDERR:
+
+[2025-11-22 07:28:31.571526] RUN: git commit -m "Auto: data update"
+[2025-11-22 07:28:31.689827] STDOUT:
+[main bfd7969] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 07:28:31.690224] STDERR:
+
+[2025-11-22 07:28:31.690598] RUN: git push
+[2025-11-22 07:28:32.967435] STDOUT:
+
+[2025-11-22 07:28:32.967815] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   d44ebb9..bfd7969  main -> main
+
+[2025-11-22 07:28:32.968157] === Auto Git Push Completed ===
+[2025-11-22 10:01:36.193431] === Auto Git Push Started ===
+[2025-11-22 10:01:36.194035] RUN: git add -A
+[2025-11-22 10:01:36.278573] STDOUT:
+
+[2025-11-22 10:01:36.278915] STDERR:
+
+[2025-11-22 10:01:36.279176] RUN: git commit -m "Auto: data update"
+[2025-11-22 10:01:36.396921] STDOUT:
+[main e1e82d4] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 10:01:36.397294] STDERR:
+
+[2025-11-22 10:01:36.397557] RUN: git push
+[2025-11-22 10:01:37.760365] STDOUT:
+
+[2025-11-22 10:01:37.760778] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   bfd7969..e1e82d4  main -> main
+
+[2025-11-22 10:01:37.761044] === Auto Git Push Completed ===
+[2025-11-22 10:53:44.096837] === Auto Git Push Started ===
+[2025-11-22 10:53:44.098525] RUN: git add -A
+[2025-11-22 10:53:44.221342] STDOUT:
+
+[2025-11-22 10:53:44.221701] STDERR:
+
+[2025-11-22 10:53:44.221961] RUN: git commit -m "Auto: data update"
+[2025-11-22 10:53:44.340714] STDOUT:
+[main 15441bf] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 10:53:44.341075] STDERR:
+
+[2025-11-22 10:53:44.341328] RUN: git push
+[2025-11-22 10:53:45.685680] STDOUT:
+
+[2025-11-22 10:53:45.686071] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   e1e82d4..15441bf  main -> main
+
+[2025-11-22 10:53:45.686381] === Auto Git Push Completed ===
+[2025-11-22 10:58:01.468080] === Auto Git Push Started ===
+[2025-11-22 10:58:01.468525] RUN: git add -A
+[2025-11-22 10:58:01.556958] STDOUT:
+
+[2025-11-22 10:58:01.557324] STDERR:
+
+[2025-11-22 10:58:01.557651] RUN: git commit -m "Auto: data update"
+[2025-11-22 10:58:01.679973] STDOUT:
+[main 37dc577] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 10:58:01.680359] STDERR:
+
+[2025-11-22 10:58:01.680626] RUN: git push
+[2025-11-22 10:58:03.011584] STDOUT:
+
+[2025-11-22 10:58:03.011956] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   15441bf..37dc577  main -> main
+
+[2025-11-22 10:58:03.012213] === Auto Git Push Completed ===
+[2025-11-22 11:02:15.791397] === Auto Git Push Started ===
+[2025-11-22 11:02:15.791869] RUN: git add -A
+[2025-11-22 11:02:15.876170] STDOUT:
+
+[2025-11-22 11:02:15.876567] STDERR:
+
+[2025-11-22 11:02:15.876920] RUN: git commit -m "Auto: data update"
+[2025-11-22 11:02:16.009106] STDOUT:
+[main 89bf6d5] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 11:02:16.009502] STDERR:
+
+[2025-11-22 11:02:16.009787] RUN: git push
+[2025-11-22 11:02:17.304189] STDOUT:
+
+[2025-11-22 11:02:17.304571] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   37dc577..89bf6d5  main -> main
+
+[2025-11-22 11:02:17.304885] === Auto Git Push Completed ===
+[2025-11-22 11:07:12.324383] === Auto Git Push Started ===
+[2025-11-22 11:07:12.324866] RUN: git add -A
+[2025-11-22 11:07:12.420227] STDOUT:
+
+[2025-11-22 11:07:12.420587] STDERR:
+
+[2025-11-22 11:07:12.420845] RUN: git commit -m "Auto: data update"
+[2025-11-22 11:07:12.546422] STDOUT:
+[main a8abec7] Auto: data update
+ 3 files changed, 127 insertions(+), 1 deletion(-)
+
+[2025-11-22 11:07:12.546782] STDERR:
+
+[2025-11-22 11:07:12.547036] RUN: git push
+[2025-11-22 11:07:13.847646] STDOUT:
+
+[2025-11-22 11:07:13.848037] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   89bf6d5..a8abec7  main -> main
+
+[2025-11-22 11:07:13.848307] === Auto Git Push Completed ===
+[2025-11-22 11:12:26.549309] === Auto Git Push Started ===
+[2025-11-22 11:12:26.549914] RUN: git add -A
+[2025-11-22 11:12:26.650569] STDOUT:
+
+[2025-11-22 11:12:26.650939] STDERR:
+
+[2025-11-22 11:12:26.651202] RUN: git commit -m "Auto: data update"
+[2025-11-22 11:12:26.788918] STDOUT:
+[main bcd906c] Auto: data update
+ 2 files changed, 22 insertions(+), 1 deletion(-)
+
+[2025-11-22 11:12:26.789351] STDERR:
+
+[2025-11-22 11:12:26.789610] RUN: git push
+[2025-11-22 11:12:28.082467] STDOUT:
+
+[2025-11-22 11:12:28.083056] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   a8abec7..bcd906c  main -> main
+
+[2025-11-22 11:12:28.083335] === Auto Git Push Completed ===
+[2025-11-22 11:28:38.056543] === Auto Git Push Started ===
+[2025-11-22 11:28:38.057014] RUN: git add -A
+[2025-11-22 11:28:38.157329] STDOUT:
+
+[2025-11-22 11:28:38.157694] STDERR:
+
+[2025-11-22 11:28:38.157948] RUN: git commit -m "Auto: data update"
+[2025-11-22 11:28:38.294706] STDOUT:
+[main d830c12] Auto: data update
+ 3 files changed, 36 insertions(+), 1 deletion(-)
+
+[2025-11-22 11:28:38.295078] STDERR:
+
+[2025-11-22 11:28:38.295333] RUN: git push
+[2025-11-22 11:28:39.567551] STDOUT:
+
+[2025-11-22 11:28:39.567968] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   bcd906c..d830c12  main -> main
+
+[2025-11-22 11:28:39.568231] === Auto Git Push Completed ===
+[2025-11-22 15:30:22.024629] === Auto Git Push Started ===
+[2025-11-22 15:30:22.026055] RUN: git add -A
+[2025-11-22 15:30:22.173752] STDOUT:
+
+[2025-11-22 15:30:22.174545] STDERR:
+
+[2025-11-22 15:30:22.178585] RUN: git commit -m "Auto: data update"
+[2025-11-22 15:30:22.366655] STDOUT:
+[main e814f36] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 15:30:22.367140] STDERR:
+
+[2025-11-22 15:30:22.367491] RUN: git push
+[2025-11-22 15:30:23.766268] STDOUT:
+
+[2025-11-22 15:30:23.766805] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   d830c12..e814f36  main -> main
+
+[2025-11-22 15:30:23.767337] === Auto Git Push Completed ===
+[2025-11-22 15:40:22.475577] === Auto Git Push Started ===
+[2025-11-22 15:40:22.477132] RUN: git add -A
+[2025-11-22 15:40:22.571882] STDOUT:
+
+[2025-11-22 15:40:22.572513] STDERR:
+
+[2025-11-22 15:40:22.573082] RUN: git commit -m "Auto: data update"
+[2025-11-22 15:40:22.713281] STDOUT:
+[main c004823] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 15:40:22.713720] STDERR:
+
+[2025-11-22 15:40:22.714248] RUN: git push
+[2025-11-22 15:40:24.081476] STDOUT:
+
+[2025-11-22 15:40:24.081962] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   e814f36..c004823  main -> main
+
+[2025-11-22 15:40:24.082432] === Auto Git Push Completed ===
+[2025-11-22 15:50:22.120290] === Auto Git Push Started ===
+[2025-11-22 15:50:22.122682] RUN: git add -A
+[2025-11-22 15:50:22.262220] STDOUT:
+
+[2025-11-22 15:50:22.263349] STDERR:
+
+[2025-11-22 15:50:22.263774] RUN: git commit -m "Auto: data update"
+[2025-11-22 15:50:22.400484] STDOUT:
+[main 6390694] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 15:50:22.400938] STDERR:
+
+[2025-11-22 15:50:22.401504] RUN: git push
+[2025-11-22 15:50:23.826979] STDOUT:
+
+[2025-11-22 15:50:23.827467] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   c004823..6390694  main -> main
+
+[2025-11-22 15:50:23.828026] === Auto Git Push Completed ===
+[2025-11-22 16:00:22.337117] === Auto Git Push Started ===
+[2025-11-22 16:00:22.338607] RUN: git add -A
+[2025-11-22 16:00:22.434623] STDOUT:
+
+[2025-11-22 16:00:22.435080] STDERR:
+
+[2025-11-22 16:00:22.435595] RUN: git commit -m "Auto: data update"
+[2025-11-22 16:00:22.575907] STDOUT:
+[main 08435c9] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 16:00:22.576438] STDERR:
+
+[2025-11-22 16:00:22.578597] RUN: git push
+[2025-11-22 16:00:23.907956] STDOUT:
+
+[2025-11-22 16:00:23.908462] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   6390694..08435c9  main -> main
+
+[2025-11-22 16:00:23.908997] === Auto Git Push Completed ===
+[2025-11-22 16:10:22.392390] === Auto Git Push Started ===
+[2025-11-22 16:10:22.393828] RUN: git add -A
+[2025-11-22 16:10:22.490629] STDOUT:
+
+[2025-11-22 16:10:22.491063] STDERR:
+
+[2025-11-22 16:10:22.491564] RUN: git commit -m "Auto: data update"
+[2025-11-22 16:10:22.634552] STDOUT:
+[main cfbc161] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 16:10:22.635061] STDERR:
+
+[2025-11-22 16:10:22.635547] RUN: git push
+[2025-11-22 16:10:23.976240] STDOUT:
+
+[2025-11-22 16:10:23.976770] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   08435c9..cfbc161  main -> main
+
+[2025-11-22 16:10:23.977238] === Auto Git Push Completed ===
+[2025-11-22 16:20:22.274909] === Auto Git Push Started ===
+[2025-11-22 16:20:22.276427] RUN: git add -A
+[2025-11-22 16:20:22.375929] STDOUT:
+
+[2025-11-22 16:20:22.376364] STDERR:
+
+[2025-11-22 16:20:22.376935] RUN: git commit -m "Auto: data update"
+[2025-11-22 16:20:22.516192] STDOUT:
+[main 6198f46] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 16:20:22.516637] STDERR:
+
+[2025-11-22 16:20:22.517138] RUN: git push
+[2025-11-22 16:20:23.896062] STDOUT:
+
+[2025-11-22 16:20:23.897281] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   cfbc161..6198f46  main -> main
+
+[2025-11-22 16:20:23.897699] === Auto Git Push Completed ===
+[2025-11-22 16:30:22.291145] === Auto Git Push Started ===
+[2025-11-22 16:30:22.292606] RUN: git add -A
+[2025-11-22 16:30:22.389797] STDOUT:
+
+[2025-11-22 16:30:22.390217] STDERR:
+
+[2025-11-22 16:30:22.390683] RUN: git commit -m "Auto: data update"
+[2025-11-22 16:30:22.528717] STDOUT:
+[main 3dfd3af] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 16:30:22.529171] STDERR:
+
+[2025-11-22 16:30:22.529649] RUN: git push
+[2025-11-22 16:30:23.895171] STDOUT:
+
+[2025-11-22 16:30:23.895763] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   6198f46..3dfd3af  main -> main
+
+[2025-11-22 16:30:23.896312] === Auto Git Push Completed ===
+[2025-11-22 16:40:22.075567] === Auto Git Push Started ===
+[2025-11-22 16:40:22.076939] RUN: git add -A
+[2025-11-22 16:40:22.173437] STDOUT:
+
+[2025-11-22 16:40:22.173900] STDERR:
+
+[2025-11-22 16:40:22.174417] RUN: git commit -m "Auto: data update"
+[2025-11-22 16:40:22.321816] STDOUT:
+[main 8e212f2] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 16:40:22.322375] STDERR:
+
+[2025-11-22 16:40:22.322869] RUN: git push
+[2025-11-22 16:40:23.667118] STDOUT:
+
+[2025-11-22 16:40:23.667789] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   3dfd3af..8e212f2  main -> main
+
+[2025-11-22 16:40:23.668330] === Auto Git Push Completed ===
+[2025-11-22 16:50:22.133438] === Auto Git Push Started ===
+[2025-11-22 16:50:22.134865] RUN: git add -A
+[2025-11-22 16:50:22.234041] STDOUT:
+
+[2025-11-22 16:50:22.234473] STDERR:
+
+[2025-11-22 16:50:22.235040] RUN: git commit -m "Auto: data update"
+[2025-11-22 16:50:22.383821] STDOUT:
+[main 29faa05] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 16:50:22.384301] STDERR:
+
+[2025-11-22 16:50:22.384753] RUN: git push
+[2025-11-22 16:50:23.715131] STDOUT:
+
+[2025-11-22 16:50:23.715672] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   8e212f2..29faa05  main -> main
+
+[2025-11-22 16:50:23.716547] === Auto Git Push Completed ===
+[2025-11-22 17:00:19.436963] === Auto Git Push Started ===
+[2025-11-22 17:00:19.439486] RUN: git add -A
+[2025-11-22 17:00:19.760049] STDOUT:
+
+[2025-11-22 17:00:19.761544] STDERR:
+
+[2025-11-22 17:00:19.762722] RUN: git commit -m "Auto: data update"
+[2025-11-22 17:00:20.097468] STDOUT:
+[main 8ecb557] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 17:00:20.098971] STDERR:
+
+[2025-11-22 17:00:20.099980] RUN: git push
+[2025-11-22 17:00:22.460207] STDOUT:
+
+[2025-11-22 17:00:22.462132] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   29faa05..8ecb557  main -> main
+
+[2025-11-22 17:00:22.462536] === Auto Git Push Completed ===
+[2025-11-22 17:10:22.475883] === Auto Git Push Started ===
+[2025-11-22 17:10:22.477496] RUN: git add -A
+[2025-11-22 17:10:22.571062] STDOUT:
+
+[2025-11-22 17:10:22.571568] STDERR:
+
+[2025-11-22 17:10:22.572045] RUN: git commit -m "Auto: data update"
+[2025-11-22 17:10:22.715386] STDOUT:
+[main 5e5b0a0] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 17:10:22.715965] STDERR:
+
+[2025-11-22 17:10:22.716512] RUN: git push
+[2025-11-22 17:10:24.088703] STDOUT:
+
+[2025-11-22 17:10:24.091199] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   8ecb557..5e5b0a0  main -> main
+
+[2025-11-22 17:10:24.092400] === Auto Git Push Completed ===
+[2025-11-22 17:20:16.174628] === Auto Git Push Started ===
+[2025-11-22 17:20:16.176480] RUN: git add -A
+[2025-11-22 17:20:16.270942] STDOUT:
+
+[2025-11-22 17:20:16.271443] STDERR:
+
+[2025-11-22 17:20:16.272039] RUN: git commit -m "Auto: data update"
+[2025-11-22 17:20:16.428252] STDOUT:
+[main e9e225a] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 17:20:16.428819] STDERR:
+
+[2025-11-22 17:20:16.429357] RUN: git push
+[2025-11-22 17:20:17.840062] STDOUT:
+
+[2025-11-22 17:20:17.840554] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   5e5b0a0..e9e225a  main -> main
+
+[2025-11-22 17:20:17.840913] === Auto Git Push Completed ===
+[2025-11-22 17:30:16.982901] === Auto Git Push Started ===
+[2025-11-22 17:30:16.984345] RUN: git add -A
+[2025-11-22 17:30:17.080929] STDOUT:
+
+[2025-11-22 17:30:17.081443] STDERR:
+
+[2025-11-22 17:30:17.081988] RUN: git commit -m "Auto: data update"
+[2025-11-22 17:30:17.224408] STDOUT:
+[main 368ae0f] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 17:30:17.224865] STDERR:
+
+[2025-11-22 17:30:17.225311] RUN: git push
+[2025-11-22 17:30:18.574239] STDOUT:
+
+[2025-11-22 17:30:18.574720] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   e9e225a..368ae0f  main -> main
+
+[2025-11-22 17:30:18.575205] === Auto Git Push Completed ===
+[2025-11-22 20:45:49.656350] === Auto Git Push Started ===
+[2025-11-22 20:45:49.656834] RUN: git add -A
+[2025-11-22 20:45:49.759748] STDOUT:
+
+[2025-11-22 20:45:49.760136] STDERR:
+
+[2025-11-22 20:45:49.760399] RUN: git commit -m "Auto: data update"
+[2025-11-22 20:45:49.896707] STDOUT:
+[main 6feaa91] Auto: data update
+ 3 files changed, 29 insertions(+), 1 deletion(-)
+
+[2025-11-22 20:45:49.897078] STDERR:
+
+[2025-11-22 20:45:49.897353] RUN: git push
+[2025-11-22 20:45:51.204137] STDOUT:
+
+[2025-11-22 20:45:51.204611] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   368ae0f..6feaa91  main -> main
+
+[2025-11-22 20:45:51.204889] === Auto Git Push Completed ===
+[2025-11-22 21:23:09.913357] === Auto Git Push Started ===
+[2025-11-22 21:23:09.914982] RUN: git add -A
+[2025-11-22 21:23:10.015940] STDOUT:
+
+[2025-11-22 21:23:10.016377] STDERR:
+
+[2025-11-22 21:23:10.016911] RUN: git commit -m "Auto: data update"
+[2025-11-22 21:23:10.170476] STDOUT:
+[main 9ac41da] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 21:23:10.170934] STDERR:
+
+[2025-11-22 21:23:10.171401] RUN: git push
+[2025-11-22 21:23:11.578829] STDOUT:
+
+[2025-11-22 21:23:11.579330] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   6feaa91..9ac41da  main -> main
+
+[2025-11-22 21:23:11.579998] === Auto Git Push Completed ===
+[2025-11-22 23:15:48.811928] === Auto Git Push Started ===
+[2025-11-22 23:15:48.814292] RUN: git add -A
+[2025-11-22 23:15:49.029616] STDOUT:
+
+[2025-11-22 23:15:49.031193] STDERR:
+
+[2025-11-22 23:15:49.031597] RUN: git commit -m "Auto: data update"
+[2025-11-22 23:15:49.202174] STDOUT:
+[main 7a8aab5] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 23:15:49.203417] STDERR:
+
+[2025-11-22 23:15:49.217698] RUN: git push
+[2025-11-22 23:15:50.684049] STDOUT:
+
+[2025-11-22 23:15:50.684533] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   9ac41da..7a8aab5  main -> main
+
+[2025-11-22 23:15:50.685196] === Auto Git Push Completed ===
+[2025-11-22 23:25:23.470476] === Auto Git Push Started ===
+[2025-11-22 23:25:23.472461] RUN: git add -A
+[2025-11-22 23:25:23.572284] STDOUT:
+
+[2025-11-22 23:25:23.574077] STDERR:
+
+[2025-11-22 23:25:23.575059] RUN: git commit -m "Auto: data update"
+[2025-11-22 23:25:23.741921] STDOUT:
+[main 1937241] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 23:25:23.742455] STDERR:
+
+[2025-11-22 23:25:23.742924] RUN: git push
+[2025-11-22 23:25:25.134464] STDOUT:
+
+[2025-11-22 23:25:25.134954] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   7a8aab5..1937241  main -> main
+
+[2025-11-22 23:25:25.135762] === Auto Git Push Completed ===
+[2025-11-22 23:35:23.101565] === Auto Git Push Started ===
+[2025-11-22 23:35:23.103017] RUN: git add -A
+[2025-11-22 23:35:23.214591] STDOUT:
+
+[2025-11-22 23:35:23.215037] STDERR:
+
+[2025-11-22 23:35:23.215513] RUN: git commit -m "Auto: data update"
+[2025-11-22 23:35:23.368957] STDOUT:
+[main 88e1149] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 23:35:23.369430] STDERR:
+
+[2025-11-22 23:35:23.369874] RUN: git push
+[2025-11-22 23:35:24.840518] STDOUT:
+
+[2025-11-22 23:35:24.840995] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   1937241..88e1149  main -> main
+
+[2025-11-22 23:35:24.841442] === Auto Git Push Completed ===
+[2025-11-22 23:45:22.972885] === Auto Git Push Started ===
+[2025-11-22 23:45:22.975281] RUN: git add -A
+[2025-11-22 23:45:23.125207] STDOUT:
+
+[2025-11-22 23:45:23.125671] STDERR:
+
+[2025-11-22 23:45:23.126199] RUN: git commit -m "Auto: data update"
+[2025-11-22 23:45:23.290483] STDOUT:
+[main 6a05f16] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 23:45:23.290996] STDERR:
+
+[2025-11-22 23:45:23.291471] RUN: git push
+[2025-11-22 23:45:24.672883] STDOUT:
+
+[2025-11-22 23:45:24.673539] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   88e1149..6a05f16  main -> main
+
+[2025-11-22 23:45:24.674078] === Auto Git Push Completed ===
+[2025-11-22 23:55:23.107844] === Auto Git Push Started ===
+[2025-11-22 23:55:23.109326] RUN: git add -A
+[2025-11-22 23:55:23.212033] STDOUT:
+
+[2025-11-22 23:55:23.212566] STDERR:
+
+[2025-11-22 23:55:23.214152] RUN: git commit -m "Auto: data update"
+[2025-11-22 23:55:23.370735] STDOUT:
+[main 870fd68] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-22 23:55:23.372727] STDERR:
+
+[2025-11-22 23:55:23.373773] RUN: git push
+[2025-11-22 23:55:24.809491] STDOUT:
+
+[2025-11-22 23:55:24.809999] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   6a05f16..870fd68  main -> main
+
+[2025-11-22 23:55:24.810349] === Auto Git Push Completed ===
+[2025-11-23 00:05:22.600888] === Auto Git Push Started ===
+[2025-11-23 00:05:22.602616] RUN: git add -A
+[2025-11-23 00:05:22.751437] STDOUT:
+
+[2025-11-23 00:05:22.752101] STDERR:
+
+[2025-11-23 00:05:22.752727] RUN: git commit -m "Auto: data update"
+[2025-11-23 00:05:22.995613] STDOUT:
+[main cf70d89] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 00:05:22.996060] STDERR:
+
+[2025-11-23 00:05:22.996615] RUN: git push
+[2025-11-23 00:05:24.343421] STDOUT:
+
+[2025-11-23 00:05:24.344916] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   870fd68..cf70d89  main -> main
+
+[2025-11-23 00:05:24.346208] === Auto Git Push Completed ===
+[2025-11-23 00:15:23.075450] === Auto Git Push Started ===
+[2025-11-23 00:15:23.076918] RUN: git add -A
+[2025-11-23 00:15:23.196553] STDOUT:
+
+[2025-11-23 00:15:23.196979] STDERR:
+
+[2025-11-23 00:15:23.197450] RUN: git commit -m "Auto: data update"
+[2025-11-23 00:15:23.346406] STDOUT:
+[main 0bc7855] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 00:15:23.346922] STDERR:
+
+[2025-11-23 00:15:23.347520] RUN: git push
+[2025-11-23 00:15:24.781480] STDOUT:
+
+[2025-11-23 00:15:24.782064] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   cf70d89..0bc7855  main -> main
+
+[2025-11-23 00:15:24.782609] === Auto Git Push Completed ===
+[2025-11-23 00:25:22.738174] === Auto Git Push Started ===
+[2025-11-23 00:25:22.739739] RUN: git add -A
+[2025-11-23 00:25:22.836818] STDOUT:
+
+[2025-11-23 00:25:22.837232] STDERR:
+
+[2025-11-23 00:25:22.837732] RUN: git commit -m "Auto: data update"
+[2025-11-23 00:25:22.986584] STDOUT:
+[main 082ac67] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 00:25:22.987060] STDERR:
+
+[2025-11-23 00:25:22.987596] RUN: git push
+[2025-11-23 00:25:24.413662] STDOUT:
+
+[2025-11-23 00:25:24.415287] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   0bc7855..082ac67  main -> main
+
+[2025-11-23 00:25:24.416320] === Auto Git Push Completed ===
+[2025-11-23 00:35:22.358235] === Auto Git Push Started ===
+[2025-11-23 00:35:22.359677] RUN: git add -A
+[2025-11-23 00:35:22.467246] STDOUT:
+
+[2025-11-23 00:35:22.467710] STDERR:
+
+[2025-11-23 00:35:22.468174] RUN: git commit -m "Auto: data update"
+[2025-11-23 00:35:22.614883] STDOUT:
+[main 8125b45] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 00:35:22.615373] STDERR:
+
+[2025-11-23 00:35:22.615885] RUN: git push
+[2025-11-23 00:35:23.961821] STDOUT:
+
+[2025-11-23 00:35:23.962469] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   082ac67..8125b45  main -> main
+
+[2025-11-23 00:35:23.962961] === Auto Git Push Completed ===
+[2025-11-23 00:45:22.837670] === Auto Git Push Started ===
+[2025-11-23 00:45:22.839077] RUN: git add -A
+[2025-11-23 00:45:22.947803] STDOUT:
+
+[2025-11-23 00:45:22.948285] STDERR:
+
+[2025-11-23 00:45:22.948900] RUN: git commit -m "Auto: data update"
+[2025-11-23 00:45:23.142737] STDOUT:
+[main 12281bb] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 00:45:23.144252] STDERR:
+
+[2025-11-23 00:45:23.145329] RUN: git push
+[2025-11-23 00:45:24.533184] STDOUT:
+
+[2025-11-23 00:45:24.533673] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   8125b45..12281bb  main -> main
+
+[2025-11-23 00:45:24.534119] === Auto Git Push Completed ===
+[2025-11-23 00:55:17.258825] === Auto Git Push Started ===
+[2025-11-23 00:55:17.260284] RUN: git add -A
+[2025-11-23 00:55:17.367533] STDOUT:
+
+[2025-11-23 00:55:17.368007] STDERR:
+
+[2025-11-23 00:55:17.372031] RUN: git commit -m "Auto: data update"
+[2025-11-23 00:55:17.515985] STDOUT:
+[main eca9a3b] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 00:55:17.516441] STDERR:
+
+[2025-11-23 00:55:17.516967] RUN: git push
+[2025-11-23 00:55:18.929653] STDOUT:
+
+[2025-11-23 00:55:18.930191] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   12281bb..eca9a3b  main -> main
+
+[2025-11-23 00:55:18.930848] === Auto Git Push Completed ===
+[2025-11-23 01:05:17.139513] === Auto Git Push Started ===
+[2025-11-23 01:05:17.140937] RUN: git add -A
+[2025-11-23 01:05:17.244312] STDOUT:
+
+[2025-11-23 01:05:17.244809] STDERR:
+
+[2025-11-23 01:05:17.245299] RUN: git commit -m "Auto: data update"
+[2025-11-23 01:05:17.393912] STDOUT:
+[main d6b0f66] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 01:05:17.394532] STDERR:
+
+[2025-11-23 01:05:17.395033] RUN: git push
+[2025-11-23 01:05:18.793839] STDOUT:
+
+[2025-11-23 01:05:18.794331] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   eca9a3b..d6b0f66  main -> main
+
+[2025-11-23 01:05:18.794959] === Auto Git Push Completed ===
+[2025-11-23 01:15:17.075576] === Auto Git Push Started ===
+[2025-11-23 01:15:17.076970] RUN: git add -A
+[2025-11-23 01:15:17.180018] STDOUT:
+
+[2025-11-23 01:15:17.180480] STDERR:
+
+[2025-11-23 01:15:17.180973] RUN: git commit -m "Auto: data update"
+[2025-11-23 01:15:17.330537] STDOUT:
+[main 11c7a92] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 01:15:17.331056] STDERR:
+
+[2025-11-23 01:15:17.331967] RUN: git push
+[2025-11-23 01:15:18.721083] STDOUT:
+
+[2025-11-23 01:15:18.722898] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   d6b0f66..11c7a92  main -> main
+
+[2025-11-23 01:15:18.724724] === Auto Git Push Completed ===
+[2025-11-23 06:35:23.705446] === Auto Git Push Started ===
+[2025-11-23 06:35:23.707166] RUN: git add -A
+[2025-11-23 06:35:23.820567] STDOUT:
+
+[2025-11-23 06:35:23.821015] STDERR:
+
+[2025-11-23 06:35:23.821494] RUN: git commit -m "Auto: data update"
+[2025-11-23 06:35:23.973390] STDOUT:
+[main ea2d1c4] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 06:35:23.973932] STDERR:
+
+[2025-11-23 06:35:23.974619] RUN: git push
+[2025-11-23 06:35:26.566454] STDOUT:
+
+[2025-11-23 06:35:26.567009] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   11c7a92..ea2d1c4  main -> main
+
+[2025-11-23 06:35:26.567515] === Auto Git Push Completed ===
+[2025-11-23 06:48:38.494841] === Auto Git Push Started ===
+[2025-11-23 06:48:38.496234] RUN: git add -A
+[2025-11-23 06:48:38.588427] STDOUT:
+
+[2025-11-23 06:48:38.588883] STDERR:
+
+[2025-11-23 06:48:38.589415] RUN: git commit -m "Auto: data update"
+[2025-11-23 06:48:38.724782] STDOUT:
+[main b4f8f99] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 06:48:38.725359] STDERR:
+
+[2025-11-23 06:48:38.727050] RUN: git push
+[2025-11-23 06:48:40.100826] STDOUT:
+
+[2025-11-23 06:48:40.101339] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   ea2d1c4..b4f8f99  main -> main
+
+[2025-11-23 06:48:40.101924] === Auto Git Push Completed ===
+[2025-11-23 06:57:13.264961] === Auto Git Push Started ===
+[2025-11-23 06:57:13.266365] RUN: git add -A
+[2025-11-23 06:57:13.357335] STDOUT:
+
+[2025-11-23 06:57:13.357797] STDERR:
+
+[2025-11-23 06:57:13.358338] RUN: git commit -m "Auto: data update"
+[2025-11-23 06:57:13.500652] STDOUT:
+[main 51c916f] Auto: data update
+ 1 file changed, 21 insertions(+)
+
+[2025-11-23 06:57:13.501128] STDERR:
+
+[2025-11-23 06:57:13.501479] RUN: git push
+[2025-11-23 06:57:14.861791] STDOUT:
+
+[2025-11-23 06:57:14.862299] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   b4f8f99..51c916f  main -> main
+
+[2025-11-23 06:57:14.863044] === Auto Git Push Completed ===
+[2025-11-23 07:38:30] === auto_git_push START ===
+[2025-11-23 07:38:30] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 07:38:30] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 07:38:30] STDOUT: [main c6e3df1] Auto pipeline update
+ 1 file changed, 2 insertions(+)
+[2025-11-23 07:38:30] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 07:38:31] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   cf5bb6f..c6e3df1  main -> main
+[2025-11-23 07:38:31] Push successful.
+[2025-11-23 07:38:31] === auto_git_push END ===
+[2025-11-23 08:36:08] === auto_git_push START ===
+[2025-11-23 08:36:08] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 08:36:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 08:36:08] STDOUT: [main a9fba78] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 08:36:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 08:36:11] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   c6e3df1..a9fba78  main -> main
+[2025-11-23 08:36:11] Push successful.
+[2025-11-23 08:36:11] === auto_git_push END ===
+[2025-11-23 08:50:59] === auto_git_push START ===
+[2025-11-23 08:50:59] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 08:50:59] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 08:50:59] STDOUT: [main c096474] Auto pipeline update
+ 3 files changed, 18 insertions(+), 1 deletion(-)
+[2025-11-23 08:50:59] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 08:51:00] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   a9fba78..c096474  main -> main
+[2025-11-23 08:51:00] Push successful.
+[2025-11-23 08:51:00] === auto_git_push END ===
+[2025-11-23 15:30:26] === auto_git_push START ===
+[2025-11-23 15:30:26] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 15:30:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 15:30:26] STDOUT: [main df30526] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 15:30:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 15:30:28] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   c096474..df30526  main -> main
+[2025-11-23 15:30:28] Push successful.
+[2025-11-23 15:30:28] === auto_git_push END ===
+[2025-11-23 15:40:25] === auto_git_push START ===
+[2025-11-23 15:40:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 15:40:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 15:40:25] STDOUT: [main 0ab77fd] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 15:40:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 15:40:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   df30526..0ab77fd  main -> main
+[2025-11-23 15:40:27] Push successful.
+[2025-11-23 15:40:27] === auto_git_push END ===
+[2025-11-23 15:50:26] === auto_git_push START ===
+[2025-11-23 15:50:26] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 15:50:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 15:50:26] STDOUT: [main cb55cfd] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 15:50:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 15:50:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   0ab77fd..cb55cfd  main -> main
+[2025-11-23 15:50:27] Push successful.
+[2025-11-23 15:50:27] === auto_git_push END ===
+[2025-11-23 16:00:26] === auto_git_push START ===
+[2025-11-23 16:00:26] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 16:00:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 16:00:26] STDOUT: [main 8336f44] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 16:00:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 16:00:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   cb55cfd..8336f44  main -> main
+[2025-11-23 16:00:27] Push successful.
+[2025-11-23 16:00:27] === auto_git_push END ===
+[2025-11-23 16:10:25] === auto_git_push START ===
+[2025-11-23 16:10:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 16:10:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 16:10:26] STDOUT: [main 8797559] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 16:10:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 16:10:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   8336f44..8797559  main -> main
+[2025-11-23 16:10:27] Push successful.
+[2025-11-23 16:10:27] === auto_git_push END ===
+[2025-11-23 16:20:25] === auto_git_push START ===
+[2025-11-23 16:20:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 16:20:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 16:20:26] STDOUT: [main 6dfe8a7] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 16:20:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 16:20:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   8797559..6dfe8a7  main -> main
+[2025-11-23 16:20:27] Push successful.
+[2025-11-23 16:20:27] === auto_git_push END ===
+[2025-11-23 16:30:26] === auto_git_push START ===
+[2025-11-23 16:30:26] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 16:30:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 16:30:26] STDOUT: [main be17bf8] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 16:30:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 16:30:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   6dfe8a7..be17bf8  main -> main
+[2025-11-23 16:30:27] Push successful.
+[2025-11-23 16:30:27] === auto_git_push END ===
+[2025-11-23 16:40:55] === auto_git_push START ===
+[2025-11-23 16:40:55] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 16:40:55] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 16:40:55] STDOUT: [main 6f738d0] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 16:40:55] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 16:40:56] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   be17bf8..6f738d0  main -> main
+[2025-11-23 16:40:56] Push successful.
+[2025-11-23 16:40:56] === auto_git_push END ===
+[2025-11-23 16:50:25] === auto_git_push START ===
+[2025-11-23 16:50:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 16:50:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 16:50:25] STDOUT: [main e9e8dd7] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 16:50:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 16:50:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   6f738d0..e9e8dd7  main -> main
+[2025-11-23 16:50:27] Push successful.
+[2025-11-23 16:50:27] === auto_git_push END ===
+[2025-11-23 17:00:26] === auto_git_push START ===
+[2025-11-23 17:00:26] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 17:00:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 17:00:26] STDOUT: [main 34cf92e] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 17:00:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 17:00:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   e9e8dd7..34cf92e  main -> main
+[2025-11-23 17:00:27] Push successful.
+[2025-11-23 17:00:27] === auto_git_push END ===
+[2025-11-23 17:10:25] === auto_git_push START ===
+[2025-11-23 17:10:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 17:10:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 17:10:25] STDOUT: [main 7b0decf] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 17:10:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 17:10:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   34cf92e..7b0decf  main -> main
+[2025-11-23 17:10:27] Push successful.
+[2025-11-23 17:10:27] === auto_git_push END ===
+[2025-11-23 17:20:26] === auto_git_push START ===
+[2025-11-23 17:20:26] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 17:20:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 17:20:26] STDOUT: [main 9123623] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 17:20:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 17:20:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   7b0decf..9123623  main -> main
+[2025-11-23 17:20:27] Push successful.
+[2025-11-23 17:20:27] === auto_git_push END ===
+[2025-11-23 17:30:25] === auto_git_push START ===
+[2025-11-23 17:30:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 17:30:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 17:30:26] STDOUT: [main 1203a28] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 17:30:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 17:30:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   9123623..1203a28  main -> main
+[2025-11-23 17:30:27] Push successful.
+[2025-11-23 17:30:27] === auto_git_push END ===
+[2025-11-23 23:15:25] === auto_git_push START ===
+[2025-11-23 23:15:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 23:15:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 23:15:25] STDOUT: [main e269f03] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 23:15:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 23:15:28] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   1203a28..e269f03  main -> main
+[2025-11-23 23:15:28] Push successful.
+[2025-11-23 23:15:28] === auto_git_push END ===
+[2025-11-23 23:25:25] === auto_git_push START ===
+[2025-11-23 23:25:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 23:25:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 23:25:25] STDOUT: [main bb29e59] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 23:25:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 23:25:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   e269f03..bb29e59  main -> main
+[2025-11-23 23:25:27] Push successful.
+[2025-11-23 23:25:27] === auto_git_push END ===
+[2025-11-23 23:35:25] === auto_git_push START ===
+[2025-11-23 23:35:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 23:35:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 23:35:26] STDOUT: [main 20d8533] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 23:35:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 23:35:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   bb29e59..20d8533  main -> main
+[2025-11-23 23:35:27] Push successful.
+[2025-11-23 23:35:27] === auto_git_push END ===
+[2025-11-23 23:45:25] === auto_git_push START ===
+[2025-11-23 23:45:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 23:45:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 23:45:25] STDOUT: [main b60ab7f] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 23:45:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 23:45:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   20d8533..b60ab7f  main -> main
+[2025-11-23 23:45:27] Push successful.
+[2025-11-23 23:45:27] === auto_git_push END ===
+[2025-11-23 23:55:25] === auto_git_push START ===
+[2025-11-23 23:55:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-23 23:55:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-23 23:55:25] STDOUT: [main 8840e4e] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-23 23:55:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-23 23:55:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   b60ab7f..8840e4e  main -> main
+[2025-11-23 23:55:27] Push successful.
+[2025-11-23 23:55:27] === auto_git_push END ===
+[2025-11-24 00:05:25] === auto_git_push START ===
+[2025-11-24 00:05:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 00:05:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 00:05:25] STDOUT: [main 1887b65] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 00:05:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 00:05:26] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   8840e4e..1887b65  main -> main
+[2025-11-24 00:05:26] Push successful.
+[2025-11-24 00:05:26] === auto_git_push END ===
+[2025-11-24 00:15:25] === auto_git_push START ===
+[2025-11-24 00:15:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 00:15:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 00:15:26] STDOUT: [main be26c14] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 00:15:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 00:15:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   1887b65..be26c14  main -> main
+[2025-11-24 00:15:27] Push successful.
+[2025-11-24 00:15:27] === auto_git_push END ===
+[2025-11-24 00:25:25] === auto_git_push START ===
+[2025-11-24 00:25:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 00:25:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 00:25:25] STDOUT: [main b672a35] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 00:25:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 00:25:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   be26c14..b672a35  main -> main
+[2025-11-24 00:25:27] Push successful.
+[2025-11-24 00:25:27] === auto_git_push END ===
+[2025-11-24 00:35:25] === auto_git_push START ===
+[2025-11-24 00:35:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 00:35:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 00:35:26] STDOUT: [main 61d78df] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 00:35:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 00:35:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   b672a35..61d78df  main -> main
+[2025-11-24 00:35:27] Push successful.
+[2025-11-24 00:35:27] === auto_git_push END ===
+[2025-11-24 00:45:25] === auto_git_push START ===
+[2025-11-24 00:45:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 00:45:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 00:45:25] STDOUT: [main f9a4fc1] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 00:45:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 00:45:26] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   61d78df..f9a4fc1  main -> main
+[2025-11-24 00:45:26] Push successful.
+[2025-11-24 00:45:26] === auto_git_push END ===
+[2025-11-24 00:55:26] === auto_git_push START ===
+[2025-11-24 00:55:26] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 00:55:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 00:55:26] STDOUT: [main d0222c7] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 00:55:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 00:55:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   f9a4fc1..d0222c7  main -> main
+[2025-11-24 00:55:27] Push successful.
+[2025-11-24 00:55:27] === auto_git_push END ===
+[2025-11-24 01:05:25] === auto_git_push START ===
+[2025-11-24 01:05:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 01:05:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 01:05:26] STDOUT: [main 504b01e] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 01:05:26] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 01:05:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   d0222c7..504b01e  main -> main
+[2025-11-24 01:05:27] Push successful.
+[2025-11-24 01:05:27] === auto_git_push END ===
+[2025-11-24 01:15:25] === auto_git_push START ===
+[2025-11-24 01:15:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 01:15:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 01:15:25] STDOUT: [main bf9a6da] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 01:15:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 01:15:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   504b01e..bf9a6da  main -> main
+[2025-11-24 01:15:27] Push successful.
+[2025-11-24 01:15:27] === auto_git_push END ===
+[2025-11-24 06:18:23] === auto_git_push START ===
+[2025-11-24 06:18:23] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 06:18:23] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 06:18:23] STDOUT: [main 1e18171] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 06:18:23] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 06:18:26] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   bf9a6da..1e18171  main -> main
+[2025-11-24 06:18:26] Push successful.
+[2025-11-24 06:18:26] === auto_git_push END ===
+[2025-11-24 07:05:48] === auto_git_push START ===
+[2025-11-24 07:05:48] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 07:05:48] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 07:05:48] STDOUT: [main aae81fd] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 07:05:48] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 07:05:50] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   1e18171..aae81fd  main -> main
+[2025-11-24 07:05:50] Push successful.
+[2025-11-24 07:05:50] === auto_git_push END ===
+[2025-11-24 07:22:43] === auto_git_push START ===
+[2025-11-24 07:22:43] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 07:22:43] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 07:22:43] STDOUT: [main ad1b915] Auto pipeline update
+ 3 files changed, 25 insertions(+), 1 deletion(-)
+[2025-11-24 07:22:43] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 07:22:45] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   aae81fd..ad1b915  main -> main
+[2025-11-24 07:22:45] Push successful.
+[2025-11-24 07:22:45] === auto_git_push END ===
+[2025-11-24 07:44:25] === auto_git_push START ===
+[2025-11-24 07:44:25] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 07:44:25] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 07:44:25] STDOUT: [main 8df9c07] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 07:44:25] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 07:44:27] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   ad1b915..8df9c07  main -> main
+[2025-11-24 07:44:27] Push successful.
+[2025-11-24 07:44:27] === auto_git_push END ===
+[2025-11-24 12:15:07] === auto_git_push START ===
+[2025-11-24 12:15:07] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 12:15:07] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 12:15:07] STDOUT: [main ac38845] Auto pipeline update
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+[2025-11-24 12:15:07] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 12:15:09] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   8df9c07..ac38845  main -> main
+[2025-11-24 12:15:09] Push successful.
+[2025-11-24 12:15:09] === auto_git_push END ===
+[2025-11-24 15:30:22] === auto_git_push START ===
+[2025-11-24 15:30:22] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 15:30:23] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 15:30:23] STDOUT: [main 833a07d] Auto pipeline update
+ 2 files changed, 47 insertions(+), 26 deletions(-)
+[2025-11-24 15:30:23] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 15:30:24] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   ac38845..833a07d  main -> main
+[2025-11-24 15:30:24] Push successful.
+[2025-11-24 15:30:24] === auto_git_push END ===
+[2025-11-24 15:40:44] === auto_git_push START ===
+[2025-11-24 15:40:44] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-24 15:40:44] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-24 15:40:44] STDOUT: [main ae0b9ca] Auto pipeline update
+ 1 file changed, 10 insertions(+)
+[2025-11-24 15:40:44] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-24 15:40:45] STDERR: To https://github.com/Excel2026/nextjs-boilerplate.git
+   833a07d..ae0b9ca  main -> main
+[2025-11-24 15:40:45] Push successful.
+[2025-11-24 15:40:45] === auto_git_push END ===
+[2025-11-24 15:50:44] === auto_git_push START ===
+[2025-11-24 15:50:44] RUN: C:\Program Files\Git\cmd\git.exe add .
+[2025-11-26 08:31:28] === auto_git_push.py started ===
+[2025-11-26 08:31:28] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 08:31:28] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 08:31:28] STDOUT:
+[main 69a5257] Auto pipeline update
+ 8 files changed, 1818 insertions(+)
+ create mode 100644 scripts/auto_git_push.py
+ create mode 100644 scripts/logs/update_excel_fallback.log
+ create mode 100644 scripts/logs/update_excel_from_api_fallback.log
+ create mode 100644 scripts/run_update.bat
+ create mode 100644 scripts/update_excel_fallback.py
+ create mode 100644 secrets/downtack_config.json
+ create mode 100644 secrets/downtrack_config.json
+
+[2025-11-26 08:31:28] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 08:31:28] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 08:31:28] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 08:31:31] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   7ee6806..69a5257  main -> main
+
+[2025-11-26 08:31:31] git push succeeded.
+[2025-11-26 08:31:31] === auto_git_push.py finished ===
+[2025-11-26 11:35:15] === auto_git_push.py started ===
+[2025-11-26 11:35:15] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 11:35:15] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 11:35:15] STDOUT:
+[main 8f3500a] Auto pipeline update
+ 4 files changed, 177 insertions(+), 235 deletions(-)
+
+[2025-11-26 11:35:15] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 11:35:15] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 11:35:15] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 11:35:17] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   69a5257..8f3500a  main -> main
+
+[2025-11-26 11:35:17] git push succeeded.
+[2025-11-26 11:35:17] === auto_git_push.py finished ===
+[2025-11-26 19:06:08] === auto_git_push.py started ===
+[2025-11-26 19:06:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 19:06:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 19:06:08] STDOUT:
+[main 2fe38f8] Auto pipeline update
+ 7 files changed, 5552 insertions(+), 119 deletions(-)
+ create mode 100644 public/game2_data-old.json
+ create mode 100644 public/history-old.json
+ create mode 100644 public/predictions-old.json
+
+[2025-11-26 19:06:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 19:06:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 19:06:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 19:06:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   3cc1341..2fe38f8  main -> main
+
+[2025-11-26 19:06:09] git push succeeded.
+[2025-11-26 19:06:09] === auto_git_push.py finished ===
+[2025-11-26 19:43:51] === auto_git_push.py started ===
+[2025-11-26 19:43:51] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 19:43:51] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 19:43:51] STDOUT:
+[main b81ae39] Auto pipeline update
+ 3 files changed, 275 insertions(+), 126 deletions(-)
+
+[2025-11-26 19:43:51] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 19:43:51] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 19:43:51] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 19:43:53] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   2fe38f8..b81ae39  main -> main
+
+[2025-11-26 19:43:53] git push succeeded.
+[2025-11-26 19:43:53] === auto_git_push.py finished ===
+[2025-11-26 20:22:06] === auto_git_push.py started ===
+[2025-11-26 20:22:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 20:22:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 20:22:06] STDOUT:
+[main 86f2ca7] Auto pipeline update
+ 5 files changed, 197 insertions(+), 281 deletions(-)
+
+[2025-11-26 20:22:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 20:22:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 20:22:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 20:22:07] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   b81ae39..86f2ca7  main -> main
+
+[2025-11-26 20:22:07] git push succeeded.
+[2025-11-26 20:22:07] === auto_git_push.py finished ===
+[2025-11-26 23:15:07] === auto_git_push.py started ===
+[2025-11-26 23:15:07] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 23:15:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 23:15:08] STDOUT:
+[main 5052cca] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-26 23:15:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 23:15:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 23:15:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 23:15:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   86f2ca7..5052cca  main -> main
+
+[2025-11-26 23:15:09] git push succeeded.
+[2025-11-26 23:15:09] === auto_git_push.py finished ===
+[2025-11-26 23:25:08] === auto_git_push.py started ===
+[2025-11-26 23:25:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 23:25:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 23:25:08] STDOUT:
+[main b683633] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-26 23:25:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 23:25:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 23:25:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 23:25:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   5052cca..b683633  main -> main
+
+[2025-11-26 23:25:09] git push succeeded.
+[2025-11-26 23:25:09] === auto_git_push.py finished ===
+[2025-11-26 23:35:06] === auto_git_push.py started ===
+[2025-11-26 23:35:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 23:35:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 23:35:06] STDOUT:
+[main cd95d55] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-26 23:35:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 23:35:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 23:35:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 23:35:07] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   b683633..cd95d55  main -> main
+
+[2025-11-26 23:35:07] git push succeeded.
+[2025-11-26 23:35:07] === auto_git_push.py finished ===
+[2025-11-26 23:45:06] === auto_git_push.py started ===
+[2025-11-26 23:45:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 23:45:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 23:45:06] STDOUT:
+[main f495ccc] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-26 23:45:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 23:45:07] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 23:45:07] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 23:45:08] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   cd95d55..f495ccc  main -> main
+
+[2025-11-26 23:45:08] git push succeeded.
+[2025-11-26 23:45:08] === auto_git_push.py finished ===
+[2025-11-26 23:55:06] === auto_git_push.py started ===
+[2025-11-26 23:55:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-26 23:55:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-26 23:55:06] STDOUT:
+[main 5122a0c] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-26 23:55:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-26 23:55:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-26 23:55:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-26 23:55:07] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   f495ccc..5122a0c  main -> main
+
+[2025-11-26 23:55:07] git push succeeded.
+[2025-11-26 23:55:07] === auto_git_push.py finished ===
+[2025-11-27 00:05:08] === auto_git_push.py started ===
+[2025-11-27 00:05:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 00:05:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 00:05:08] STDOUT:
+[main 87a0274] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 00:05:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 00:05:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 00:05:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 00:05:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   5122a0c..87a0274  main -> main
+
+[2025-11-27 00:05:09] git push succeeded.
+[2025-11-27 00:05:09] === auto_git_push.py finished ===
+[2025-11-27 00:15:07] === auto_git_push.py started ===
+[2025-11-27 00:15:07] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 00:15:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 00:15:08] STDOUT:
+[main 44bb922] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 00:15:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 00:15:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 00:15:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 00:15:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   87a0274..44bb922  main -> main
+
+[2025-11-27 00:15:09] git push succeeded.
+[2025-11-27 00:15:09] === auto_git_push.py finished ===
+[2025-11-27 00:25:06] === auto_git_push.py started ===
+[2025-11-27 00:25:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 00:25:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 00:25:06] STDOUT:
+[main 80621af] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 00:25:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 00:25:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 00:25:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 00:25:08] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   44bb922..80621af  main -> main
+
+[2025-11-27 00:25:08] git push succeeded.
+[2025-11-27 00:25:08] === auto_git_push.py finished ===
+[2025-11-27 00:35:08] === auto_git_push.py started ===
+[2025-11-27 00:35:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 00:35:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 00:35:08] STDOUT:
+[main 8f7691a] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 00:35:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 00:35:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 00:35:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 00:35:10] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   80621af..8f7691a  main -> main
+
+[2025-11-27 00:35:10] git push succeeded.
+[2025-11-27 00:35:10] === auto_git_push.py finished ===
+[2025-11-27 00:45:06] === auto_git_push.py started ===
+[2025-11-27 00:45:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 00:45:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 00:45:06] STDOUT:
+[main 08201f9] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 00:45:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 00:45:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 00:45:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 00:45:07] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   8f7691a..08201f9  main -> main
+
+[2025-11-27 00:45:07] git push succeeded.
+[2025-11-27 00:45:07] === auto_git_push.py finished ===
+[2025-11-27 00:55:08] === auto_git_push.py started ===
+[2025-11-27 00:55:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 00:55:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 00:55:08] STDOUT:
+[main 6ac3886] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 00:55:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 00:55:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 00:55:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 00:55:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   08201f9..6ac3886  main -> main
+
+[2025-11-27 00:55:09] git push succeeded.
+[2025-11-27 00:55:09] === auto_git_push.py finished ===
+[2025-11-27 01:05:08] === auto_git_push.py started ===
+[2025-11-27 01:05:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 01:05:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 01:05:08] STDOUT:
+[main 0af11cb] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 01:05:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 01:05:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 01:05:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 01:05:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   6ac3886..0af11cb  main -> main
+
+[2025-11-27 01:05:09] git push succeeded.
+[2025-11-27 01:05:09] === auto_git_push.py finished ===
+[2025-11-27 01:15:08] === auto_git_push.py started ===
+[2025-11-27 01:15:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 01:15:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 01:15:08] STDOUT:
+[main 262f33d] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 01:15:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 01:15:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 01:15:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 01:15:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   0af11cb..262f33d  main -> main
+
+[2025-11-27 01:15:09] git push succeeded.
+[2025-11-27 01:15:09] === auto_git_push.py finished ===
+[2025-11-27 09:10:26] === auto_git_push.py started ===
+[2025-11-27 09:10:26] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 09:10:26] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 09:10:27] STDOUT:
+[main f1fae37] Auto pipeline update
+ 6 files changed, 41 insertions(+), 13 deletions(-)
+ delete mode 100644 next.config.js.ts
+ delete mode 100644 postcss.config.mjs
+
+[2025-11-27 09:10:27] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 09:10:27] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 09:10:27] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 09:10:29] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   262f33d..f1fae37  main -> main
+
+[2025-11-27 09:10:29] git push succeeded.
+[2025-11-27 09:10:29] === auto_git_push.py finished ===
+[2025-11-27 15:30:11] === auto_git_push.py started ===
+[2025-11-27 15:30:11] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 15:30:11] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 15:30:11] STDOUT:
+[main 1833652] Auto pipeline update
+ 3 files changed, 246 insertions(+), 130 deletions(-)
+
+[2025-11-27 15:30:11] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 15:30:11] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 15:30:11] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 15:30:13] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   f1fae37..1833652  main -> main
+
+[2025-11-27 15:30:13] git push succeeded.
+[2025-11-27 15:30:13] === auto_git_push.py finished ===
+[2025-11-27 15:40:08] === auto_git_push.py started ===
+[2025-11-27 15:40:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 15:40:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 15:40:08] STDOUT:
+[main dbdb28a] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 15:40:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 15:40:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 15:40:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 15:40:10] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   1833652..dbdb28a  main -> main
+
+[2025-11-27 15:40:10] git push succeeded.
+[2025-11-27 15:40:10] === auto_git_push.py finished ===
+[2025-11-27 15:50:06] === auto_git_push.py started ===
+[2025-11-27 15:50:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 15:50:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 15:50:06] STDOUT:
+[main a1ed9de] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 15:50:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 15:50:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 15:50:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 15:50:08] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   dbdb28a..a1ed9de  main -> main
+
+[2025-11-27 15:50:08] git push succeeded.
+[2025-11-27 15:50:08] === auto_git_push.py finished ===
+[2025-11-27 16:00:08] === auto_git_push.py started ===
+[2025-11-27 16:00:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 16:00:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 16:00:08] STDOUT:
+[main 09d006d] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 16:00:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 16:00:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 16:00:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 16:00:10] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   a1ed9de..09d006d  main -> main
+
+[2025-11-27 16:00:10] git push succeeded.
+[2025-11-27 16:00:10] === auto_git_push.py finished ===
+[2025-11-27 16:10:08] === auto_git_push.py started ===
+[2025-11-27 16:10:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 16:10:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 16:10:08] STDOUT:
+[main cf0d47d] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 16:10:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 16:10:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 16:10:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 16:10:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   09d006d..cf0d47d  main -> main
+
+[2025-11-27 16:10:09] git push succeeded.
+[2025-11-27 16:10:09] === auto_git_push.py finished ===
+[2025-11-27 16:20:08] === auto_git_push.py started ===
+[2025-11-27 16:20:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 16:20:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 16:20:08] STDOUT:
+[main ddb801b] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 16:20:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 16:20:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 16:20:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 16:20:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   cf0d47d..ddb801b  main -> main
+
+[2025-11-27 16:20:09] git push succeeded.
+[2025-11-27 16:20:09] === auto_git_push.py finished ===
+[2025-11-27 16:30:08] === auto_git_push.py started ===
+[2025-11-27 16:30:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 16:30:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 16:30:08] STDOUT:
+[main 5acf02b] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 16:30:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 16:30:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 16:30:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 16:30:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   ddb801b..5acf02b  main -> main
+
+[2025-11-27 16:30:09] git push succeeded.
+[2025-11-27 16:30:09] === auto_git_push.py finished ===
+[2025-11-27 16:40:08] === auto_git_push.py started ===
+[2025-11-27 16:40:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 16:40:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 16:40:08] STDOUT:
+[main 7bee81f] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 16:40:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 16:40:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 16:40:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 16:40:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   5acf02b..7bee81f  main -> main
+
+[2025-11-27 16:40:09] git push succeeded.
+[2025-11-27 16:40:09] === auto_git_push.py finished ===
+[2025-11-27 16:50:08] === auto_git_push.py started ===
+[2025-11-27 16:50:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 16:50:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 16:50:08] STDOUT:
+[main 4df9ef4] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 16:50:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 16:50:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 16:50:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 16:50:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   7bee81f..4df9ef4  main -> main
+
+[2025-11-27 16:50:09] git push succeeded.
+[2025-11-27 16:50:09] === auto_git_push.py finished ===
+[2025-11-27 17:00:08] === auto_git_push.py started ===
+[2025-11-27 17:00:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 17:00:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 17:00:08] STDOUT:
+[main 2484680] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 17:00:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 17:00:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 17:00:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 17:00:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   4df9ef4..2484680  main -> main
+
+[2025-11-27 17:00:09] git push succeeded.
+[2025-11-27 17:00:09] === auto_git_push.py finished ===
+[2025-11-27 17:10:08] === auto_git_push.py started ===
+[2025-11-27 17:10:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 17:10:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 17:10:08] STDOUT:
+[main 0db7605] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 17:10:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 17:10:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 17:10:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 17:10:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   2484680..0db7605  main -> main
+
+[2025-11-27 17:10:09] git push succeeded.
+[2025-11-27 17:10:09] === auto_git_push.py finished ===
+[2025-11-27 17:20:08] === auto_git_push.py started ===
+[2025-11-27 17:20:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 17:20:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 17:20:08] STDOUT:
+[main bfac0c7] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 17:20:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 17:20:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 17:20:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 17:20:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   0db7605..bfac0c7  main -> main
+
+[2025-11-27 17:20:09] git push succeeded.
+[2025-11-27 17:20:09] === auto_git_push.py finished ===
+[2025-11-27 17:30:08] === auto_git_push.py started ===
+[2025-11-27 17:30:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 17:30:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 17:30:08] STDOUT:
+[main 60c4f34] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 17:30:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 17:30:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 17:30:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 17:30:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   bfac0c7..60c4f34  main -> main
+
+[2025-11-27 17:30:09] git push succeeded.
+[2025-11-27 17:30:09] === auto_git_push.py finished ===
+[2025-11-27 22:21:20] === auto_git_push.py started ===
+[2025-11-27 22:21:20] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 22:21:20] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 22:21:20] STDOUT:
+[main 28eedcd] Auto pipeline update
+ 6 files changed, 263 insertions(+), 201 deletions(-)
+
+[2025-11-27 22:21:20] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 22:21:20] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 22:21:20] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 22:21:23] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   60c4f34..28eedcd  main -> main
+
+[2025-11-27 22:21:23] git push succeeded.
+[2025-11-27 22:21:23] === auto_git_push.py finished ===
+[2025-11-27 23:15:05] === auto_git_push.py started ===
+[2025-11-27 23:15:05] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 23:15:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 23:15:06] STDOUT:
+[main cf8ebe0] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 23:15:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 23:15:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 23:15:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 23:15:07] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   28eedcd..cf8ebe0  main -> main
+
+[2025-11-27 23:15:07] git push succeeded.
+[2025-11-27 23:15:07] === auto_git_push.py finished ===
+[2025-11-27 23:25:08] === auto_git_push.py started ===
+[2025-11-27 23:25:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 23:25:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 23:25:08] STDOUT:
+[main 690d244] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 23:25:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 23:25:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 23:25:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 23:25:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   cf8ebe0..690d244  main -> main
+
+[2025-11-27 23:25:09] git push succeeded.
+[2025-11-27 23:25:09] === auto_git_push.py finished ===
+[2025-11-27 23:35:06] === auto_git_push.py started ===
+[2025-11-27 23:35:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 23:35:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 23:35:06] STDOUT:
+[main d3326e0] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 23:35:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 23:35:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 23:35:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 23:35:08] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   690d244..d3326e0  main -> main
+
+[2025-11-27 23:35:08] git push succeeded.
+[2025-11-27 23:35:08] === auto_git_push.py finished ===
+[2025-11-27 23:45:08] === auto_git_push.py started ===
+[2025-11-27 23:45:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 23:45:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 23:45:08] STDOUT:
+[main 6980872] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 23:45:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 23:45:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 23:45:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 23:45:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   d3326e0..6980872  main -> main
+
+[2025-11-27 23:45:09] git push succeeded.
+[2025-11-27 23:45:09] === auto_git_push.py finished ===
+[2025-11-27 23:55:08] === auto_git_push.py started ===
+[2025-11-27 23:55:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-27 23:55:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-27 23:55:08] STDOUT:
+[main 8f9fd50] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-27 23:55:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-27 23:55:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-27 23:55:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-27 23:55:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   6980872..8f9fd50  main -> main
+
+[2025-11-27 23:55:09] git push succeeded.
+[2025-11-27 23:55:09] === auto_git_push.py finished ===
+[2025-11-28 00:05:06] === auto_git_push.py started ===
+[2025-11-28 00:05:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-28 00:05:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-28 00:05:06] STDOUT:
+[main 023e593] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-28 00:05:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-28 00:05:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-28 00:05:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-28 00:05:08] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   8f9fd50..023e593  main -> main
+
+[2025-11-28 00:05:08] git push succeeded.
+[2025-11-28 00:05:08] === auto_git_push.py finished ===
+[2025-11-28 00:15:08] === auto_git_push.py started ===
+[2025-11-28 00:15:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-28 00:15:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-28 00:15:08] STDOUT:
+[main 9d0d83b] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-28 00:15:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-28 00:15:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-28 00:15:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-28 00:15:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   023e593..9d0d83b  main -> main
+
+[2025-11-28 00:15:09] git push succeeded.
+[2025-11-28 00:15:09] === auto_git_push.py finished ===
+[2025-11-28 00:25:08] === auto_git_push.py started ===
+[2025-11-28 00:25:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-28 00:25:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-28 00:25:08] STDOUT:
+[main 14f21cd] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-28 00:25:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-28 00:25:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-28 00:25:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-28 00:25:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   9d0d83b..14f21cd  main -> main
+
+[2025-11-28 00:25:09] git push succeeded.
+[2025-11-28 00:25:09] === auto_git_push.py finished ===
+[2025-11-28 00:35:08] === auto_git_push.py started ===
+[2025-11-28 00:35:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-28 00:35:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-28 00:35:08] STDOUT:
+[main 7b6c651] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-28 00:35:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-28 00:35:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-28 00:35:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-28 00:35:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   14f21cd..7b6c651  main -> main
+
+[2025-11-28 00:35:09] git push succeeded.
+[2025-11-28 00:35:09] === auto_git_push.py finished ===
+[2025-11-28 00:45:08] === auto_git_push.py started ===
+[2025-11-28 00:45:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-28 00:45:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-28 00:45:08] STDOUT:
+[main 06e63d1] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-28 00:45:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-28 00:45:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-28 00:45:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-28 00:45:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   7b6c651..06e63d1  main -> main
+
+[2025-11-28 00:45:09] git push succeeded.
+[2025-11-28 00:45:09] === auto_git_push.py finished ===
+[2025-11-28 00:55:06] === auto_git_push.py started ===
+[2025-11-28 00:55:06] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-28 00:55:06] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-28 00:55:06] STDOUT:
+[main d547a06] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-28 00:55:06] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-28 00:55:06] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-28 00:55:06] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-28 00:55:08] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   06e63d1..d547a06  main -> main
+
+[2025-11-28 00:55:08] git push succeeded.
+[2025-11-28 00:55:08] === auto_git_push.py finished ===
+[2025-11-28 01:05:07] === auto_git_push.py started ===
+[2025-11-28 01:05:07] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-28 01:05:08] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-28 01:05:08] STDOUT:
+[main 988d364] Auto pipeline update
+ 2 files changed, 39 insertions(+)
+
+[2025-11-28 01:05:08] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-28 01:05:08] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-28 01:05:08] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-28 01:05:09] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   d547a06..988d364  main -> main
+
+[2025-11-28 01:05:09] git push succeeded.
+[2025-11-28 01:05:09] === auto_git_push.py finished ===
+[2025-11-28 01:15:08] === auto_git_push.py started ===
+[2025-11-28 01:15:08] RUN: C:\Program Files\Git\cmd\git.exe add -A
