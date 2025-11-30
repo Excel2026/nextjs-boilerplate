@@ -16,7 +16,6 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur">
       <div className="mx-auto flex max-w-5xl flex-col items-center px-4 py-3 md:flex-row md:justify-between">
-
         {/* Brand */}
         <div className="hidden md:flex items-center gap-2">
           <span className="text-sm text-gray-300">Run by</span>
@@ -32,8 +31,12 @@ export default function Header() {
         <nav className="w-full md:w-auto mt-4 md:mt-0">
           <div className="w-full text-center space-y-6 md:space-y-0 md:flex md:items-center md:justify-center md:gap-6">
             {nav.map((n) => {
+              // Hide link for the current page
               if (pathname === n.href) return null;
               if (pathname === "/" && n.href === "/") return null;
+
+              // EXTRA RULE: on Game 2, hide the "Predictions" link (/pick3)
+              if (pathname === "/game2" && n.href === "/pick3") return null;
 
               return (
                 <Link
@@ -47,7 +50,6 @@ export default function Header() {
             })}
           </div>
         </nav>
-
       </div>
     </header>
   );
