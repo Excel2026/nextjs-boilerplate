@@ -71,7 +71,6 @@ export default function Game2Page() {
       />
 
       <div className="relative z-20 mx-auto max-w-7xl px-4 py-10">
-
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div className="flex flex-col">
@@ -114,7 +113,6 @@ export default function Game2Page() {
 
         {/* SHIFTED LEFT BY 120px */}
         <div className="relative left-[-120px]">
-
           {/* Number Selector */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {Array.from({ length: 10 }, (_, i) => (
@@ -158,8 +156,8 @@ export default function Game2Page() {
         </div>
       </div>
 
-      {/* Mini Draw History (unchanged except width from earlier) */}
-      <aside className="hidden md:block absolute right-8 top-[260px] w-[500px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white h-[600px] overflow-y-auto">
+      {/* Mini Draw History */}
+      <aside className="hidden md:block absolute right-8 top-[260px] z-30 w-[500px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white h-[600px] overflow-y-auto">
         <h2 className="text-lg font-semibold text-white mb-4">
           Recent Draws (Top 20)
         </h2>
@@ -198,7 +196,7 @@ export default function Game2Page() {
         </ul>
       </aside>
 
-      {/* Modal and animations unchanged */}
+      {/* Modal */}
       {showInstructions && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
