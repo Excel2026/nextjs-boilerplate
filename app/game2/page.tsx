@@ -114,6 +114,7 @@ export default function Game2Page() {
               ?
             </button>
 
+            {/* This pill uses the animated-color-pill class */}
             <Link
               href="/pick3"
               className="animated-color-pill text-black font-semibold shadow-md"
@@ -127,7 +128,7 @@ export default function Game2Page() {
           Last updated: {lastUpdated}
         </p>
 
-        {/* MAIN GRID — perfectly balanced inside the “yellow box” */}
+        {/* MAIN GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
           {/* LEFT SIDE (red pills + predictions panel) */}
           <div className="flex flex-col items-center">
@@ -189,7 +190,7 @@ export default function Game2Page() {
                     {index + 1}
                   </span>
 
-                  {/* DATE — now white for visibility */}
+                  {/* DATE — white */}
                   <span className="w-[90px] text-sm text-white">
                     {row.Date}
                   </span>
@@ -257,6 +258,42 @@ export default function Game2Page() {
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
+        }
+
+        /* === Animated pill styles (same as Game 1) === */
+        @keyframes colorMorph {
+          0% {
+            background-color: #ffffff;
+          }
+          25% {
+            background-color: #38bdf8;
+          }
+          50% {
+            background-color: #9333ea;
+          }
+          75% {
+            background-color: #10b981;
+          }
+          100% {
+            background-color: #ffffff;
+          }
+        }
+        .animated-color-pill {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.25rem 1rem;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: #000;
+          animation: colorMorph 6s ease-in-out infinite;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .animated-color-pill:hover {
+          transform: scale(1.08);
+          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
         }
       `}</style>
     </main>
