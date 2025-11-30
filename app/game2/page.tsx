@@ -44,18 +44,20 @@ export default function Game2Page() {
   const [selectedDigit, setSelectedDigit] = useState<number | null>(null);
   const [showInstructions, setShowInstructions] = useState(false);
 
+  /** LOAD PREDICTIONS */
   useEffect(() => {
     (async () => {
-      const [predRes, histRes] = await Promise.all([
-        fetch("/predictions.json", { cache: "no-store" }),
-        fetch("/history.json", { cache: "no-store" }),
-      ]);
+      const res = await fetch("/predictions.json", { cache: "no-store" });
+      setData((await res.json()) as PredictionsJSON);
+    })();
+  }, []);
 
-      const predJson = (await predRes.json()) as PredictionsJSON;
-      const historyJson = (await histRes.json()) as HistoryRow[];
-
-      setData(predJson);
-      setHistory(historyJson || []);
+  /** LOAD DRAW HISTORY (MATCHING GAME 1 FORMAT) */
+  useEffect(() => {
+    (async () => {
+      const res = await fetch("/history.json", { cache: "no-store" });
+      const j = await res.json();
+      setHistory(j.rows || []);
     })();
   }, []);
 
@@ -67,7 +69,7 @@ export default function Game2Page() {
   const transformed = useMemo(() => {
     if (selectedDigit === null) return allNums;
     return allNums.map((n) => {
-      const str = n.toString().trim().padStart(3, "0");
+      const str = n.toString().padStart(3, "0");
       return `${selectedDigit}${str.slice(1)}`;
     });
   }, [allNums, selectedDigit]);
@@ -75,7 +77,7 @@ export default function Game2Page() {
   const lastUpdated = formatLastUpdated(data?.last_updated);
 
   return (
-    <main className="relative min-h-screen text-black">
+    <main className="relative min-h-screen text-black overflow-x-hidden">
       {/* Background */}
       <div
         aria-hidden
@@ -87,29 +89,27 @@ export default function Game2Page() {
       />
 
       <div className="relative z-20 mx-auto max-w-7xl px-4 py-10">
-        {/* Header */}
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex flex-col">
+        {/* HEADER */}
+        <div className="flex items-start justify-between">
+          <div>
             <h1 className="text-3xl font-extrabold text-white drop-shadow">
               NC Pick 3 Predictions
             </h1>
-            <div className="mt-1 flex flex-wrap items-baseline gap-x-2">
-              <span className="text-3xl font-extrabold text-white drop-shadow">
-                Game 2
-              </span>
-              <span
-                className="text-2xl font-bold drop-shadow"
-                style={{ color: "#4B9CD3" }}
-              >
-                (Target The Front Number)
-              </span>
-            </div>
+            <span className="text-3xl font-extrabold text-white drop-shadow">
+              Game 2
+            </span>
+            <span
+              className="text-2xl font-bold drop-shadow ml-2"
+              style={{ color: "#4B9CD3" }}
+            >
+              (Target The Front Number)
+            </span>
           </div>
 
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setShowInstructions(true)}
-              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-400 text-black font-bold shadow-md hover:bg-yellow-300 transition"
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-400 text-black font-bold shadow-md"
             >
               ?
             </button>
@@ -127,17 +127,17 @@ export default function Game2Page() {
           Last updated: {lastUpdated}
         </p>
 
-        {/* Main content row: predictions on the left, mini history on the right */}
-        <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-start">
-          {/* LEFT: red pills + predictions panel (kept vertically aligned as-is) */}
+        {/* MAIN GRID — perfectly balanced inside the “yellow box” */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
+          {/* LEFT SIDE (red pills + predictions panel) */}
           <div className="flex flex-col items-center">
-            {/* Number Selector */}
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {/* RED PILLS */}
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
               {Array.from({ length: 10 }, (_, i) => (
                 <button
                   key={i}
                   onClick={() => setSelectedDigit(i)}
-                  className={`w-11 h-11 text-[20px] font-extrabold rounded-full transition shadow-md ${
+                  className={`w-11 h-11 text-[20px] font-extrabold rounded-full shadow-md ${
                     selectedDigit === i
                       ? "bg-yellow-400 text-black"
                       : "bg-red-600 text-white hover:bg-red-500"
@@ -148,14 +148,14 @@ export default function Game2Page() {
               ))}
               <button
                 onClick={() => setSelectedDigit(null)}
-                className="ml-4 px-3 py-1 rounded-full bg-gray-700 text-white text-sm hover:bg-gray-600"
+                className="ml-4 px-3 py-1 rounded-full bg-gray-700 text-white text-sm"
               >
                 Reset
               </button>
             </div>
 
-            {/* Predictions Panel */}
-            <section className="rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg w-[440px] max-w-full">
+            {/* PREDICTION PANE */}
+            <div className="w-[440px] max-w-full rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg">
               <h2 className="mb-3 text-lg font-semibold text-white">
                 {transformed.length} Numbers
               </h2>
@@ -163,76 +163,76 @@ export default function Game2Page() {
               <div className="flex flex-wrap gap-1.5">
                 {transformed.map((n, i) => (
                   <div
-                    key={`g2-${i}`}
+                    key={i}
                     className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md font-extrabold text-[18px]"
                   >
                     {n}
                   </div>
                 ))}
               </div>
-            </section>
+            </div>
           </div>
 
-          {/* RIGHT: Mini Draw History (aligned with top of predictions row, balanced inside page) */}
-          <aside className="hidden md:block w-full max-w-[420px] ml-auto rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white h-[600px] overflow-y-auto">
+          {/* RIGHT SIDE — Mini Draw History (perfectly aligned to green line) */}
+          <div className="hidden md:block w-[360px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg max-h-[600px] overflow-y-auto">
             <h2 className="text-lg font-semibold text-white mb-4">
               Recent Draws (Top 20)
             </h2>
 
-            <ul className="space-y-3">
+            <div className="space-y-2">
               {history.slice(0, 20).map((row, index) => (
-                <li
+                <div
                   key={index}
-                  className="rounded-lg bg-gray-800/60 p-3 flex items-center justify-between"
+                  className="flex items-center justify-between bg-gray-800/60 rounded-lg px-3 py-2"
                 >
-                  <div className="flex flex-col">
-                    <span className="font-bold text-sm">{row.Date}</span>
-                    <span
-                      className={`mt-1 px-2 py-0.5 text-xs font-bold rounded-full w-fit ${
-                        row.Draw === "Mid"
-                          ? "bg-blue-500 text-white"
-                          : "bg-orange-500 text-white"
-                      }`}
-                    >
-                      {row.Draw}
-                    </span>
-                  </div>
+                  <span className="w-6 text-sm text-gray-300">
+                    {index + 1}
+                  </span>
 
-                  <span className="text-lg font-bold">
+                  <span className="w-[90px] text-sm">{row.Date}</span>
+
+                  <span
+                    className={`px-2 py-0.5 rounded text-xs font-bold ${
+                      row.Draw.toUpperCase() === "MID"
+                        ? "bg-blue-500 text-white"
+                        : "bg-orange-400 text-black"
+                    }`}
+                  >
+                    {row.Draw}
+                  </span>
+
+                  <span className="font-bold text-white w-10 text-right">
                     {row.P1}
                     {row.P2}
                     {row.P3}
                   </span>
-                </li>
+                </div>
               ))}
-            </ul>
-          </aside>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Modal */}
+      {/* MODAL */}
       {showInstructions && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
           onClick={() => setShowInstructions(false)}
         >
           <div
+            className="max-w-3xl w-[90%] rounded-2xl bg-gray-900/90 text-white p-8 shadow-2xl border border-white/10"
             onClick={(e) => e.stopPropagation()}
-            className="max-w-3xl w-[90%] rounded-2xl bg-gray-900/90 text-white p-8 shadow-2xl border border-white/10 animate-fadeIn"
           >
             <h2 className="text-xl font-bold text-yellow-400 mb-4 text-center">
               Instructions
             </h2>
-
             <p className="text-[17px] leading-relaxed text-gray-200 mb-4">
-              Click a red number to set your target front digit. We adjust the
-              entire prediction list automatically.
+              Click a red number to set your target front digit.
             </p>
-
             <div className="flex justify-center">
               <button
                 onClick={() => setShowInstructions(false)}
-                className="px-4 py-1 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition"
+                className="px-4 py-1 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300"
               >
                 Close
               </button>
@@ -251,9 +251,6 @@ export default function Game2Page() {
             opacity: 1;
             transform: translateY(0);
           }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
