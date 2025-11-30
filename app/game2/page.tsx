@@ -173,7 +173,7 @@ export default function Game2Page() {
             </div>
           </div>
 
-          {/* RIGHT SIDE — Mini Draw History (perfectly aligned to green line) */}
+          {/* RIGHT SIDE — Mini Draw History */}
           <div className="hidden md:block w-[360px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg max-h-[600px] overflow-y-auto">
             <h2 className="text-lg font-semibold text-white mb-4">
               Recent Draws (Top 20)
@@ -189,7 +189,10 @@ export default function Game2Page() {
                     {index + 1}
                   </span>
 
-                  <span className="w-[90px] text-sm">{row.Date}</span>
+                  {/* DATE — now white for visibility */}
+                  <span className="w-[90px] text-sm text-white">
+                    {row.Date}
+                  </span>
 
                   <span
                     className={`px-2 py-0.5 rounded text-xs font-bold ${
