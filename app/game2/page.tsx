@@ -9,14 +9,6 @@ type PredictionsJSON = {
   last_updated?: string;
 };
 
-type HistoryRow = {
-  Date: string;
-  P1: string;
-  P2: string;
-  P3: string;
-  Draw: string;
-};
-
 function sort3Digits(list: string[]): string[] {
   return [...list]
     .filter(Boolean)
@@ -42,23 +34,12 @@ export default function Game2Page() {
   const [data, setData] = useState<PredictionsJSON | null>(null);
   const [selectedDigit, setSelectedDigit] = useState<number | null>(null);
   const [showInstructions, setShowInstructions] = useState(false);
-  const [history, setHistory] = useState<HistoryRow[]>([]);
 
   useEffect(() => {
     (async () => {
-      // Predictions
       const res = await fetch("/predictions.json", { cache: "no-store" });
       const j = (await res.json()) as PredictionsJSON;
       setData(j);
-
-      // Draw history (for mini panel)
-      try {
-        const h = await fetch("/history.json", { cache: "no-store" });
-        const hist = await h.json();
-        setHistory(hist.rows ?? []);
-      } catch (err) {
-        console.error("Failed to load history.json", err);
-      }
     })();
   }, []);
 
@@ -67,7 +48,6 @@ export default function Game2Page() {
     return sort3Digits(raw);
   }, [data]);
 
-  // Always show all numbers; only swap the first digit visually
   const transformed = useMemo(() => {
     if (selectedDigit === null) return allNums;
     return allNums.map((n) => {
@@ -77,7 +57,6 @@ export default function Game2Page() {
   }, [allNums, selectedDigit]);
 
   const lastUpdated = formatLastUpdated(data?.last_updated);
-  const top20 = history.slice(0, 20);
 
   return (
     <main className="relative min-h-screen text-black">
@@ -115,8 +94,6 @@ export default function Game2Page() {
             <button
               onClick={() => setShowInstructions(true)}
               className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-400 text-black font-bold shadow-md hover:bg-yellow-300 transition"
-              aria-label="Instructions"
-              title="Instructions"
             >
               ?
             </button>
@@ -134,7 +111,7 @@ export default function Game2Page() {
           Last updated: {lastUpdated}
         </p>
 
-        {/* Front-digit selector */}
+        {/* Number Selector */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {Array.from({ length: 10 }, (_, i) => (
             <button
@@ -157,13 +134,12 @@ export default function Game2Page() {
           </button>
         </div>
 
-        {/* Predictions Panel — aligned & packed tighter */}
+        {/* Predictions List */}
         <section className="rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg w-[440px] mx-auto relative left-[-20px]">
           <h2 className="mb-3 text-lg font-semibold text-white">
             {transformed.length} Numbers
           </h2>
 
-          {/* Tight layout: flex-wrap with very small gaps */}
           <div className="flex flex-wrap gap-1.5">
             {transformed.map((n, i) => (
               <div
@@ -175,26 +151,30 @@ export default function Game2Page() {
             ))}
           </div>
         </section>
+      </div>
 
-        {/* Mini Draw History (desktop only) */}
-        <section className="hidden md:block w-[360px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg absolute right-4 top-[220px]">
-          <h2 className="text-lg font-semibold text-white mb-3">
-            Recent Draws (Top 20)
-          </h2>
+      {/* Mini Draw History — WIDER */}
+      <aside className="hidden md:block absolute right-8 top-[260px] w-[500px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white h-[600px] overflow-y-auto">
+        <h2 className="text-lg font-semibold text-white mb-4">
+          Recent Draws (Top 20)
+        </h2>
 
-          <div className="max-h-[600px] overflow-y-auto pr-1">
-            {top20.map((row, idx) => (
-              <div
-                key={idx}
-                className="mb-2 rounded-xl bg-gray-800/80 px-4 py-3 text-white flex items-center justify-between shadow"
+        <ul className="space-y-3">
+          {Array.from({ length: 20 }).map((_, index) => {
+            const row = (data as any)?.history?.[index];
+            if (!row) return null;
+
+            return (
+              <li
+                key={index}
+                className="rounded-lg bg-gray-800/60 p-3 flex items-center justify-between"
               >
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-300">{idx + 1}</span>
-                  <span className="text-sm font-semibold">{row.Date}</span>
+                  <span className="font-bold text-sm">{row.Date}</span>
                   <span
-                    className={`mt-1 text-xs font-bold px-2 py-0.5 rounded-full w-fit ${
+                    className={`mt-1 px-2 py-0.5 text-xs font-bold rounded-full w-fit ${
                       row.Draw === "Mid"
-                        ? "bg-blue-600 text-white"
+                        ? "bg-blue-500 text-white"
                         : "bg-orange-500 text-white"
                     }`}
                   >
@@ -202,21 +182,17 @@ export default function Game2Page() {
                   </span>
                 </div>
 
-                <div className="text-right text-2xl font-extrabold tracking-wide">
-                  {row.P1}
-                  {row.P2}
-                  {row.P3}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+                <span className="text-lg font-bold">{row.P1}{row.P2}{row.P3}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </aside>
 
-      {/* ===== Instructions Modal ===== */}
+      {/* Instructions Modal */}
       {showInstructions && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
           onClick={() => setShowInstructions(false)}
         >
           <div
@@ -227,49 +203,12 @@ export default function Game2Page() {
               Instructions
             </h2>
 
-            <div className="text-[17px] leading-relaxed space-y-4 text-gray-200">
-              <p>
-                <strong>How to play Game 2:</strong> This is a fun little game
-                where, if you have a personal system you use and are pretty good
-                at getting the front number right, this is a perfect game!
-                Simply click one of the red (0 thru 9) numbers and the entire
-                prediction list will adjust to your targeted front number, we'll
-                handle the other 2 numbers.
-              </p>
+            <p className="text-[17px] leading-relaxed text-gray-200 mb-4">
+              Click a red number to set your target front digit. We adjust the
+              entire prediction list automatically.
+            </p>
 
-              <p>
-                Keep in mind, even though you are targeting only the front
-                number, sometimes the actual number that comes out will have all
-                three numbers from within the prediction list but your target
-                front number might actually come out in the middle or end
-                position (P2 or P3) but “a win is a win”, it will be a “box” /
-                “any” type hit unless you combo all of the prediction numbers to
-                get an exact hit.
-              </p>
-
-              <p>
-                Combo numbers locks in an exact hit but be cautious, some of the
-                prediction number lists are quite a bit bigger than others and
-                combo all six ways is more expensive. As we always say, “the
-                math has to work” (financially speaking). That being said, a
-                better bet might be to play as “box” / “any” instead of exact
-                order on your play slips if the investment cost doesn't make
-                sense.
-              </p>
-
-              <p>
-                Pick 3 and other ball lottery games are unforgiving and brutal
-                so play with no emotion, play consistently, with patience and
-                discipline and realistic budget because in reality, we lose more
-                times than we win, the real talent is not how many wins but the
-                quality of the win (investment against profit). If you feel
-                unsure / not confident, just don't play but observe until you
-                feel confident about which numbers you are going to play from
-                the list.
-              </p>
-            </div>
-
-            <div className="mt-6 flex justify-center">
+            <div className="flex justify-center">
               <button
                 onClick={() => setShowInstructions(false)}
                 className="px-4 py-1 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition"
@@ -281,46 +220,7 @@ export default function Game2Page() {
         </div>
       )}
 
-      {/* ===== Animations & Styles ===== */}
       <style jsx global>{`
-        @keyframes colorMorph {
-          0% {
-            background-color: #ffffff;
-          }
-          25% {
-            background-color: #38bdf8;
-          }
-          50% {
-            background-color: #9333ea;
-          }
-          75% {
-            background-color: #10b981;
-          }
-          100% {
-            background-color: #ffffff;
-          }
-        }
-
-        .animated-color-pill {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0.25rem 1rem;
-          border-radius: 9999px;
-          font-size: 0.875rem;
-          font-weight: 600;
-          text-decoration: none;
-          color: #000;
-          animation: colorMorph 6s ease-in-out infinite;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .animated-color-pill:hover {
-          transform: scale(1.08);
-          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
-        }
-
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -331,7 +231,6 @@ export default function Game2Page() {
             transform: translateY(0);
           }
         }
-
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
         }
