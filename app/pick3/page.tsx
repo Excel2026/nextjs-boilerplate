@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
+/** ▸▸ Game 1 Help Text (updated: removed "(left)") ◂◂ */
 const HELP_HTML = `
 <h2 class="text-xl font-semibold text-yellow-400 text-center mb-4">How to play Game 1</h2>
 <p class="text-sm text-gray-200 leading-relaxed text-center">
@@ -23,7 +24,10 @@ Simply take a screenshot or photo with your phone and take it to your local stor
 As you know, Pick 3 and all lottery ball games are punishing, brutal and require a lot of patience and discipline. Play consistently yet responsibly. If you don’t see it jumping out in your face, might be better to not play some draws if the numbers just don’t feel right.
 </p>
 <div class="flex justify-center mt-6">
-  <button id="closeHelp" class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-300 transition">
+  <button
+    id="closeHelp"
+    class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-300 transition"
+  >
     Close
   </button>
 </div>
@@ -34,13 +38,28 @@ type PredictionsJSON = {
   last_updated?: string;
 };
 
+type HistoryRow = {
+  Date: string;
+  P1: string;
+  P2: string;
+  P3: string;
+  Draw: string;
+};
+
 function sort3Digits(list: string[]): string[] {
-  return [...list].filter(Boolean).map((x) => x.padStart(3, "0")).sort((a, b) => Number(a) - Number(b));
+  return [...list]
+    .filter(Boolean)
+    .map((x) => x.padStart(3, "0"))
+    .sort((a, b) => Number(a) - Number(b));
 }
 
 function formatLastUpdated(input?: string): string {
   const d = input ? new Date(input.replace(" ", "T")) : new Date();
-  const datePart = d.toLocaleDateString("en-US", { month: "2-digit", day: "2-digit", year: "numeric" });
+  const datePart = d.toLocaleDateString("en-US", {
+    month: "2-digit",
+    day: "2-digit",
+    year: "numeric",
+  });
   const hrs = d.getHours();
   const mins = d.getMinutes().toString().padStart(2, "0");
   const h12 = hrs % 12 || 12;
@@ -55,7 +74,7 @@ export default function Pick3Page() {
   const [hydrated, setHydrated] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
 
-  const [history, setHistory] = useState<any[]>([]);
+  const [history, setHistory] = useState<HistoryRow[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -64,7 +83,10 @@ export default function Pick3Page() {
       setData(j);
       setHydrated(true);
     })();
+  }, []);
 
+  // Load Draw History JSON
+  useEffect(() => {
     (async () => {
       const res = await fetch("/history.json", { cache: "no-store" });
       const j = await res.json();
@@ -80,7 +102,10 @@ export default function Pick3Page() {
     return () => btn?.removeEventListener("click", handler);
   }, [showHelp]);
 
-  const game1 = useMemo(() => sort3Digits(data?.["Game 1"]?.flat?.() ?? []), [data]);
+  const game1 = useMemo(
+    () => sort3Digits(data?.["Game 1"]?.flat?.() ?? []),
+    [data]
+  );
   const shownList = filteredNumbers ?? game1;
 
   const handleFilter = () => {
@@ -99,46 +124,68 @@ export default function Pick3Page() {
     setFilteredNumbers(null);
   };
 
-  const lastUpdated = hydrated && data?.last_updated ? formatLastUpdated(data.last_updated) : "";
+  const lastUpdated =
+    hydrated && data?.last_updated
+      ? formatLastUpdated(data.last_updated)
+      : "";
 
   return (
     <main className="relative min-h-screen text-black overflow-x-hidden">
+      {/* Background */}
       <div className="absolute inset-0 z-0 bg-[#0b0b0b]" />
       <div
         aria-hidden
         className="absolute inset-0 z-10 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/Prediction%20Page%20Background%20v2.png")', opacity: 1 }}
+        style={{
+          backgroundImage: 'url("/Prediction%20Page%20Background%20v2.png")',
+          opacity: 1,
+        }}
       />
 
       <div className="relative z-20">
         <div className="mx-auto max-w-7xl px-4 py-10">
+          {/* Header */}
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-extrabold text-white drop-shadow">NC Pick 3 Predictions</h1>
-              <span className="text-3xl font-extrabold text-white drop-shadow">Game 1</span>
+              <h1 className="text-3xl font-extrabold text-white drop-shadow">
+                NC Pick 3 Predictions
+              </h1>
+              <span className="text-3xl font-extrabold text-white drop-shadow">
+                Game 1
+              </span>
             </div>
 
             <div className="flex gap-2 items-center">
               <button
                 onClick={() => setShowHelp(true)}
                 className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-400 text-black font-bold shadow-md hover:bg-yellow-300 transition"
+                aria-label="How to play Game 1"
               >
                 ?
               </button>
 
-              <Link href="/game2" className="animated-color-pill text-black font-semibold shadow-md">
+              <Link
+                href="/game2"
+                className="animated-color-pill text-black font-semibold shadow-md"
+              >
                 Go to Game 2
               </Link>
             </div>
           </div>
 
-          {hydrated && <p className="text-sm text-gray-200 mt-2 mb-6">Last updated: {lastUpdated}</p>}
+          {hydrated && (
+            <p className="text-sm text-gray-200 mt-2 mb-6">
+              Last updated: {lastUpdated}
+            </p>
+          )}
 
           {/* DESKTOP VIEW */}
           <div className="hidden md:flex items-start gap-6">
-            {/* MAIN NUMBERS */}
+            {/* NUMBERS PANEL */}
             <section className="w-1/2 max-w-[560px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg">
-              <h2 className="mb-3 text-lg font-semibold text-white">{shownList.length} Numbers</h2>
+              <h2 className="mb-3 text-lg font-semibold text-white">
+                {shownList.length} Numbers
+              </h2>
               <div className="grid grid-cols-6 gap-4 justify-items-center">
                 {shownList.map((n, i) => (
                   <div
@@ -151,10 +198,14 @@ export default function Pick3Page() {
               </div>
             </section>
 
-            {/* CUSTOM FILTER */}
-            <section className="W-[300px] w-[300px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white">
-              <h2 className="text-lg font-semibold text-yellow-400 mb-3">Custom Pick</h2>
-              <p className="text-sm mb-2">Filter Main List for specific digits or pairs</p>
+            {/* CUSTOM PICK */}
+            <section className="w-[300px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white">
+              <h2 className="text-lg font-semibold text-yellow-400 mb-3">
+                Custom Pick
+              </h2>
+              <p className="text-sm mb-2">
+                Filter Main List for specific digits or pairs
+              </p>
               <div className="flex gap-2 mb-3">
                 <input
                   type="text"
@@ -163,33 +214,45 @@ export default function Pick3Page() {
                   onChange={(e) => setFilterValue(e.target.value)}
                   className="flex-1 rounded px-2 py-1 text-black text-sm focus:outline-none"
                 />
-                <button onClick={handleFilter} className="bg-yellow-400 text-black text-sm font-semibold px-3 py-1 rounded hover:bg-yellow-300">
+                <button
+                  onClick={handleFilter}
+                  className="bg-yellow-400 text-black text-sm font-semibold px-3 py-1 rounded hover:bg-yellow-300"
+                >
                   Filter
                 </button>
               </div>
-              <button onClick={handleReset} className="w-full bg-gray-600 text-white text-sm font-semibold px-3 py-1 rounded hover:bg-gray-500 transition">
+              <button
+                onClick={handleReset}
+                className="w-full bg-gray-600 text-white text-sm font-semibold px-3 py-1 rounded hover:bg-gray-500 transition"
+              >
                 Reset
               </button>
-              <p className="text-xs text-gray-300 mt-3">Type a digit or pair above, then click Filter. Click Reset to show all again.</p>
+              <p className="text-xs text-gray-300 mt-3">
+                Type a digit or pair above, then click Filter. Click Reset to
+                show all again.
+              </p>
             </section>
 
-            {/* MINI DRAW HISTORY (WIDE + CORRECT) */}
-            <section className="hidden md:block w-[420px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg">
-              <h2 className="text-lg font-semibold text-white mb-4">Recent Draws (Top 20)</h2>
+            {/* MINI HISTORY PANEL (Top 20) */}
+            <section className="w-[360px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white max-h-[720px] overflow-y-auto">
+              <h2 className="text-lg font-semibold text-white mb-3">
+                Recent Draws (Top 20)
+              </h2>
 
-              <div className="max-h-[560px] overflow-y-auto pr-2 space-y-2">
+              <div className="space-y-2">
                 {history.slice(0, 20).map((row, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center justify-between bg-gray-800/60 rounded-lg px-4 py-2 text-white text-sm"
+                    className="flex items-center justify-between bg-gray-800/60 rounded-lg px-3 py-2"
                   >
-                    <span className="w-6">{idx + 1}</span>
+                    <span className="text-sm text-gray-300 w-6">{idx + 1}</span>
 
-                    <span className="w-28">{row.Date}</span>
+                    <span className="text-sm w-[90px]">{row.Date}</span>
 
+                    {/* Draw Pill — MID (Blue), EVE (Orange) */}
                     <span
                       className={`px-2 py-0.5 rounded text-xs font-bold ${
-                        row.Draw === "MID"
+                        row.Draw.toUpperCase() === "MID"
                           ? "bg-blue-500 text-white"
                           : "bg-orange-400 text-black"
                       }`}
@@ -197,8 +260,10 @@ export default function Pick3Page() {
                       {row.Draw}
                     </span>
 
-                    <span className="w-10 text-right font-semibold">
-                      {`${row.P1}${row.P2}${row.P3}`}
+                    <span className="font-bold text-white w-10 text-right">
+                      {row.P1}
+                      {row.P2}
+                      {row.P3}
                     </span>
                   </div>
                 ))}
@@ -208,7 +273,9 @@ export default function Pick3Page() {
 
           {/* MOBILE VIEW */}
           <div className="block md:hidden mt-8 pb-16 overflow-y-auto max-h-[95vh]">
-            <h2 className="mb-4 text-lg font-semibold text-white text-center">{shownList.length} Numbers</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white text-center">
+              {shownList.length} Numbers
+            </h2>
             <div className="numbers-grid">
               {shownList.map((n, i) => (
                 <div key={`g1-mobile-${i}`} className="pill">
@@ -218,8 +285,12 @@ export default function Pick3Page() {
             </div>
 
             <section className="mt-10 mb-8 w-full rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-6 shadow-lg text-white min-h-[320px]">
-              <h2 className="text-lg font-semibold text-yellow-400 mb-3 text-center">Custom Pick</h2>
-              <p className="text-sm mb-3 text-center">Filter Main List for specific digits or pairs</p>
+              <h2 className="text-lg font-semibold text-yellow-400 mb-3 text-center">
+                Custom Pick
+              </h2>
+              <p className="text-sm mb-3 text-center">
+                Filter Main List for specific digits or pairs
+              </p>
               <div className="flex gap-2 mb-4">
                 <input
                   type="text"
@@ -228,21 +299,29 @@ export default function Pick3Page() {
                   onChange={(e) => setFilterValue(e.target.value)}
                   className="flex-1 rounded px-3 py-2 text-black text-sm focus:outline-none"
                 />
-                <button onClick={handleFilter} className="bg-yellow-400 text-black text-sm font-semibold px-4 py-2 rounded hover:bg-yellow-300">
+                <button
+                  onClick={handleFilter}
+                  className="bg-yellow-400 text-black text-sm font-semibold px-4 py-2 rounded hover:bg-yellow-300"
+                >
                   Filter
                 </button>
               </div>
-              <button onClick={handleReset} className="w-full bg-gray-600 text-white text-sm font-semibold px-4 py-3 rounded hover:bg-gray-500 transition">
+              <button
+                onClick={handleReset}
+                className="w-full bg-gray-600 text-white text-sm font-semibold px-4 py-3 rounded hover:bg-gray-500 transition"
+              >
                 Reset
               </button>
               <p className="text-xs text-gray-300 mt-4 text-center leading-snug">
-                Type a digit or pair above, then click Filter.<br />Click Reset to show all again.
+                Type a digit or pair above, then click Filter.<br />
+                Click Reset to show all again.
               </p>
             </section>
           </div>
         </div>
       </div>
 
+      {/* Help Modal */}
       {showHelp && (
         <div
           onClick={() => setShowHelp(false)}
@@ -252,18 +331,32 @@ export default function Pick3Page() {
             onClick={(e) => e.stopPropagation()}
             className="relative mx-auto bg-gray-900/90 text-white rounded-2xl p-6 w-full max-w-md shadow-xl border border-yellow-400/40"
           >
-            <div className="[&_h1]:text-yellow-400 [&_*]:select-text" dangerouslySetInnerHTML={{ __html: HELP_HTML }} />
+            <div
+              className="[&_h1]:text-yellow-400 [&_*]:select-text"
+              dangerouslySetInnerHTML={{ __html: HELP_HTML }}
+            />
           </div>
         </div>
       )}
 
+      {/* Styles */}
       <style jsx global>{`
         @keyframes colorMorph {
-          0% { background-color: #ffffff; }
-          25% { background-color: #38bdf8; }
-          50% { background-color: #9333ea; }
-          75% { background-color: #10b981; }
-          100% { background-color: #ffffff; }
+          0% {
+            background-color: #ffffff;
+          }
+          25% {
+            background-color: #38bdf8;
+          }
+          50% {
+            background-color: #9333ea;
+          }
+          75% {
+            background-color: #10b981;
+          }
+          100% {
+            background-color: #ffffff;
+          }
         }
         .animated-color-pill {
           display: inline-flex;
@@ -275,7 +368,12 @@ export default function Pick3Page() {
           font-weight: 600;
           color: #000;
           animation: colorMorph 6s ease-in-out infinite;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .animated-color-pill:hover {
+          transform: scale(1.08);
+          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
         }
 
         @media (max-width: 640px) {
@@ -283,8 +381,10 @@ export default function Pick3Page() {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             width: 100vw;
-            gap: 10px;
+            margin: 0;
             padding: 0 8px;
+            gap: 10px;
+            justify-items: center;
           }
           .pill {
             width: 58px;
@@ -297,7 +397,7 @@ export default function Pick3Page() {
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
           }
         }
       `}</style>
