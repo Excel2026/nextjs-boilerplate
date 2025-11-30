@@ -9,6 +9,14 @@ type PredictionsJSON = {
   last_updated?: string;
 };
 
+type HistoryRow = {
+  Date: string;
+  Draw: string;
+  P1: string | number;
+  P2: string | number;
+  P3: string | number;
+};
+
 function sort3Digits(list: string[]): string[] {
   return [...list]
     .filter(Boolean)
@@ -32,14 +40,22 @@ function formatLastUpdated(input?: string): string {
 
 export default function Game2Page() {
   const [data, setData] = useState<PredictionsJSON | null>(null);
+  const [history, setHistory] = useState<HistoryRow[]>([]);
   const [selectedDigit, setSelectedDigit] = useState<number | null>(null);
   const [showInstructions, setShowInstructions] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("/predictions.json", { cache: "no-store" });
-      const j = (await res.json()) as PredictionsJSON;
-      setData(j);
+      const [predRes, histRes] = await Promise.all([
+        fetch("/predictions.json", { cache: "no-store" }),
+        fetch("/history.json", { cache: "no-store" }),
+      ]);
+
+      const predJson = (await predRes.json()) as PredictionsJSON;
+      const historyJson = (await histRes.json()) as HistoryRow[];
+
+      setData(predJson);
+      setHistory(historyJson || []);
     })();
   }, []);
 
@@ -111,90 +127,88 @@ export default function Game2Page() {
           Last updated: {lastUpdated}
         </p>
 
-        {/* SHIFTED LEFT BY 120px */}
-        <div className="relative left-[-120px]">
-          {/* Number Selector */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {Array.from({ length: 10 }, (_, i) => (
+        {/* Main content row: predictions on the left, mini history on the right */}
+        <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-start">
+          {/* LEFT: red pills + predictions panel (kept vertically aligned as-is) */}
+          <div className="flex flex-col items-center">
+            {/* Number Selector */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              {Array.from({ length: 10 }, (_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelectedDigit(i)}
+                  className={`w-11 h-11 text-[20px] font-extrabold rounded-full transition shadow-md ${
+                    selectedDigit === i
+                      ? "bg-yellow-400 text-black"
+                      : "bg-red-600 text-white hover:bg-red-500"
+                  }`}
+                >
+                  {i}
+                </button>
+              ))}
               <button
-                key={i}
-                onClick={() => setSelectedDigit(i)}
-                className={`w-11 h-11 text-[20px] font-extrabold rounded-full transition shadow-md ${
-                  selectedDigit === i
-                    ? "bg-yellow-400 text-black"
-                    : "bg-red-600 text-white hover:bg-red-500"
-                }`}
+                onClick={() => setSelectedDigit(null)}
+                className="ml-4 px-3 py-1 rounded-full bg-gray-700 text-white text-sm hover:bg-gray-600"
               >
-                {i}
+                Reset
               </button>
-            ))}
-            <button
-              onClick={() => setSelectedDigit(null)}
-              className="ml-4 px-3 py-1 rounded-full bg-gray-700 text-white text-sm hover:bg-gray-600"
-            >
-              Reset
-            </button>
+            </div>
+
+            {/* Predictions Panel */}
+            <section className="rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg w-[440px] max-w-full">
+              <h2 className="mb-3 text-lg font-semibold text-white">
+                {transformed.length} Numbers
+              </h2>
+
+              <div className="flex flex-wrap gap-1.5">
+                {transformed.map((n, i) => (
+                  <div
+                    key={`g2-${i}`}
+                    className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md font-extrabold text-[18px]"
+                  >
+                    {n}
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
 
-          {/* Predictions Panel */}
-          <section className="rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg w-[440px] mx-auto">
-            <h2 className="mb-3 text-lg font-semibold text-white">
-              {transformed.length} Numbers
+          {/* RIGHT: Mini Draw History (aligned with top of predictions row, balanced inside page) */}
+          <aside className="hidden md:block w-full max-w-[420px] ml-auto rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white h-[600px] overflow-y-auto">
+            <h2 className="text-lg font-semibold text-white mb-4">
+              Recent Draws (Top 20)
             </h2>
 
-            <div className="flex flex-wrap gap-1.5">
-              {transformed.map((n, i) => (
-                <div
-                  key={`g2-${i}`}
-                  className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md font-extrabold text-[18px]"
+            <ul className="space-y-3">
+              {history.slice(0, 20).map((row, index) => (
+                <li
+                  key={index}
+                  className="rounded-lg bg-gray-800/60 p-3 flex items-center justify-between"
                 >
-                  {n}
-                </div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-sm">{row.Date}</span>
+                    <span
+                      className={`mt-1 px-2 py-0.5 text-xs font-bold rounded-full w-fit ${
+                        row.Draw === "Mid"
+                          ? "bg-blue-500 text-white"
+                          : "bg-orange-500 text-white"
+                      }`}
+                    >
+                      {row.Draw}
+                    </span>
+                  </div>
+
+                  <span className="text-lg font-bold">
+                    {row.P1}
+                    {row.P2}
+                    {row.P3}
+                  </span>
+                </li>
               ))}
-            </div>
-          </section>
+            </ul>
+          </aside>
         </div>
       </div>
-
-      {/* Mini Draw History */}
-      <aside className="hidden md:block absolute right-8 top-[260px] z-30 w-[500px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white h-[600px] overflow-y-auto">
-        <h2 className="text-lg font-semibold text-white mb-4">
-          Recent Draws (Top 20)
-        </h2>
-
-        <ul className="space-y-3">
-          {Array.from({ length: 20 }).map((_, index) => {
-            const row = (data as any)?.history?.[index];
-            if (!row) return null;
-
-            return (
-              <li
-                key={index}
-                className="rounded-lg bg-gray-800/60 p-3 flex items-center justify-between"
-              >
-                <div className="flex flex-col">
-                  <span className="font-bold text-sm">{row.Date}</span>
-                  <span
-                    className={`mt-1 px-2 py-0.5 text-xs font-bold rounded-full w-fit ${
-                      row.Draw === "Mid"
-                        ? "bg-blue-500 text-white"
-                        : "bg-orange-500 text-white"
-                    }`}
-                  >
-                    {row.Draw}
-                  </span>
-                </div>
-
-                <span className="text-lg font-bold">
-                  {row.P1}
-                  {row.P2}
-                  {row.P3}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
-      </aside>
 
       {/* Modal */}
       {showInstructions && (
@@ -237,6 +251,9 @@ export default function Game2Page() {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
