@@ -71,6 +71,7 @@ export default function Game2Page() {
       />
 
       <div className="relative z-20 mx-auto max-w-7xl px-4 py-10">
+
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div className="flex flex-col">
@@ -83,7 +84,7 @@ export default function Game2Page() {
               </span>
               <span
                 className="text-2xl font-bold drop-shadow"
-                style={{ color: "#4B9CD3" }} // Carolina Blue
+                style={{ color: "#4B9CD3" }}
               >
                 (Target The Front Number)
               </span>
@@ -111,49 +112,53 @@ export default function Game2Page() {
           Last updated: {lastUpdated}
         </p>
 
-        {/* Number Selector */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {Array.from({ length: 10 }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => setSelectedDigit(i)}
-              className={`w-11 h-11 text-[20px] font-extrabold rounded-full transition shadow-md ${
-                selectedDigit === i
-                  ? "bg-yellow-400 text-black"
-                  : "bg-red-600 text-white hover:bg-red-500"
-              }`}
-            >
-              {i}
-            </button>
-          ))}
-          <button
-            onClick={() => setSelectedDigit(null)}
-            className="ml-4 px-3 py-1 rounded-full bg-gray-700 text-white text-sm hover:bg-gray-600"
-          >
-            Reset
-          </button>
-        </div>
+        {/* SHIFTED LEFT BY 120px */}
+        <div className="relative left-[-120px]">
 
-        {/* Predictions List */}
-        <section className="rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg w-[440px] mx-auto relative left-[-20px]">
-          <h2 className="mb-3 text-lg font-semibold text-white">
-            {transformed.length} Numbers
-          </h2>
-
-          <div className="flex flex-wrap gap-1.5">
-            {transformed.map((n, i) => (
-              <div
-                key={`g2-${i}`}
-                className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md font-extrabold text-[18px]"
+          {/* Number Selector */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {Array.from({ length: 10 }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setSelectedDigit(i)}
+                className={`w-11 h-11 text-[20px] font-extrabold rounded-full transition shadow-md ${
+                  selectedDigit === i
+                    ? "bg-yellow-400 text-black"
+                    : "bg-red-600 text-white hover:bg-red-500"
+                }`}
               >
-                {n}
-              </div>
+                {i}
+              </button>
             ))}
+            <button
+              onClick={() => setSelectedDigit(null)}
+              className="ml-4 px-3 py-1 rounded-full bg-gray-700 text-white text-sm hover:bg-gray-600"
+            >
+              Reset
+            </button>
           </div>
-        </section>
+
+          {/* Predictions Panel */}
+          <section className="rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg w-[440px] mx-auto">
+            <h2 className="mb-3 text-lg font-semibold text-white">
+              {transformed.length} Numbers
+            </h2>
+
+            <div className="flex flex-wrap gap-1.5">
+              {transformed.map((n, i) => (
+                <div
+                  key={`g2-${i}`}
+                  className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md font-extrabold text-[18px]"
+                >
+                  {n}
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
 
-      {/* Mini Draw History — WIDER */}
+      {/* Mini Draw History (unchanged except width from earlier) */}
       <aside className="hidden md:block absolute right-8 top-[260px] w-[500px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg text-white h-[600px] overflow-y-auto">
         <h2 className="text-lg font-semibold text-white mb-4">
           Recent Draws (Top 20)
@@ -182,14 +187,18 @@ export default function Game2Page() {
                   </span>
                 </div>
 
-                <span className="text-lg font-bold">{row.P1}{row.P2}{row.P3}</span>
+                <span className="text-lg font-bold">
+                  {row.P1}
+                  {row.P2}
+                  {row.P3}
+                </span>
               </li>
             );
           })}
         </ul>
       </aside>
 
-      {/* Instructions Modal */}
+      {/* Modal and animations unchanged */}
       {showInstructions && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
