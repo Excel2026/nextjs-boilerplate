@@ -40,28 +40,24 @@ function formatLastUpdated(input?: string): string {
 
 export default function Game2Page() {
   const [data, setData] = useState<PredictionsJSON | null>(null);
-  const [history, setHistory] = useState<HistoryRow[]>([]);
   const [selectedDigit, setSelectedDigit] = useState<number | null>(null);
   const [showInstructions, setShowInstructions] = useState(false);
+  const [history, setHistory] = useState<HistoryRow[]>([]);
 
-  // Load Game 2 predictions
   useEffect(() => {
     (async () => {
+      // Predictions
       const res = await fetch("/predictions.json", { cache: "no-store" });
       const j = (await res.json()) as PredictionsJSON;
       setData(j);
-    })();
-  }, []);
 
-  // Load history.json (first 20 rows)
-  useEffect(() => {
-    (async () => {
+      // Draw history (for mini panel)
       try {
-        const res = await fetch("/history.json", { cache: "no-store" });
-        const j = await res.json();
-        setHistory(j.rows?.slice(0, 20) ?? []);
-      } catch (e) {
-        console.error("Error loading history:", e);
+        const h = await fetch("/history.json", { cache: "no-store" });
+        const hist = await h.json();
+        setHistory(hist.rows ?? []);
+      } catch (err) {
+        console.error("Failed to load history.json", err);
       }
     })();
   }, []);
@@ -71,6 +67,7 @@ export default function Game2Page() {
     return sort3Digits(raw);
   }, [data]);
 
+  // Always show all numbers; only swap the first digit visually
   const transformed = useMemo(() => {
     if (selectedDigit === null) return allNums;
     return allNums.map((n) => {
@@ -80,6 +77,7 @@ export default function Game2Page() {
   }, [allNums, selectedDigit]);
 
   const lastUpdated = formatLastUpdated(data?.last_updated);
+  const top20 = history.slice(0, 20);
 
   return (
     <main className="relative min-h-screen text-black">
@@ -93,126 +91,126 @@ export default function Game2Page() {
         }}
       />
 
-      {/* MAIN LAYOUT ROW — Predictions Left, Mini-History Right */}
-      <div className="relative z-20 mx-auto max-w-7xl px-4 py-10 flex flex-col lg:flex-row gap-10">
-
-        {/* LEFT SIDE — the ENTIRE ORIGINAL GAME 2 CONTENT */}
-        <div className="flex-1">
-          {/* Header */}
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex flex-col">
-              <h1 className="text-3xl font-extrabold text-white drop-shadow">
-                NC Pick 3 Predictions
-              </h1>
-              <div className="mt-1 flex flex-wrap items-baseline gap-x-2">
-                <span className="text-3xl font-extrabold text-white drop-shadow">
-                  Game 2
-                </span>
-                <span
-                  className="text-2xl font-bold drop-shadow"
-                  style={{ color: "#4B9CD3" }} // Carolina Blue
-                >
-                  (Target The Front Number)
-                </span>
-              </div>
-            </div>
-
-            <div className="flex gap-2 items-center">
-              <button
-                onClick={() => setShowInstructions(true)}
-                className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-400 text-black font-bold shadow-md hover:bg-yellow-300 transition"
+      <div className="relative z-20 mx-auto max-w-7xl px-4 py-10">
+        {/* Header */}
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex flex-col">
+            <h1 className="text-3xl font-extrabold text-white drop-shadow">
+              NC Pick 3 Predictions
+            </h1>
+            <div className="mt-1 flex flex-wrap items-baseline gap-x-2">
+              <span className="text-3xl font-extrabold text-white drop-shadow">
+                Game 2
+              </span>
+              <span
+                className="text-2xl font-bold drop-shadow"
+                style={{ color: "#4B9CD3" }} // Carolina Blue
               >
-                ?
-              </button>
-
-              <Link
-                href="/pick3"
-                className="animated-color-pill text-black font-semibold shadow-md"
-              >
-                Go to Game 1
-              </Link>
-            </div>
-          </div>
-
-          <p className="text-sm text-gray-200 mt-2 mb-6">
-            Last updated: {lastUpdated}
-          </p>
-
-          {/* Front-digit selector */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {Array.from({ length: 10 }, (_, i) => (
-              <button
-                key={i}
-                onClick={() => setSelectedDigit(i)}
-                className={`w-11 h-11 text-[20px] font-extrabold rounded-full transition shadow-md ${
-                  selectedDigit === i
-                    ? "bg-yellow-400 text-black"
-                    : "bg-red-600 text-white hover:bg-red-500"
-                }`}
-              >
-                {i}
-              </button>
-            ))}
-            <button
-              onClick={() => setSelectedDigit(null)}
-              className="ml-4 px-3 py-1 rounded-full bg-gray-700 text-white text-sm hover:bg-gray-600"
-            >
-              Reset
-            </button>
-          </div>
-
-          {/* Predictions Panel */}
-          <section className="rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg w-[440px] mx-auto relative left-[-20px]">
-            <h2 className="mb-3 text-lg font-semibold text-white">
-              {transformed.length} Numbers
-            </h2>
-
-            <div className="flex flex-wrap gap-1.5">
-              {transformed.map((n, i) => (
-                <div
-                  key={`g2-${i}`}
-                  className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md font-extrabold text-[18px]"
-                >
-                  {n}
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-
-        {/* RIGHT SIDE — MINI DRAW HISTORY (DESKTOP ONLY) */}
-        <aside className="hidden lg:block w-[330px]">
-          <div className="rounded-2xl bg-gray-900/80 border border-white/10 backdrop-blur-md p-4 shadow-lg text-white">
-            <h2 className="text-xl font-bold mb-3">Recent Draws (20)</h2>
-
-            {/* Pills */}
-            <div className="flex gap-2 mb-4">
-              <span className="px-3 py-1 rounded-full bg-yellow-500 text-black text-sm font-bold">
-                All
+                (Target The Front Number)
               </span>
             </div>
-
-            {/* Table */}
-            <div className="text-sm space-y-2 max-h-[700px] overflow-y-auto pr-2">
-
-              {history.map((row, idx) => {
-                const num = `${row.P1}${row.P2}${row.P3}`;
-                return (
-                  <div
-                    key={idx}
-                    className="flex justify-between items-center bg-white/10 px-3 py-2 rounded-lg"
-                  >
-                    <div className="flex flex-col">
-                      <span className="font-bold text-yellow-300">{row.Date}</span>
-                      <span className="text-gray-300">{row.Draw}</span>
-                    </div>
-                    <div className="text-lg font-extrabold text-white">{num}</div>
-                  </div>
-                );
-              })}
-            </div>
           </div>
-        </aside>
+
+          <div className="flex gap-2 items-center">
+            <button
+              onClick={() => setShowInstructions(true)}
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-400 text-black font-bold shadow-md hover:bg-yellow-300 transition"
+              aria-label="Instructions"
+              title="Instructions"
+            >
+              ?
+            </button>
+
+            <Link
+              href="/pick3"
+              className="animated-color-pill text-black font-semibold shadow-md"
+            >
+              Go to Game 1
+            </Link>
+          </div>
+        </div>
+
+        <p className="text-sm text-gray-200 mt-2 mb-6">
+          Last updated: {lastUpdated}
+        </p>
+
+        {/* Front-digit selector */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {Array.from({ length: 10 }, (_, i) => (
+            <button
+              key={i}
+              onClick={() => setSelectedDigit(i)}
+              className={`w-11 h-11 text-[20px] font-extrabold rounded-full transition shadow-md ${
+                selectedDigit === i
+                  ? "bg-yellow-400 text-black"
+                  : "bg-red-600 text-white hover:bg-red-500"
+              }`}
+            >
+              {i}
+            </button>
+          ))}
+          <button
+            onClick={() => setSelectedDigit(null)}
+            className="ml-4 px-3 py-1 rounded-full bg-gray-700 text-white text-sm hover:bg-gray-600"
+          >
+            Reset
+          </button>
+        </div>
+
+        {/* Predictions Panel — aligned & packed tighter */}
+        <section className="rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg w-[440px] mx-auto relative left-[-20px]">
+          <h2 className="mb-3 text-lg font-semibold text-white">
+            {transformed.length} Numbers
+          </h2>
+
+          {/* Tight layout: flex-wrap with very small gaps */}
+          <div className="flex flex-wrap gap-1.5">
+            {transformed.map((n, i) => (
+              <div
+                key={`g2-${i}`}
+                className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-md font-extrabold text-[18px]"
+              >
+                {n}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Mini Draw History (desktop only) */}
+        <section className="hidden md:block w-[360px] rounded-2xl border border-white/10 bg-gray-900/70 backdrop-blur-md p-5 shadow-lg absolute right-4 top-[220px]">
+          <h2 className="text-lg font-semibold text-white mb-3">
+            Recent Draws (Top 20)
+          </h2>
+
+          <div className="max-h-[600px] overflow-y-auto pr-1">
+            {top20.map((row, idx) => (
+              <div
+                key={idx}
+                className="mb-2 rounded-xl bg-gray-800/80 px-4 py-3 text-white flex items-center justify-between shadow"
+              >
+                <div className="flex flex-col">
+                  <span className="text-sm text-gray-300">{idx + 1}</span>
+                  <span className="text-sm font-semibold">{row.Date}</span>
+                  <span
+                    className={`mt-1 text-xs font-bold px-2 py-0.5 rounded-full w-fit ${
+                      row.Draw === "Mid"
+                        ? "bg-blue-600 text-white"
+                        : "bg-orange-500 text-white"
+                    }`}
+                  >
+                    {row.Draw}
+                  </span>
+                </div>
+
+                <div className="text-right text-2xl font-extrabold tracking-wide">
+                  {row.P1}
+                  {row.P2}
+                  {row.P3}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
 
       {/* ===== Instructions Modal ===== */}
@@ -230,25 +228,44 @@ export default function Game2Page() {
             </h2>
 
             <div className="text-[17px] leading-relaxed space-y-4 text-gray-200">
-              {/* === (YOUR MODAL CONTENT LEFT UNTOUCHED) === */}
               <p>
-                <strong>How to play Game 2:</strong> This is a fun little game where,
-                if you have a personal system you use and are pretty good at getting
-                the front number right, this is a perfect game!
+                <strong>How to play Game 2:</strong> This is a fun little game
+                where, if you have a personal system you use and are pretty good
+                at getting the front number right, this is a perfect game!
+                Simply click one of the red (0 thru 9) numbers and the entire
+                prediction list will adjust to your targeted front number, we'll
+                handle the other 2 numbers.
               </p>
 
               <p>
-                Keep in mind, even though you are targeting only the front number,
-                sometimes the actual number that comes out will have all three numbers
-                from within the prediction list…
+                Keep in mind, even though you are targeting only the front
+                number, sometimes the actual number that comes out will have all
+                three numbers from within the prediction list but your target
+                front number might actually come out in the middle or end
+                position (P2 or P3) but “a win is a win”, it will be a “box” /
+                “any” type hit unless you combo all of the prediction numbers to
+                get an exact hit.
               </p>
 
               <p>
-                Combo numbers locks in an exact hit but be cautious…
+                Combo numbers locks in an exact hit but be cautious, some of the
+                prediction number lists are quite a bit bigger than others and
+                combo all six ways is more expensive. As we always say, “the
+                math has to work” (financially speaking). That being said, a
+                better bet might be to play as “box” / “any” instead of exact
+                order on your play slips if the investment cost doesn't make
+                sense.
               </p>
 
               <p>
-                Pick 3 and other ball lottery games are unforgiving and brutal…
+                Pick 3 and other ball lottery games are unforgiving and brutal
+                so play with no emotion, play consistently, with patience and
+                discipline and realistic budget because in reality, we lose more
+                times than we win, the real talent is not how many wins but the
+                quality of the win (investment against profit). If you feel
+                unsure / not confident, just don't play but observe until you
+                feel confident about which numbers you are going to play from
+                the list.
               </p>
             </div>
 
@@ -292,7 +309,16 @@ export default function Game2Page() {
           border-radius: 9999px;
           font-size: 0.875rem;
           font-weight: 600;
+          text-decoration: none;
+          color: #000;
           animation: colorMorph 6s ease-in-out infinite;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animated-color-pill:hover {
+          transform: scale(1.08);
+          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
         }
 
         @keyframes fadeIn {

@@ -2225,3 +2225,41 @@ To https://github.com/Excel2026/nextjs-boilerplate.git
 [2025-11-29 08:20:00] === auto_git_push.py finished ===
 [2025-11-29 20:13:36] === auto_git_push.py started ===
 [2025-11-29 20:13:36] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2025-11-29 20:13:37] STDERR:
+warning: in the working copy of 'auto_git_push.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/logs/update_excel_fallback.log', LF will be replaced by CRLF the next time Git touches it
+warning: adding embedded git repository: Upwork-site-repo files
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint: 	git submodule add <url> Upwork-site-repo files
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint: 	git rm --cached Upwork-site-repo files
+hint:
+hint: See "git help submodule" for more information.
+hint: Disable this message with "git config set advice.addEmbeddedRepo false"
+
+[2025-11-29 20:13:37] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2025-11-29 20:13:37] STDOUT:
+[main 0b899e8] Auto pipeline update
+ 6 files changed, 25 insertions(+), 15 deletions(-)
+ create mode 160000 Upwork-site-repo files
+ create mode 100644 Upwork-site-repo files.zip
+
+[2025-11-29 20:13:37] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2025-11-29 20:13:37] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2025-11-29 20:13:37] RUN: C:\Program Files\Git\cmd\git.exe push
+[2025-11-29 20:13:41] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   3b363a9..0b899e8  main -> main
+
+[2025-11-29 20:13:41] git push succeeded.
+[2025-11-29 20:13:41] === auto_git_push.py finished ===
