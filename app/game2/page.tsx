@@ -114,7 +114,6 @@ export default function Game2Page() {
               ?
             </button>
 
-            {/* This pill uses the animated-color-pill class */}
             <Link
               href="/pick3"
               className="animated-color-pill text-black font-semibold shadow-md"
@@ -190,7 +189,6 @@ export default function Game2Page() {
                     {index + 1}
                   </span>
 
-                  {/* DATE — white */}
                   <span className="w-[90px] text-sm text-white">
                     {row.Date}
                   </span>
@@ -230,9 +228,45 @@ export default function Game2Page() {
             <h2 className="text-xl font-bold text-yellow-400 mb-4 text-center">
               Instructions
             </h2>
+
+            {/* REPLACED FULL HELP TEXT */}
             <p className="text-[17px] leading-relaxed text-gray-200 mb-4">
-              Click a red number to set your target front digit.
+              <b>How to play Game 2:</b> This is a fun little game where, if you
+              have a personal system you use and are pretty good at getting the
+              front number right, this is a perfect game! Simply click one of the
+              red (0 thru 9) numbers and the entire prediction list will adjust
+              to your targeted front number — we’ll handle the other 2 numbers for
+              you.
             </p>
+
+            <p className="text-[17px] leading-relaxed text-gray-200 mb-4">
+              Keep in mind, even though you are targeting only the front number,
+              sometimes the actual number that comes out will have all three
+              numbers from within the prediction list but your target front number
+              might actually come out in the middle or end position (P2 or P3) but
+              “a win is a win”, it will be a “box” / “any” type hit unless you
+              combo all of the prediction numbers to get an exact hit.
+            </p>
+
+            <p className="text-[17px] leading-relaxed text-gray-200 mb-4">
+              Combo numbers locks in an exact hit but be cautious, some of the
+              prediction number lists are quite a bit bigger than others and combo
+              all six ways is more expensive. As we always say, “the math has to
+              work” (financially speaking). That being said, a better bet might be
+              to play as “box” / “any” instead of exact order on your play slips
+              if the investment cost doesn't make sense.
+            </p>
+
+            <p className="text-[17px] leading-relaxed text-gray-200 mb-4">
+              Pick 3 and other ball lottery games are unforgiving and brutal so
+              play with no emotion, play consistently, with patience and
+              discipline and realistic budget because in reality, we lose more
+              times than we win, the real talent is not how many wins but the
+              quality of the win (investment against profit). If you feel unsure /
+              not confident, just don’t play but observe until you feel confident
+              about which numbers you are going to play from the list.
+            </p>
+
             <div className="flex justify-center">
               <button
                 onClick={() => setShowInstructions(false)}
@@ -260,7 +294,6 @@ export default function Game2Page() {
           animation: fadeIn 0.3s ease-out;
         }
 
-        /* === Animated pill styles (same as Game 1) === */
         @keyframes colorMorph {
           0% {
             background-color: #ffffff;
