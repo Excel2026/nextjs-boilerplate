@@ -1364,3 +1364,17 @@ pywintypes.com_error: (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel'
     ~~~~~~~~^^^^^^
 TypeError: 'bool' object is not callable
 
+[12/04/2025 06:34:38 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/04/2025 06:34:38 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/04/2025 06:34:39 AM] Normalized 2 Downtack rows.
+[12/04/2025 06:34:41 AM] Workbook + Data sheet opened successfully.
+[12/04/2025 06:34:55 AM] Loaded 594 existing rows.
+[12/04/2025 06:34:55 AM] Shifting 594 rows down by 2 safely...
+[12/04/2025 06:37:48 AM] Shift complete.
+[12/04/2025 06:37:48 AM] Inserting 2 new row(s) at top...
+[12/04/2025 06:37:49 AM] Saving workbook...
+[12/04/2025 06:37:50 AM] Excel COM cleaned up.
+[12/04/2025 06:37:54 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[12/04/2025 06:37:57 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[12/04/2025 06:37:59 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[12/04/2025 06:38:00 AM] === NC Pick 3 update finished ===
