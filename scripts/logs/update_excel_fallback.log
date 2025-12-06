@@ -1432,3 +1432,15 @@ TypeError: 'bool' object is not callable
 [12/06/2025 11:04:15 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
 [12/06/2025 11:04:17 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
 [12/06/2025 11:04:19 AM] === NC Pick 3 update finished ===
+[12/06/2025 11:07:38 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/06/2025 11:07:38 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/06/2025 11:07:38 AM] Normalized 2 Downtack rows.
+[12/06/2025 11:07:40 AM] Workbook + Data sheet opened successfully.
+[12/06/2025 11:07:49 AM] Loaded 324 existing rows.
+[12/06/2025 11:07:49 AM] No new rows to insert. Done.
+[12/06/2025 11:07:49 AM] Saving workbook...
+[12/06/2025 11:07:49 AM] Excel COM cleaned up.
+[12/06/2025 11:07:51 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[12/06/2025 11:07:53 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[12/06/2025 11:07:55 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[12/06/2025 11:07:56 AM] === NC Pick 3 update finished ===
