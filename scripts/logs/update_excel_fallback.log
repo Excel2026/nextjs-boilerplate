@@ -1648,3 +1648,15 @@ pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
 pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 
+[12/09/2025 04:30:49 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/09/2025 04:30:49 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/09/2025 04:30:50 PM] Normalized 2 Downtack rows.
+[12/09/2025 04:30:51 PM] Workbook + Data sheet opened successfully.
+[12/09/2025 04:31:06 PM] Loaded 749 existing rows.
+[12/09/2025 04:31:06 PM] No new rows to insert. Done.
+[12/09/2025 04:31:06 PM] Saving workbook...
+[12/09/2025 04:31:06 PM] Excel COM cleaned up.
+[12/09/2025 04:31:08 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[12/09/2025 04:31:11 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[12/09/2025 04:31:13 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[12/09/2025 04:31:14 PM] === NC Pick 3 update finished ===
