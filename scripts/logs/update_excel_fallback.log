@@ -1565,3 +1565,17 @@ TypeError: 'bool' object is not callable
     ret = self._oleobj_.Invoke(retEntry.dispid, 0, invoke_type, 1)
 pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 
+[12/09/2025 11:17:18 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/09/2025 11:17:18 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/09/2025 11:17:18 AM] Normalized 2 Downtack rows.
+[12/09/2025 11:17:21 AM] Workbook + Data sheet opened successfully.
+[12/09/2025 11:17:27 AM] Loaded 345 existing rows.
+[12/09/2025 11:17:27 AM] Shifting 345 rows down by 2 safely...
+[12/09/2025 11:18:57 AM] Shift complete.
+[12/09/2025 11:18:57 AM] Inserting 2 new row(s) at top...
+[12/09/2025 11:18:57 AM] Saving workbook...
+[12/09/2025 11:18:58 AM] Excel COM cleaned up.
+[12/09/2025 11:19:00 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[12/09/2025 11:19:04 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[12/09/2025 11:19:06 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[12/09/2025 11:19:07 AM] === NC Pick 3 update finished ===
