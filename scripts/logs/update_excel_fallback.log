@@ -2090,3 +2090,17 @@ AttributeError: Open.Close
     ret = self._oleobj_.Invoke(retEntry.dispid, 0, invoke_type, 1)
 pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 
+[12/15/2025 06:04:23 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/15/2025 06:04:23 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/15/2025 06:04:23 PM] Normalized 2 Downtack rows.
+[12/15/2025 06:04:25 PM] Workbook + Data sheet opened successfully.
+[12/15/2025 06:04:33 PM] Loaded 393 existing rows.
+[12/15/2025 06:04:33 PM] Shifting 393 rows down by 1 safely...
+[12/15/2025 06:06:06 PM] Shift complete.
+[12/15/2025 06:06:06 PM] Inserting 1 new row(s) at top...
+[12/15/2025 06:06:06 PM] Saving workbook...
+[12/15/2025 06:06:06 PM] Excel COM cleaned up.
+[12/15/2025 06:06:09 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[12/15/2025 06:06:12 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[12/15/2025 06:06:14 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[12/15/2025 06:06:16 PM] === NC Pick 3 update finished ===
