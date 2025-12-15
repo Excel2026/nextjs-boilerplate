@@ -2042,3 +2042,15 @@ AttributeError: Open.Close
 [12/14/2025 07:49:01 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
 [12/14/2025 07:49:03 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
 [12/14/2025 07:49:05 PM] === NC Pick 3 update finished ===
+[12/14/2025 07:49:48 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/14/2025 07:49:48 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/14/2025 07:49:48 PM] Normalized 2 Downtack rows.
+[12/14/2025 07:49:50 PM] Workbook + Data sheet opened successfully.
+[12/14/2025 07:49:52 PM] Loaded 100 existing rows.
+[12/14/2025 07:49:52 PM] No new rows to insert. Done.
+[12/14/2025 07:49:52 PM] Saving workbook...
+[12/14/2025 07:49:53 PM] Excel COM cleaned up.
+[12/14/2025 07:49:55 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[12/14/2025 07:49:57 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[12/14/2025 07:49:59 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[12/14/2025 07:50:00 PM] === NC Pick 3 update finished ===
