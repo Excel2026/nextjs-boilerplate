@@ -2400,3 +2400,40 @@ pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 [12/19/2025 09:40:43 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
 [12/19/2025 09:40:44 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
 [12/19/2025 09:40:46 AM] === NC Pick 3 update finished ===
+[12/19/2025 08:23:15 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/19/2025 08:23:15 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/19/2025 08:23:15 PM] Normalized 2 Downtack rows.
+[12/19/2025 08:23:18 PM] Workbook + Data sheet opened successfully.
+[12/19/2025 08:23:20 PM] FATAL ERROR: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[12/19/2025 08:23:20 PM] FATAL ERROR: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[12/19/2025 08:23:20 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 209, in update_excel
+    existing = read_existing(ws)
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 137, in read_existing
+    str(ws.Cells(r, 2).Value).strip(),
+        ~~~~~~~~^^^^^^
+  File "C:\Program Files\Python314\Lib\site-packages\win32com\client\dynamic.py", line 214, in __call__
+    self._oleobj_.Invoke(*allArgs), self._olerepr_.defaultDispatchName, None
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
+
+[12/19/2025 08:28:42 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/19/2025 08:28:42 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/19/2025 08:28:43 PM] Normalized 2 Downtack rows.
+[12/19/2025 08:28:45 PM] Workbook + Data sheet opened successfully.
+[12/19/2025 08:28:51 PM] Loaded 299 existing rows.
+[12/19/2025 08:28:51 PM] Shifting 299 rows down by 1 safely...
+[12/19/2025 08:30:16 PM] Shift complete.
+[12/19/2025 08:30:16 PM] Inserting 1 new row(s) at top...
+[12/19/2025 08:30:16 PM] Saving workbook...
+[12/19/2025 08:30:16 PM] Excel COM cleaned up.
+[12/19/2025 08:30:19 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[12/19/2025 08:30:22 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[12/19/2025 08:30:24 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[12/19/2025 08:30:25 PM] === NC Pick 3 update finished ===
