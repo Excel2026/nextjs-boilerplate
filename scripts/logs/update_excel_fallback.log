@@ -2576,3 +2576,25 @@ pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
     ~~~~~~~^^
 TypeError: 'bool' object is not callable
 
+[12/21/2025 09:29:32 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/21/2025 09:29:32 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/21/2025 09:29:33 AM] Normalized 2 Downtack rows.
+[12/21/2025 09:29:35 AM] Workbook + Data sheet opened successfully.
+[12/21/2025 09:29:40 AM] FATAL ERROR: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[12/21/2025 09:29:40 AM] FATAL ERROR: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[12/21/2025 09:29:40 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 209, in update_excel
+    existing = read_existing(ws)
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 138, in read_existing
+    str(ws.Cells(r, 3).Value).strip(),
+        ^^^^^^^^
+  File "C:\Program Files\Python314\Lib\site-packages\win32com\client\dynamic.py", line 620, in __getattr__
+    ret = self._oleobj_.Invoke(retEntry.dispid, 0, invoke_type, 1)
+pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
+
