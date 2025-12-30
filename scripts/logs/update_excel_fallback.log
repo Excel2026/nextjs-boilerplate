@@ -3334,3 +3334,15 @@ pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 [12/29/2025 04:07:20 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
 [12/29/2025 04:07:22 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
 [12/29/2025 04:07:23 PM] === NC Pick 3 update finished ===
+[12/29/2025 07:39:04 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/29/2025 07:39:04 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/29/2025 07:39:05 PM] Normalized 2 Downtack rows.
+[12/29/2025 07:39:07 PM] Workbook + Data sheet opened successfully.
+[12/29/2025 07:39:16 PM] Loaded 428 existing rows.
+[12/29/2025 07:39:16 PM] No new rows to insert. Done.
+[12/29/2025 07:39:16 PM] Saving workbook...
+[12/29/2025 07:39:16 PM] Excel COM cleaned up.
+[12/29/2025 07:39:19 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[12/29/2025 07:39:21 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[12/29/2025 07:39:23 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[12/29/2025 07:39:24 PM] === NC Pick 3 update finished ===
