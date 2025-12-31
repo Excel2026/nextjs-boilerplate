@@ -3481,3 +3481,26 @@ pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 [12/30/2025 08:28:51 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
 [12/30/2025 08:28:53 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
 [12/30/2025 08:28:55 AM] === NC Pick 3 update finished ===
+[12/30/2025 08:40:02 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[12/30/2025 08:40:02 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[12/30/2025 08:40:03 PM] Normalized 2 Downtack rows.
+[12/30/2025 08:40:05 PM] Workbook + Data sheet opened successfully.
+[12/30/2025 08:40:19 PM] Loaded 762 existing rows.
+[12/30/2025 08:40:19 PM] Shifting 762 rows down by 1 safely...
+[12/30/2025 08:54:07 PM] Shift complete.
+[12/30/2025 08:54:07 PM] Inserting 1 new row(s) at top...
+[12/30/2025 08:54:08 PM] Saving workbook...
+[12/30/2025 08:54:08 PM] FATAL ERROR: TypeError("'bool' object is not callable")
+[12/30/2025 08:54:08 PM] FATAL ERROR: TypeError("'bool' object is not callable")
+[12/30/2025 08:54:08 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 229, in update_excel
+    wb.Save()
+    ~~~~~~~^^
+TypeError: 'bool' object is not callable
+
