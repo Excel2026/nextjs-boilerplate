@@ -4703,3 +4703,25 @@ pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 [01/09/2026 12:14:12 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
 [01/09/2026 12:14:13 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
 [01/09/2026 12:14:15 PM] === NC Pick 3 update finished ===
+[01/09/2026 01:21:55 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[01/09/2026 01:21:55 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[01/09/2026 01:21:55 PM] Normalized 2 Downtack rows.
+[01/09/2026 01:21:57 PM] Workbook + Data sheet opened successfully.
+[01/09/2026 01:22:00 PM] FATAL ERROR: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[01/09/2026 01:22:00 PM] FATAL ERROR: com_error(-2147418111, 'Call was rejected by callee.', None, None)
+[01/09/2026 01:22:00 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 209, in update_excel
+    existing = read_existing(ws)
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 138, in read_existing
+    str(ws.Cells(r, 3).Value).strip(),
+        ^^^^^^^^
+  File "C:\Program Files\Python314\Lib\site-packages\win32com\client\dynamic.py", line 620, in __getattr__
+    ret = self._oleobj_.Invoke(retEntry.dispid, 0, invoke_type, 1)
+pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
+
