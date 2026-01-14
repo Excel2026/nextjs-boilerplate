@@ -7234,3 +7234,26 @@ To https://github.com/Excel2026/nextjs-boilerplate.git
 [2026-01-13 21:37:31] === auto_git_push.py finished ===
 [2026-01-13 21:43:17] === auto_git_push.py started ===
 [2026-01-13 21:43:17] RUN: C:\Program Files\Git\cmd\git.exe add -A
+[2026-01-13 21:43:17] STDERR:
+warning: in the working copy of 'auto_git_push.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/logs/update_excel_fallback.log', LF will be replaced by CRLF the next time Git touches it
+
+[2026-01-13 21:43:17] RUN: C:\Program Files\Git\cmd\git.exe commit -m Auto pipeline update
+[2026-01-13 21:43:17] STDOUT:
+[main 8e4db93] Auto pipeline update
+ 4 files changed, 50 insertions(+), 8 deletions(-)
+
+[2026-01-13 21:43:17] RUN: C:\Program Files\Git\cmd\git.exe pull --rebase
+[2026-01-13 21:43:17] STDERR:
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+[2026-01-13 21:43:17] RUN: C:\Program Files\Git\cmd\git.exe push
+[2026-01-13 21:43:18] STDERR:
+To https://github.com/Excel2026/nextjs-boilerplate.git
+   9d2d689..8e4db93  main -> main
+
+[2026-01-13 21:43:18] git push succeeded.
+[2026-01-13 21:43:18] === auto_git_push.py finished ===
+[2026-01-14 09:27:48] === auto_git_push.py started ===
+[2026-01-14 09:27:48] RUN: C:\Program Files\Git\cmd\git.exe add -A
