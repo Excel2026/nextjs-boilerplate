@@ -5773,3 +5773,15 @@ pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
     ~~~~~~~^^
 TypeError: 'bool' object is not callable
 
+[01/16/2026 11:11:43 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[01/16/2026 11:11:43 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[01/16/2026 11:11:44 AM] Normalized 2 Downtack rows.
+[01/16/2026 11:11:46 AM] Workbook + Data sheet opened successfully.
+[01/16/2026 11:12:00 AM] Loaded 787 existing rows.
+[01/16/2026 11:12:00 AM] No new rows to insert. Done.
+[01/16/2026 11:12:00 AM] Saving workbook...
+[01/16/2026 11:12:01 AM] Excel COM cleaned up.
+[01/16/2026 11:12:03 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[01/16/2026 11:12:06 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[01/16/2026 11:12:08 AM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[01/16/2026 11:12:10 AM] === NC Pick 3 update finished ===
