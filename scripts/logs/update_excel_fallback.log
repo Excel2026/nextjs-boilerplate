@@ -5750,3 +5750,26 @@ TypeError: 'bool' object is not callable
     ret = self._oleobj_.Invoke(retEntry.dispid, 0, invoke_type, 1)
 pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 
+[01/16/2026 10:56:08 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[01/16/2026 10:56:08 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[01/16/2026 10:56:09 AM] Normalized 2 Downtack rows.
+[01/16/2026 10:56:10 AM] Workbook + Data sheet opened successfully.
+[01/16/2026 10:56:18 AM] Loaded 382 existing rows.
+[01/16/2026 10:56:18 AM] Shifting 382 rows down by 1 safely...
+[01/16/2026 11:07:03 AM] Shift complete.
+[01/16/2026 11:07:03 AM] Inserting 1 new row(s) at top...
+[01/16/2026 11:07:11 AM] Saving workbook...
+[01/16/2026 11:07:11 AM] FATAL ERROR: TypeError("'bool' object is not callable")
+[01/16/2026 11:07:11 AM] FATAL ERROR: TypeError("'bool' object is not callable")
+[01/16/2026 11:07:11 AM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 229, in update_excel
+    wb.Save()
+    ~~~~~~~^^
+TypeError: 'bool' object is not callable
+
