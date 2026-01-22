@@ -6549,3 +6549,15 @@ TypeError: 'bool' object is not callable
     ~~~~~~~^^
 TypeError: 'bool' object is not callable
 
+[01/22/2026 03:10:39 PM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[01/22/2026 03:10:39 PM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[01/22/2026 03:10:40 PM] Normalized 2 Downtack rows.
+[01/22/2026 03:10:42 PM] Workbook + Data sheet opened successfully.
+[01/22/2026 03:10:58 PM] Loaded 791 existing rows.
+[01/22/2026 03:10:58 PM] No new rows to insert. Done.
+[01/22/2026 03:10:58 PM] Saving workbook...
+[01/22/2026 03:10:58 PM] Excel COM cleaned up.
+[01/22/2026 03:11:59 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_draw_history.py
+[01/22/2026 03:12:02 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_game2_data.py
+[01/22/2026 03:12:04 PM] Running extractor: C:\Sites\pick3-site\Pick 3 Website Info - 10-10-2025\Raw Scrape - 10-26-2025\extract_predictions_excel_live.py
+[01/22/2026 03:12:06 PM] === NC Pick 3 update finished ===
