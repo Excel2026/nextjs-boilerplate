@@ -8289,3 +8289,28 @@ pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
     ret = self._oleobj_.Invoke(retEntry.dispid, 0, invoke_type, 1)
 pywintypes.com_error: (-2147418111, 'Call was rejected by callee.', None, None)
 
+[01/28/2026 11:51:28 AM] === NC Pick 3 FAST SHIFT-DOWN update started ===
+[01/28/2026 11:51:28 AM] Fetching Downtack data → https://us-lotteries.downtack.com/public/index.php/lotteries/3a4099a724edc52deda188ad74f4f912
+[01/28/2026 11:51:29 AM] Normalized 2 Downtack rows.
+[01/28/2026 11:51:31 AM] Workbook + Data sheet opened successfully.
+[01/28/2026 11:51:45 AM] Loaded 798 existing rows.
+[01/28/2026 11:51:45 AM] Shifting 798 rows down by 1 safely...
+[01/28/2026 12:07:19 PM] Shift complete.
+[01/28/2026 12:07:19 PM] Inserting 1 new row(s) at top...
+[01/28/2026 12:07:27 PM] Saving workbook...
+[01/28/2026 12:07:28 PM] FATAL ERROR: AttributeError('Open.Close')
+[01/28/2026 12:07:28 PM] FATAL ERROR: AttributeError('Open.Close')
+[01/28/2026 12:07:28 PM] Traceback (most recent call last):
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 267, in main
+    update_excel(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "C:\Sites\site-repo\scripts\update_excel_fallback.py", line 230, in update_excel
+    wb.Close(True)
+    ^^^^^^^^
+  File "C:\Program Files\Python314\Lib\site-packages\win32com\client\dynamic.py", line 631, in __getattr__
+    raise AttributeError(f"{self._username_}.{attr}")
+AttributeError: Open.Close
+
